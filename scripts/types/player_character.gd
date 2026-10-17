@@ -5,8 +5,10 @@ class_name Character
 @export var inventory : Item;
 @export var interaction_hitbox : Area2D;
 @export var sprite : Sprite2D;
+@export var carried_item_position : Marker2D;
 
 @export var speed : float = 400;
+
 
 
 var _stored_movement := Vector2()
@@ -173,8 +175,13 @@ func pick_item(item: Item) -> void:
 		return;
 	
 	inventory = item;
-	item.hide();
+	if item.visible_when_carred:
+		item.show();
+	else:
+		item.hide();
+	
 	item.reparent(self);
+	item.position = item.carried_offset + carried_item_position.position;
 	item.deactivate();
 	item.mark_taken();
 

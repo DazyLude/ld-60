@@ -10,10 +10,11 @@ height = 120.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_h02qm"]
 radius = 73.0
 
-[node name="Neanderthal" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite")]
+[node name="Neanderthal" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position")]
 script = ExtResource("1_je5ps")
 interaction_hitbox = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
+carried_item_position = NodePath("CarriedItemMarker")
 metadata/_custom_type_script = "uid://cqpsssjp2m55h"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428816770]
@@ -30,3 +31,6 @@ position = Vector2(0, -10)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=316428025]
 shape = SubResource("CircleShape2D_h02qm")
 debug_color = Color(0.6000929, 0.36985418, 1, 0.41960785)
+
+[node name="CarriedItemMarker" type="Marker2D" parent="." unique_id=2014108726]
+position = Vector2(1, -112)

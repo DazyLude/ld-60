@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ccp5l1jr6vxig"]
+
+[ext_resource type="Script" uid="uid://db5f5adk7kmgr" path="res://scripts/types/npc.gd" id="1_46ksx"]
+[ext_resource type="Texture2D" uid="uid://dkhowmjihc2j4" path="res://assets/visuals/items/sacrifices/cultist_t.png" id="2_8qyap"]
+[ext_resource type="Texture2D" uid="uid://bcr6wmnq1nm8o" path="res://assets/visuals/items/sacrifices/cultist_th.png" id="3_oehwr"]
+[ext_resource type="Texture2D" uid="uid://tvxqj5dlhjp3" path="res://assets/visuals/items/sacrifices/cultist.png" id="4_i1yso"]
+[ext_resource type="Texture2D" uid="uid://c4v135y7pvu0x" path="res://assets/visuals/items/sacrifices/cultist_h.png" id="5_632h3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgrj8"]
+size = Vector2(54, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7omy"]
+size = Vector2(111, 37)
+
+[node name="Cultist" type="Node2D" unique_id=323613442 node_paths=PackedStringArray("tied_sprite_offset", "free_sprite_offset", "tied_hitbox", "hitbox", "sprite")]
+script = ExtResource("1_46ksx")
+tied_texture = ExtResource("2_8qyap")
+highlighted_tied_texture = ExtResource("3_oehwr")
+tied_sprite_offset = NodePath("TiedSpritePosition")
+free_sprite_offset = NodePath("FreeSpritePosition")
+tied_hitbox = NodePath("TiedHB")
+item_texture = ExtResource("4_i1yso")
+highlighted_texture = ExtResource("5_632h3")
+hitbox = NodePath("FreeHB")
+sprite = NodePath("Body")
+visible_when_carred = true
+metadata/_custom_type_script = "uid://db5f5adk7kmgr"
+
+[node name="Body" type="Sprite2D" parent="." unique_id=485133197]
+position = Vector2(-3, -31)
+texture = ExtResource("4_i1yso")
+
+[node name="TiedSpritePosition" type="Marker2D" parent="." unique_id=449190989]
+position = Vector2(0, -8)
+
+[node name="FreeSpritePosition" type="Marker2D" parent="." unique_id=372496434]
+position = Vector2(1, -31)
+
+[node name="FreeHB" type="Area2D" parent="." unique_id=875615881]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FreeHB" unique_id=305628840]
+position = Vector2(1, -31.5)
+shape = SubResource("RectangleShape2D_fgrj8")
+
+[node name="TiedHB" type="Area2D" parent="." unique_id=354314785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TiedHB" unique_id=196848371]
+position = Vector2(-0.5, -8.5)
+shape = SubResource("RectangleShape2D_a7omy")

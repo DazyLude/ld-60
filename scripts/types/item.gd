@@ -10,6 +10,10 @@ class_name Item
 @export var hitbox : Area2D;
 @export var sprite : Sprite2D;
 var active : bool;
+var taken : bool;
+
+@export var carried_offset : Vector2;
+@export var visible_when_carred : bool = false;
 
 
 func _ready() -> void:
@@ -28,8 +32,10 @@ func deactivate() -> void:
 
 
 func mark_taken() -> void:
+	taken = true;
 	hitbox.monitorable = false;
 
 
 func unmark_taken() -> void:
+	taken = false;
 	hitbox.monitorable = true;
