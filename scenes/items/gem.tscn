@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://diup1ews0vrea"]
+
+[ext_resource type="Script" uid="uid://nsx20o6x83tb" path="res://scenes/items/gem.gd" id="1_y3ymv"]
+[ext_resource type="Texture2D" uid="uid://dahjohch0t4ga" path="res://assets/visuals/items/gems/red.png" id="2_e4ygx"]
+[ext_resource type="Texture2D" uid="uid://b7mdxgm88yqwo" path="res://assets/visuals/items/gems/blue.png" id="3_6kdjw"]
+[ext_resource type="Texture2D" uid="uid://dqv4tiktljbgu" path="res://assets/visuals/items/gems/red_h.png" id="3_qy7mo"]
+[ext_resource type="Texture2D" uid="uid://bu43de07sey13" path="res://assets/visuals/items/gems/yellow.png" id="4_pbsn4"]
+[ext_resource type="Texture2D" uid="uid://7ep2usuvw4fu" path="res://assets/visuals/items/gems/purple.png" id="5_6k0ak"]
+[ext_resource type="Texture2D" uid="uid://c7ig4bkjd3swv" path="res://assets/visuals/items/gems/green.png" id="6_8dy45"]
+[ext_resource type="Texture2D" uid="uid://bif4sj1mxcrh7" path="res://assets/visuals/items/gems/white.png" id="7_t8c58"]
+[ext_resource type="Texture2D" uid="uid://ch4ve1v5u6nsi" path="res://assets/visuals/items/gems/black.png" id="8_il4pl"]
+[ext_resource type="Texture2D" uid="uid://bgqjdlo2g3g7y" path="res://assets/visuals/items/gems/blue_h.png" id="10_a22xm"]
+[ext_resource type="Texture2D" uid="uid://d1liu3jmb1f4a" path="res://assets/visuals/items/gems/yellow_h.png" id="11_0yd8l"]
+[ext_resource type="Texture2D" uid="uid://ccc2p2buvwjnm" path="res://assets/visuals/items/gems/purple_h.png" id="12_hosp2"]
+[ext_resource type="Texture2D" uid="uid://cipjgntmqrmf5" path="res://assets/visuals/items/gems/green_h.png" id="13_7m05n"]
+[ext_resource type="Texture2D" uid="uid://f6nbbx07ihpu" path="res://assets/visuals/items/gems/white_h.png" id="14_7lb2k"]
+[ext_resource type="Texture2D" uid="uid://cbdo8kfbw1oxj" path="res://assets/visuals/items/gems/black_h.png" id="15_pl3sg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhyfn"]
+size = Vector2(51, 47)
+
+[node name="Gem" type="Node2D" unique_id=1737541831 node_paths=PackedStringArray("hitbox", "sprite")]
+script = ExtResource("1_y3ymv")
+textures_per_type = Dictionary[int, Texture2D]({
+0: ExtResource("2_e4ygx"),
+1: ExtResource("3_6kdjw"),
+2: ExtResource("4_pbsn4"),
+3: ExtResource("5_6k0ak"),
+4: ExtResource("6_8dy45"),
+5: ExtResource("7_t8c58"),
+6: ExtResource("8_il4pl")
+})
+h_textures_per_type = Dictionary[int, Texture2D]({
+0: ExtResource("3_qy7mo"),
+1: ExtResource("10_a22xm"),
+2: ExtResource("11_0yd8l"),
+3: ExtResource("12_hosp2"),
+4: ExtResource("13_7m05n"),
+5: ExtResource("14_7lb2k"),
+6: ExtResource("15_pl3sg")
+})
+item_name = "gem"
+item_texture = ExtResource("2_e4ygx")
+highlighted_texture = ExtResource("3_qy7mo")
+hitbox = NodePath("Area2D")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://kcijktpqlpou"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073497469]
+texture = ExtResource("2_e4ygx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1509468262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1162187772]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_hhyfn")

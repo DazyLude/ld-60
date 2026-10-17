@@ -12,6 +12,7 @@ class_name Item
 
 
 func _ready() -> void:
+	sprite.texture = item_texture;
 	hitbox.owner = self;
 
 

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="1_fr1um"]
 [ext_resource type="PackedScene" uid="uid://c1shhfnl2fifi" path="res://scenes/items/stick.tscn" id="2_v45ci"]
 [ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/station.tscn" id="3_48ne7"]
-[ext_resource type="PackedScene" uid="uid://dnm2rvv343esx" path="res://scenes/items/stick2.tscn" id="4_v45ci"]
+[ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="5_48ne7"]
 
 [node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick")]
 y_sort_enabled = true
@@ -26,5 +26,29 @@ position = Vector2(-179, 190)
 [node name="Station" parent="." unique_id=1972157419 instance=ExtResource("3_48ne7")]
 position = Vector2(341, 103)
 
-[node name="Stick2" parent="." unique_id=1335654719 instance=ExtResource("4_v45ci")]
-position = Vector2(-62, 271)
+[node name="Gem" parent="." unique_id=1656488786 instance=ExtResource("5_48ne7")]
+position = Vector2(158, -161)
+
+[node name="Gem2" parent="." unique_id=2022153750 instance=ExtResource("5_48ne7")]
+position = Vector2(85, -202)
+type = 1
+
+[node name="Gem3" parent="." unique_id=1885905884 instance=ExtResource("5_48ne7")]
+position = Vector2(-6, -220)
+type = 2
+
+[node name="Gem4" parent="." unique_id=882460095 instance=ExtResource("5_48ne7")]
+position = Vector2(-97, -179)
+type = 3
+
+[node name="Gem5" parent="." unique_id=1249308713 instance=ExtResource("5_48ne7")]
+position = Vector2(-188, -112)
+type = 4
+
+[node name="Gem6" parent="." unique_id=863815189 instance=ExtResource("5_48ne7")]
+position = Vector2(-196, -29)
+type = 5
+
+[node name="Gem7" parent="." unique_id=499162378 instance=ExtResource("5_48ne7")]
+position = Vector2(-155, 59)
+type = 6
