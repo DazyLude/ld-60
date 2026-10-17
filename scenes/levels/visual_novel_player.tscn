@@ -1,5 +1,13 @@
 [gd_scene format=3 uid="uid://lf5u86637iur"]
 
+[ext_resource type="Script" uid="uid://c1nbrwvp2iosa" path="res://scenes/levels/visual_novel_player.gd" id="1_3smag"]
+[ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="2_u6rad"]
+[ext_resource type="Texture2D" uid="uid://b30t6tskfw6op" path="res://assets/novel/characters/millenial/millenial.png" id="3_rqat7"]
+[ext_resource type="Texture2D" uid="uid://dex1axfuh6puk" path="res://assets/novel/characters/wizard/wizard.png" id="4_xh2g5"]
+[ext_resource type="Texture2D" uid="uid://dici4uotgoyx3" path="res://assets/novel/characters/vampire/vampire.png" id="5_wurvx"]
+[ext_resource type="Texture2D" uid="uid://cu3jmjt30u47g" path="res://assets/novel/characters/ghost/ghost.png" id="6_043yu"]
+[ext_resource type="Texture2D" uid="uid://b2c4b2sn66elo" path="res://assets/novel/characters/ghost/ghost text field.png" id="7_bc5sb"]
+
 [node name="VisualNovelPlayer" type="Control" unique_id=1367113482]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +15,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3smag")
+
+[node name="BG" type="TextureRect" parent="." unique_id=7447062]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_u6rad")
+
+[node name="Millenial" type="TextureRect" parent="." unique_id=1737006229]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 152.0
+offset_right = 502.0
+offset_bottom = 519.0
+texture = ExtResource("3_rqat7")
+
+[node name="Wizard" type="TextureRect" parent="." unique_id=1005979714]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 97.0
+offset_right = 755.0
+offset_bottom = 489.0
+texture = ExtResource("4_xh2g5")
+
+[node name="Vampire" type="TextureRect" parent="." unique_id=2120526862]
+layout_mode = 0
+offset_left = 772.0
+offset_top = -93.0
+offset_right = 996.0
+offset_bottom = 356.0
+texture = ExtResource("5_wurvx")
+
+[node name="Ghost" type="TextureRect" parent="." unique_id=787994767]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 175.0
+offset_right = 1250.0
+offset_bottom = 439.0
+texture = ExtResource("6_043yu")
+
+[node name="TextBox" type="TextureRect" parent="." unique_id=1231164965]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 430.0
+offset_right = 1211.0
+offset_bottom = 709.0
+texture = ExtResource("7_bc5sb")
+
+[node name="Label" type="Label" parent="TextBox" unique_id=1836721754]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 134.0
+offset_right = 1100.0
+offset_bottom = 239.0
+horizontal_alignment = 1
+vertical_alignment = 1
