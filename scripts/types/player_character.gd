@@ -191,6 +191,7 @@ func drop_item(swap_with: Item = null) -> void:
 		return;
 	
 	if swap_with == null:
+		inventory.position = Vector2();
 		_drop_item();
 	else:
 		var local_pos := to_local(swap_with.global_position);

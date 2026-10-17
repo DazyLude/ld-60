@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Hud" unique_id=1869632403]
+[node name="Quest" type="Label" parent="Hud" unique_id=1869632403]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 23.0

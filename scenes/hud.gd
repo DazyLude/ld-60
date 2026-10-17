@@ -2,8 +2,9 @@ extends CanvasLayer
 
 
 var active_player : Character;
-@export
-var inventory_display : ItemSlot;
+
+@export var inventory_display : ItemSlot;
+@export var quest_label : Label;
 
 
 func _process(_delta: float) -> void:
