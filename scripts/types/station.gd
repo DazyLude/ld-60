@@ -49,7 +49,7 @@ func receive_item(item: Item) -> void:
 
 
 func has_item() -> bool:
-	return _item != null;
+	return hitbox.monitorable and _item != null;
 
 
 func dispense_item() -> Item:

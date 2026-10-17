@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 		_previously_activated = closest;
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var input_movement := Vector2();
 	if Input.is_action_pressed(&"move_down"):
 		input_movement += Vector2(0.0, 1.0);
@@ -56,7 +56,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed(&"move_right"):
 		input_movement += Vector2(1.0, 0.0);
 	
-	move_and_collide(input_movement * speed * delta)
+	velocity = input_movement * speed;
+	move_and_slide()
+	
 	_stored_movement = input_movement;
 
 

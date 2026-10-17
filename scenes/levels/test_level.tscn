@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="8_7x1jh"]
 [ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="9_2mu0v"]
 [ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="10_jmx14"]
+[ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="11_jmx14"]
 
 [node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick", "book_holder")]
 y_sort_enabled = true
@@ -60,18 +61,18 @@ position = Vector2(-155, 59)
 type = 6
 
 [node name="Station2" parent="." unique_id=2140649539 instance=ExtResource("6_6xh4u")]
-position = Vector2(495, -120)
+position = Vector2(313, 292)
 
 [node name="Station3" parent="." unique_id=1114166825 instance=ExtResource("6_6xh4u")]
-position = Vector2(621, -30)
+position = Vector2(616, 150)
 type = 1
 
 [node name="Station4" parent="." unique_id=1357455734 instance=ExtResource("6_6xh4u")]
-position = Vector2(565, 122)
+position = Vector2(560, 302)
 type = 2
 
 [node name="Station5" parent="." unique_id=583819138 instance=ExtResource("6_6xh4u")]
-position = Vector2(417, 122)
+position = Vector2(412, 302)
 type = 3
 
 [node name="Station6" parent="." unique_id=809487660 instance=ExtResource("6_6xh4u")]
@@ -102,3 +103,7 @@ starting_item = NodePath("../Grimoire")
 
 [node name="Grimoire" parent="." unique_id=1161200828 instance=ExtResource("10_jmx14")]
 position = Vector2(-204, 293)
+
+[node name="Barrier" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders") instance=ExtResource("11_jmx14")]
+position = Vector2(472, -113)
+gem_holders = [NodePath("../Station6")]

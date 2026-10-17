@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ct4ob0fyfo5gc"]
+
+[ext_resource type="Script" uid="uid://dksmyfwu7uav1" path="res://scenes/stations/barrier.gd" id="1_vq7bl"]
+[ext_resource type="Texture2D" uid="uid://o8pvqi08dmv0" path="res://assets/visuals/stations/circle.png" id="2_r402l"]
+[ext_resource type="Texture2D" uid="uid://im0on1mk6k5d" path="res://assets/visuals/stations/dome.png" id="3_7e665"]
+[ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="4_16f5n"]
+[ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="5_vnd4u"]
+
+[node name="Barrier" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("barrier_hitbox", "barrier_display")]
+script = ExtResource("1_vq7bl")
+barrier_hitbox = NodePath("PHB")
+barrier_display = NodePath("Dome")
+metadata/_custom_type_script = "uid://db5f5adk7kmgr"
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=479752479]
+z_index = -1
+position = Vector2(0, -62)
+texture = ExtResource("2_r402l")
+
+[node name="Dome" type="Sprite2D" parent="." unique_id=1740550862]
+z_index = 1
+position = Vector2(0, -62)
+texture = ExtResource("3_7e665")
+
+[node name="Station" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("4_16f5n")]
+starting_item = NodePath("../Grimoire")
+
+[node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("5_vnd4u")]
+
+[node name="PHB" type="StaticBody2D" parent="." unique_id=47777956]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHB" unique_id=1326440944]
+polygon = PackedVector2Array(-119, -10, -76, -66, -34, -97, -6, -103, 10, -103, 49, -93, 96, -56, 119, -10, 107, 25, 62, 53, 1, 61, -61, 51, -102, 26)

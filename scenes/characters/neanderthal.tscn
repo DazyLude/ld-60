@@ -11,6 +11,10 @@ height = 120.0
 radius = 73.0
 
 [node name="Neanderthal" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position")]
+motion_mode = 1
+slide_on_ceiling = false
+platform_floor_layers = 4278190080
+platform_wall_layers = 1
 script = ExtResource("1_je5ps")
 interaction_hitbox = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
