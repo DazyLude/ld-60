@@ -11,11 +11,22 @@ signal item_removed;
 @export var item_placement : Marker2D;
 @export var item_slot : ItemSlot;
 
+@export var starting_item : Item;
+
 var _item : Item;
 
 
 func _ready() -> void:
+	if starting_item != null:
+		_equip_deferred.call_deferred();
+	
 	hitbox.owner = self;
+
+
+func _equip_deferred() -> void:
+	starting_item.mark_taken();
+	receive_item(starting_item);
+	deactivate();
 
 
 func activate() -> void:

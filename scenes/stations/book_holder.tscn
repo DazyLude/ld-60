@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bc7uq42qomsba"]
+
+[ext_resource type="Script" uid="uid://g6dnn6fynkv1" path="res://scenes/stations/gem_holder.gd" id="1_3m0bf"]
+[ext_resource type="Texture2D" uid="uid://bli100u8ctsf4" path="res://assets/visuals/items/gems/any_holder.png" id="2_rcds7"]
+[ext_resource type="Texture2D" uid="uid://fgwtk3p55esn" path="res://assets/visuals/items/gems/red_holder.png" id="3_u3ps7"]
+[ext_resource type="Texture2D" uid="uid://5pfrfl67vwbc" path="res://assets/visuals/items/gems/blue_holder.png" id="4_wr4ji"]
+[ext_resource type="Texture2D" uid="uid://ds86qi8c2tjpy" path="res://assets/visuals/items/gems/yellow_holder.png" id="5_6uucq"]
+[ext_resource type="Texture2D" uid="uid://g0q1egibh7ac" path="res://assets/visuals/items/gems/purple_holder.png" id="6_p7h3u"]
+[ext_resource type="Texture2D" uid="uid://18sm43ap3i6y" path="res://assets/visuals/items/gems/green_holder.png" id="7_plmgr"]
+[ext_resource type="Texture2D" uid="uid://c6n3smtxc3um6" path="res://assets/visuals/items/gems/white_holder.png" id="8_c8jxp"]
+[ext_resource type="Texture2D" uid="uid://djuwn8ay4oeve" path="res://assets/visuals/items/gems/black_holder.png" id="9_w5un7"]
+[ext_resource type="Texture2D" uid="uid://c6iqug8ngk14m" path="res://assets/visuals/item_slot.png" id="10_oe8mq"]
+[ext_resource type="Script" uid="uid://ckjpebr888lms" path="res://scripts/types/item_slot.gd" id="11_ksa7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
+size = Vector2(50, 108)
+
+[node name="Station" type="Node2D" unique_id=1972157419 node_paths=PackedStringArray("sprite", "hitbox", "item_placement", "item_slot")]
+script = ExtResource("1_3m0bf")
+texture_per_type = Dictionary[int, Texture2D]({
+0: ExtResource("2_rcds7"),
+1: ExtResource("3_u3ps7"),
+2: ExtResource("4_wr4ji"),
+3: ExtResource("5_6uucq"),
+4: ExtResource("6_p7h3u"),
+5: ExtResource("7_plmgr"),
+6: ExtResource("8_c8jxp"),
+7: ExtResource("9_w5un7")
+})
+sprite = NodePath("Sprite2D")
+station_name = "gem_holder"
+hitbox = NodePath("Area2D")
+item_placement = NodePath("Marker2D")
+item_slot = NodePath("ItemSlot")
+metadata/_custom_type_script = "uid://be4ke7jqfu0kv"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1154531718]
+position = Vector2(-5, -38)
+texture = ExtResource("2_rcds7")
+
+[node name="Label" type="Label" parent="." unique_id=1564733866]
+offset_left = 14.0
+offset_top = -105.0
+offset_right = 129.0
+offset_bottom = -82.0
+rotation = 1.5707964
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "BOOK HOLDER"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=676756648]
+position = Vector2(-5, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=255867426]
+position = Vector2(7, -5)
+shape = SubResource("RectangleShape2D_3ic5c")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=269852651]
+position = Vector2(2, -94)
+
+[node name="ItemSlot" type="Sprite2D" parent="." unique_id=1883115425 node_paths=PackedStringArray("item_sprite")]
+modulate = Color(1, 1, 1, 0.5019608)
+position = Vector2(3, -149)
+texture = ExtResource("10_oe8mq")
+script = ExtResource("11_ksa7s")
+item_sprite = NodePath("Item")
+metadata/_custom_type_script = "uid://ckjpebr888lms"
+
+[node name="Item" type="Sprite2D" parent="ItemSlot" unique_id=340423349]

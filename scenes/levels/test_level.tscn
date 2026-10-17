@@ -8,12 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="6_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="7_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="8_7x1jh"]
+[ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="9_2mu0v"]
+[ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="10_jmx14"]
 
-[node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick")]
+[node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick", "book_holder")]
 y_sort_enabled = true
 script = ExtResource("1_48ne7")
 stone = NodePath("Station")
 target_stick = NodePath("Stick")
+book_holder = NodePath("bholder")
 
 [node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("1_fr1um")]
 
@@ -92,3 +95,10 @@ position = Vector2(-313, -148)
 
 [node name="Cultist" parent="." unique_id=323613442 instance=ExtResource("8_7x1jh")]
 position = Vector2(197, 40)
+
+[node name="bholder" parent="." unique_id=1722944968 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_2mu0v")]
+position = Vector2(-282, 315)
+starting_item = NodePath("../Grimoire")
+
+[node name="Grimoire" parent="." unique_id=1161200828 instance=ExtResource("10_jmx14")]
+position = Vector2(-204, 293)
