@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c1shhfnl2fifi"]
+
+[ext_resource type="Script" uid="uid://kcijktpqlpou" path="res://scripts/types/item.gd" id="1_ibmtb"]
+[ext_resource type="Texture2D" uid="uid://bn64c7lgk7b0s" path="res://assets/visuals/items/stick.png" id="2_7rqfo"]
+[ext_resource type="Texture2D" uid="uid://caprqcc270f4b" path="res://assets/visuals/items/stick_h.png" id="3_tkx6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhyfn"]
+size = Vector2(59, 57)
+
+[node name="Stick" type="Node2D" unique_id=1737541831 node_paths=PackedStringArray("hitbox", "sprite")]
+script = ExtResource("1_ibmtb")
+item_name = "stick"
+item_texture = ExtResource("2_7rqfo")
+highlighted_texture = ExtResource("3_tkx6t")
+hitbox = NodePath("Area2D")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://kcijktpqlpou"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073497469]
+texture = ExtResource("2_7rqfo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1509468262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1162187772]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_hhyfn")

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://byun7bpqqfgoc"]
+
+[ext_resource type="Script" uid="uid://d1riewe13sttr" path="res://scenes/main/main.gd" id="1_hyk8p"]
+
+[node name="Main" type="Control" unique_id=557696987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyk8p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131936903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -42.5
+offset_right = 165.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=63814025]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=168650034]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "start"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1430569065]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "level select"
+
+[node name="Volume" type="HBoxContainer" parent="VBoxContainer" unique_id=2005503708]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Volume" unique_id=349596681]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Volume" unique_id=2125550518]
+layout_mode = 2
+size_flags_horizontal = 3

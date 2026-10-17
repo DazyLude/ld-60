@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://da7capxaenbjt"]
+
+[ext_resource type="Script" uid="uid://ceb7yfdqq8lop" path="res://scenes/hud.gd" id="1_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://c6iqug8ngk14m" path="res://assets/visuals/item_slot.png" id="2_6fi6k"]
+[ext_resource type="Script" uid="uid://ckjpebr888lms" path="res://scripts/types/item_slot.gd" id="3_uo2fv"]
+
+[node name="HUDRoot" type="CanvasLayer" unique_id=14687594 node_paths=PackedStringArray("inventory_display")]
+script = ExtResource("1_5ysmq")
+inventory_display = NodePath("Hud/ItemSlot")
+
+[node name="Hud" type="Control" parent="." unique_id=2087808399]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Hud" unique_id=1869632403]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 64.0
+offset_bottom = 46.0
+text = "???"
+
+[node name="ItemSlot" type="Sprite2D" parent="Hud" unique_id=1129365853 node_paths=PackedStringArray("item_sprite")]
+position = Vector2(69, 106)
+texture = ExtResource("2_6fi6k")
+script = ExtResource("3_uo2fv")
+item_sprite = NodePath("Item")
+metadata/_custom_type_script = "uid://ckjpebr888lms"
+
+[node name="Item" type="Sprite2D" parent="Hud/ItemSlot" unique_id=2114952701]

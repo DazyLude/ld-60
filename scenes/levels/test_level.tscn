@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://7twhqee02nw3"]
+
+[ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="1_fr1um"]
+[ext_resource type="PackedScene" uid="uid://c1shhfnl2fifi" path="res://scenes/items/stick.tscn" id="2_v45ci"]
+[ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/station.tscn" id="3_48ne7"]
+[ext_resource type="PackedScene" uid="uid://dnm2rvv343esx" path="res://scenes/items/stick2.tscn" id="4_v45ci"]
+
+[node name="TestLevel" type="Node2D" unique_id=1666038874]
+
+[node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("1_fr1um")]
+
+[node name="Stick" parent="." unique_id=1737541831 instance=ExtResource("2_v45ci")]
+position = Vector2(-179, 190)
+
+[node name="Station" parent="." unique_id=1972157419 instance=ExtResource("3_48ne7")]
+position = Vector2(348, 190)
+
+[node name="Stick2" parent="." unique_id=1335654719 instance=ExtResource("4_v45ci")]
+position = Vector2(-42, 259)

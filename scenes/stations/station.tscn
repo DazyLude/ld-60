@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c34nffr34wgml"]
+
+[ext_resource type="Script" uid="uid://be4ke7jqfu0kv" path="res://scripts/types/station.gd" id="1_vl7xr"]
+[ext_resource type="Texture2D" uid="uid://cy8hsobf4byeu" path="res://assets/visuals/stations/stone.png" id="2_p2oen"]
+[ext_resource type="Texture2D" uid="uid://c6iqug8ngk14m" path="res://assets/visuals/item_slot.png" id="3_3ic5c"]
+[ext_resource type="Script" uid="uid://ckjpebr888lms" path="res://scripts/types/item_slot.gd" id="4_fbgwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
+size = Vector2(122, 81)
+
+[node name="Station" type="Node2D" unique_id=1972157419 node_paths=PackedStringArray("hitbox", "item_placement", "item_slot")]
+script = ExtResource("1_vl7xr")
+station_name = "stone"
+hitbox = NodePath("Area2D")
+item_placement = NodePath("Marker2D")
+item_slot = NodePath("ItemSlot")
+metadata/_custom_type_script = "uid://be4ke7jqfu0kv"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1154531718]
+texture = ExtResource("2_p2oen")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=676756648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=255867426]
+position = Vector2(2, 8.5)
+shape = SubResource("RectangleShape2D_3ic5c")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=269852651]
+position = Vector2(3, -9)
+
+[node name="ItemSlot" type="Sprite2D" parent="." unique_id=1883115425 node_paths=PackedStringArray("item_sprite")]
+modulate = Color(1, 1, 1, 0.5019608)
+position = Vector2(0, -85)
+texture = ExtResource("3_3ic5c")
+script = ExtResource("4_fbgwf")
+item_sprite = NodePath("Item")
+metadata/_custom_type_script = "uid://ckjpebr888lms"
+
+[node name="Item" type="Sprite2D" parent="ItemSlot" unique_id=340423349]
