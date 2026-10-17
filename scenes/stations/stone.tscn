@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
 size = Vector2(122, 81)
 
-[node name="Station" type="Node2D" unique_id=1972157419 node_paths=PackedStringArray("hitbox", "item_placement", "item_slot")]
+[node name="Stone" type="Node2D" unique_id=1972157419 node_paths=PackedStringArray("hitbox", "item_placement", "item_slot")]
 script = ExtResource("1_vl7xr")
 station_name = "stone"
 hitbox = NodePath("Area2D")

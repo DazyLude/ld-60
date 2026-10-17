@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dgkadtgv4200s" path="res://scenes/levels/test_level.gd" id="1_48ne7"]
 [ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="1_fr1um"]
 [ext_resource type="PackedScene" uid="uid://c1shhfnl2fifi" path="res://scenes/items/stick.tscn" id="2_v45ci"]
-[ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/station.tscn" id="3_48ne7"]
+[ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/stone.tscn" id="3_48ne7"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="5_48ne7"]
+[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="6_6xh4u"]
 
 [node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick")]
 y_sort_enabled = true
@@ -21,10 +22,10 @@ limit_right = 1000
 limit_bottom = 600
 
 [node name="Stick" parent="." unique_id=1737541831 instance=ExtResource("2_v45ci")]
-position = Vector2(-179, 190)
+position = Vector2(-443, 145)
 
 [node name="Station" parent="." unique_id=1972157419 instance=ExtResource("3_48ne7")]
-position = Vector2(341, 103)
+position = Vector2(-454, 30)
 
 [node name="Gem" parent="." unique_id=1656488786 instance=ExtResource("5_48ne7")]
 position = Vector2(158, -161)
@@ -52,3 +53,34 @@ type = 5
 [node name="Gem7" parent="." unique_id=499162378 instance=ExtResource("5_48ne7")]
 position = Vector2(-155, 59)
 type = 6
+
+[node name="Station2" parent="." unique_id=2140649539 instance=ExtResource("6_6xh4u")]
+position = Vector2(495, -120)
+
+[node name="Station3" parent="." unique_id=1114166825 instance=ExtResource("6_6xh4u")]
+position = Vector2(621, -30)
+type = 1
+
+[node name="Station4" parent="." unique_id=1357455734 instance=ExtResource("6_6xh4u")]
+position = Vector2(565, 122)
+type = 2
+
+[node name="Station5" parent="." unique_id=583819138 instance=ExtResource("6_6xh4u")]
+position = Vector2(417, 122)
+type = 3
+
+[node name="Station6" parent="." unique_id=809487660 instance=ExtResource("6_6xh4u")]
+position = Vector2(357, -39)
+type = 4
+
+[node name="Station7" parent="." unique_id=522341713 instance=ExtResource("6_6xh4u")]
+position = Vector2(207, 280)
+type = 5
+
+[node name="Station8" parent="." unique_id=466230097 instance=ExtResource("6_6xh4u")]
+position = Vector2(113, 280)
+type = 6
+
+[node name="Station9" parent="." unique_id=1599462872 instance=ExtResource("6_6xh4u")]
+position = Vector2(19, 276)
+type = 7
