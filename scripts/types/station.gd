@@ -34,7 +34,7 @@ func receive_item(item: Item) -> void:
 	item_slot.display_item(item);
 	_item = item;
 	
-	item_received.emit();
+	item_received.emit(item);
 
 
 func has_item() -> bool:

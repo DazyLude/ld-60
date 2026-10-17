@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://dibkxewec3nt4"
 Settings="*uid://p6oujikgjheu"
 BGMPlayer="*uid://djv18gbbv2rf2"
 HUD="*uid://da7capxaenbjt"
+Gamestate="*uid://xup26i3a0q3m"
 
 [debug]
 

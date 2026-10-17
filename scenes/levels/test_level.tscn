@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://7twhqee02nw3"]
 
+[ext_resource type="Script" uid="uid://dgkadtgv4200s" path="res://scenes/levels/test_level.gd" id="1_48ne7"]
 [ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="1_fr1um"]
 [ext_resource type="PackedScene" uid="uid://c1shhfnl2fifi" path="res://scenes/items/stick.tscn" id="2_v45ci"]
 [ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/station.tscn" id="3_48ne7"]
 [ext_resource type="PackedScene" uid="uid://dnm2rvv343esx" path="res://scenes/items/stick2.tscn" id="4_v45ci"]
 
-[node name="TestLevel" type="Node2D" unique_id=1666038874]
+[node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick")]
+y_sort_enabled = true
+script = ExtResource("1_48ne7")
+stone = NodePath("Station")
+target_stick = NodePath("Stick")
 
 [node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("1_fr1um")]
+
+[node name="Camera2D2" type="Camera2D" parent="Neanderthal" unique_id=1729430041]
+limit_left = -1000
+limit_top = -600
+limit_right = 1000
+limit_bottom = 600
 
 [node name="Stick" parent="." unique_id=1737541831 instance=ExtResource("2_v45ci")]
 position = Vector2(-179, 190)
 
 [node name="Station" parent="." unique_id=1972157419 instance=ExtResource("3_48ne7")]
-position = Vector2(348, 190)
+position = Vector2(341, 103)
 
 [node name="Stick2" parent="." unique_id=1335654719 instance=ExtResource("4_v45ci")]
-position = Vector2(-42, 259)
+position = Vector2(-62, 271)

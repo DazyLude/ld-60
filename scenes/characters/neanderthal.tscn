@@ -17,17 +17,16 @@ sprite = NodePath("Sprite2D")
 metadata/_custom_type_script = "uid://cqpsssjp2m55h"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428816770]
-position = Vector2(-4, 1)
+position = Vector2(-4, -45)
 texture = ExtResource("2_h02qm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104316617]
+position = Vector2(0, -46)
 shape = SubResource("CapsuleShape2D_8u7ty")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2106394316]
-position = Vector2(0, 36)
+position = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=316428025]
 shape = SubResource("CircleShape2D_h02qm")
 debug_color = Color(0.6000929, 0.36985418, 1, 0.41960785)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=222542165]
