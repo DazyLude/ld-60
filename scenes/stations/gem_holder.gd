@@ -1,4 +1,5 @@
 extends Station
+class_name GemHolder
 
 
 enum Type {

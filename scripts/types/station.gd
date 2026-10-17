@@ -2,7 +2,7 @@ extends Node2D
 class_name Station
 
 
-signal item_received(Item);
+signal item_received(item: Item);
 signal item_removed;
 
 
@@ -47,5 +47,5 @@ func dispense_item() -> Item:
 	item_slot.clear();
 	var t_item := _item;
 	_item = null;
-	
+	item_removed.emit()
 	return t_item;

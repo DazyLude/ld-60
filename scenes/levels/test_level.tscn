@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/stone.tscn" id="3_48ne7"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="5_48ne7"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="6_6xh4u"]
+[ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="7_cyt5c"]
 
 [node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick")]
 y_sort_enabled = true
@@ -15,17 +16,17 @@ target_stick = NodePath("Stick")
 
 [node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("1_fr1um")]
 
-[node name="Camera2D2" type="Camera2D" parent="Neanderthal" unique_id=1729430041]
+[node name="Camera2D" type="Camera2D" parent="Neanderthal" unique_id=1729430041]
 limit_left = -1000
 limit_top = -600
 limit_right = 1000
 limit_bottom = 600
 
 [node name="Stick" parent="." unique_id=1737541831 instance=ExtResource("2_v45ci")]
-position = Vector2(-443, 145)
+position = Vector2(-516, 271)
 
 [node name="Station" parent="." unique_id=1972157419 instance=ExtResource("3_48ne7")]
-position = Vector2(-454, 30)
+position = Vector2(-527, 156)
 
 [node name="Gem" parent="." unique_id=1656488786 instance=ExtResource("5_48ne7")]
 position = Vector2(158, -161)
@@ -84,3 +85,6 @@ type = 6
 [node name="Station9" parent="." unique_id=1599462872 instance=ExtResource("6_6xh4u")]
 position = Vector2(19, 276)
 type = 7
+
+[node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("7_cyt5c")]
+position = Vector2(-313, -148)

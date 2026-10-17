@@ -9,6 +9,7 @@ class_name Item
 
 @export var hitbox : Area2D;
 @export var sprite : Sprite2D;
+var active : bool;
 
 
 func _ready() -> void:
@@ -17,10 +18,12 @@ func _ready() -> void:
 
 
 func activate() -> void:
+	active = true;
 	sprite.texture = highlighted_texture;
 
 
 func deactivate() -> void:
+	active = false;
 	sprite.texture = item_texture;
 
 

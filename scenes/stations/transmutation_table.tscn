@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://hwomokq7ue3f"]
+
+[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="1_pw22r"]
+[ext_resource type="Script" uid="uid://bxqi6c6vjwn1a" path="res://scenes/stations/transmutation_table.gd" id="1_qn52g"]
+[ext_resource type="Texture2D" uid="uid://djhl8u14l7hwv" path="res://assets/visuals/stations/contraption.png" id="2_ga6nc"]
+[ext_resource type="Texture2D" uid="uid://c2vbocfv3k008" path="res://assets/visuals/smoke_cloud.png" id="4_ga6nc"]
+
+[node name="TransmutationTable" type="Node2D" unique_id=380858643 node_paths=PackedStringArray("left_holder", "right_holder", "smoke_cloud")]
+script = ExtResource("1_qn52g")
+left_holder = NodePath("HolderL")
+right_holder = NodePath("HolderR")
+smoke_cloud = NodePath("Cloud")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=50234909]
+position = Vector2(3, -65)
+texture = ExtResource("2_ga6nc")
+
+[node name="HolderL" parent="." unique_id=1972157419 instance=ExtResource("1_pw22r")]
+position = Vector2(-50, 0)
+
+[node name="HolderR" parent="." unique_id=1394061524 instance=ExtResource("1_pw22r")]
+position = Vector2(52, 0)
+
+[node name="Cloud" type="Sprite2D" parent="." unique_id=2033929095]
+visible = false
+position = Vector2(1, -75)
+texture = ExtResource("4_ga6nc")
