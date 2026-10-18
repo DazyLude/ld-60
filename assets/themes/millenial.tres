@@ -3,5 +3,5 @@
 [ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="1_f7u1x"]
 
 [resource]
-RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/font_sizes/normal_font_size = 36
 RichTextLabel/fonts/normal_font = ExtResource("1_f7u1x")

@@ -3,5 +3,5 @@
 [ext_resource type="FontFile" uid="uid://uutmc5e0a5cb" path="res://assets/fonts/NewRocker-Regular.ttf" id="1_uydjg"]
 
 [resource]
-RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/font_sizes/normal_font_size = 36
 RichTextLabel/fonts/normal_font = ExtResource("1_uydjg")

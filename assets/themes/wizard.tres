@@ -3,5 +3,5 @@
 [ext_resource type="FontFile" uid="uid://cygtowexbyv8q" path="res://assets/fonts/Fondamento-Regular.ttf" id="1_12x73"]
 
 [resource]
-RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/font_sizes/normal_font_size = 36
 RichTextLabel/fonts/normal_font = ExtResource("1_12x73")
