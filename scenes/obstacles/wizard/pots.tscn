@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bn72cmb7gyjop"]
+
+[ext_resource type="Texture2D" uid="uid://cp4uyoavbwj3m" path="res://assets/visuals/wizard/plants.png" id="1_dgmpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjwng"]
+size = Vector2(58, 12.5)
+
+[node name="Pots" type="Node2D" unique_id=1116984424]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1616499882]
+position = Vector2(3, -50)
+texture = ExtResource("1_dgmpu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1604756447]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1500729895]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_bjwng")

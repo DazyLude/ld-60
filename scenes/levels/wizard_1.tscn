@@ -2,10 +2,20 @@
 
 [ext_resource type="Script" uid="uid://b75eqj8pk8alr" path="res://scenes/levels/wizard_1.gd" id="1_2wy64"]
 [ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_v17vj"]
-[ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="3_m30b0"]
 [ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_x2q6h"]
+[ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_exsvg"]
 [ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="5_2wy64"]
 [ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="6_tjsu0"]
+[ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="7_exsvg"]
+[ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="8_2wy64"]
+[ext_resource type="PackedScene" uid="uid://ssf5axchxfts" path="res://scenes/obstacles/wizard/carpet_large.tscn" id="9_tjsu0"]
+[ext_resource type="PackedScene" uid="uid://bn72cmb7gyjop" path="res://scenes/obstacles/wizard/pots.tscn" id="10_j2owc"]
+[ext_resource type="PackedScene" uid="uid://b5xhpnk6wsjlb" path="res://scenes/obstacles/wizard/carpet.tscn" id="11_gb1ja"]
+[ext_resource type="PackedScene" uid="uid://dkx2ldeqmg846" path="res://scenes/obstacles/wizard/books.tscn" id="12_rnpi2"]
+[ext_resource type="Texture2D" uid="uid://bpmogqtff0xk0" path="res://assets/visuals/movement_tip.png" id="13_t4uli"]
+[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="14_bfwwa"]
+[ext_resource type="Texture2D" uid="uid://hnox1s2mhxu" path="res://assets/visuals/action_tip.png" id="15_hspqr"]
+[ext_resource type="Texture2D" uid="uid://nx6j6jubqxgl" path="res://assets/visuals/export_tip.png" id="16_jtiin"]
 
 [node name="Wizard1" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand")]
 y_sort_enabled = true
@@ -19,17 +29,14 @@ tile_set = ExtResource("2_v17vj")
 navigation_enabled = false
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=816540336]
+z_index = -2
 tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAADAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAHAAQABwAAAAAAAAABAAIAAAAAAAAAAAADAAQACAAAAAAAAAAFAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAQAAAAAAAAAAAAGAAIABQAAAAAAAAAIAAQAAAAAAAAAAAADAAIAAAAAAAAAAAAFAAQABQAAAAAAAAAHAAIAAAAAAAAAAAABAAQABgAAAAAAAAABAAMAAAAAAAAAAAADAAEAAAAAAAAAAAAGAAEAAgAAAAAAAAAIAAMAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAEAAAAAAAAAAAAGAAMABgAAAAAAAAAIAAEAAQAAAAAAAAACAAMAAAAAAAAAAAAIAAIABgAAAAAAAAAGAAQAAAAAAAAAAAAFAAEABwAAAAAAAAACAAEAAAAAAAAAAAAEAAMABQAAAAAAAAAHAAEAAAAAAAAAAAAHAAMAAAAAAAAAAAAEAAIAAQAAAAAAAAA=")
 tile_set = ExtResource("3_x2q6h")
 
-[node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("3_m30b0")]
-position = Vector2(270, 394)
-
-[node name="Camera2D2" type="Camera2D" parent="Neanderthal" unique_id=574103617]
-limit_left = 0
-limit_top = 24
-limit_right = 1280
-limit_bottom = 744
+[node name="Decor" type="TileMapLayer" parent="." unique_id=2004917498]
+tile_map_data = PackedByteArray("AAAGAAAACgAAAAAAAAAIAAAACgAAAAAAAAAJAAQACgAAAAAAAFAIAAUACgAAAAAAADAEAAAACAAAAAAAAAAEAAUABwAAAAAAADA=")
+tile_set = ExtResource("4_exsvg")
+navigation_enabled = false
 
 [node name="bholder" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("5_2wy64")]
 position = Vector2(994, 434)
@@ -37,3 +44,87 @@ starting_item = NodePath("../Grimoire")
 
 [node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("6_tjsu0")]
 position = Vector2(1071, 412)
+
+[node name="Wizard" parent="." unique_id=42250212 instance=ExtResource("7_exsvg")]
+position = Vector2(214, 263)
+
+[node name="Camera2D2" type="Camera2D" parent="Wizard" unique_id=574103617]
+limit_left = 0
+limit_top = 24
+limit_right = 1280
+limit_bottom = 744
+
+[node name="Bookshelf" parent="." unique_id=415810828 instance=ExtResource("8_2wy64")]
+position = Vector2(189, 166)
+
+[node name="Bookshelf2" parent="." unique_id=368800946 instance=ExtResource("8_2wy64")]
+position = Vector2(317, 166)
+
+[node name="Bookshelf3" parent="." unique_id=360899453 instance=ExtResource("8_2wy64")]
+position = Vector2(445, 166)
+
+[node name="Bookshelf4" parent="." unique_id=371218860 instance=ExtResource("8_2wy64")]
+position = Vector2(699, 165)
+
+[node name="Carpets" parent="." unique_id=1738673141 instance=ExtResource("9_tjsu0")]
+position = Vector2(322, 265)
+rotation = 1.5707964
+
+[node name="Pots" parent="." unique_id=1116984424 instance=ExtResource("10_j2owc")]
+position = Vector2(1075, 158)
+
+[node name="Carpets2" parent="." unique_id=1296325919 instance=ExtResource("11_gb1ja")]
+position = Vector2(997, 441)
+
+[node name="Bookshelf5" parent="." unique_id=588605129 instance=ExtResource("8_2wy64")]
+position = Vector2(190, 419)
+
+[node name="Bookshelf6" parent="." unique_id=197822928 instance=ExtResource("8_2wy64")]
+position = Vector2(319, 419)
+
+[node name="Books" parent="." unique_id=1010775333 instance=ExtResource("12_rnpi2")]
+position = Vector2(226, 447)
+
+[node name="Books2" parent="." unique_id=1882361390 instance=ExtResource("12_rnpi2")]
+position = Vector2(203, 476)
+
+[node name="Books3" parent="." unique_id=1156158988 instance=ExtResource("12_rnpi2")]
+position = Vector2(280, 476)
+flip = true
+
+[node name="MovementTip" type="Sprite2D" parent="." unique_id=400116185]
+z_index = -2
+position = Vector2(444.5, 574.5)
+scale = Vector2(1.1367186, 1.1132813)
+texture = ExtResource("13_t4uli")
+
+[node name="Label" type="Label" parent="." unique_id=506606407]
+z_index = -2
+offset_left = 388.0
+offset_top = 556.0
+offset_right = 499.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+theme_override_fonts/font = ExtResource("14_bfwwa")
+text = "movement"
+
+[node name="Label2" type="Label" parent="." unique_id=1034551694]
+z_index = -2
+offset_left = 791.0
+offset_top = 255.0
+offset_right = 902.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+theme_override_fonts/font = ExtResource("14_bfwwa")
+text = "action"
+
+[node name="ActionTip" type="Sprite2D" parent="." unique_id=2010004763]
+z_index = -2
+position = Vector2(835, 295)
+texture = ExtResource("15_hspqr")
+
+[node name="ExportTip" type="Sprite2D" parent="." unique_id=1302017853]
+z_index = -2
+position = Vector2(782.99994, 349.99997)
+rotation = 1.8008851
+texture = ExtResource("16_jtiin")

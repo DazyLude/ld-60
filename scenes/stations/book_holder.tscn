@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ckjpebr888lms" path="res://scripts/types/item_slot.gd" id="11_ksa7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
-size = Vector2(64, 109.5)
+size = Vector2(64, 58)
 
 [node name="Station" type="Node2D" unique_id=1972157419 node_paths=PackedStringArray("hitbox", "item_placement", "item_slot")]
 script = ExtResource("1_vsirx")
@@ -24,7 +24,7 @@ texture = ExtResource("10_rcds7")
 position = Vector2(-5, -38)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=255867426]
-position = Vector2(6, 4.25)
+position = Vector2(6, 30)
 shape = SubResource("RectangleShape2D_3ic5c")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=269852651]

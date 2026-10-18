@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://folvkjk2nngi"]
+
+[ext_resource type="Script" uid="uid://cqpsssjp2m55h" path="res://scripts/types/player_character.gd" id="1_ml74m"]
+[ext_resource type="Texture2D" uid="uid://csrjxiwb0o12d" path="res://assets/visuals/characters/vampire.png" id="2_ml74m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u7ty"]
+radius = 40.0
+height = 120.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h02qm"]
+radius = 73.0
+
+[node name="Wizard" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position")]
+motion_mode = 1
+slide_on_ceiling = false
+platform_floor_layers = 4278190080
+platform_wall_layers = 1
+script = ExtResource("1_ml74m")
+interaction_hitbox = NodePath("Area2D")
+sprite = NodePath("Sprite2D")
+carried_item_position = NodePath("CarriedItemMarker")
+metadata/_custom_type_script = "uid://cqpsssjp2m55h"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428816770]
+position = Vector2(-4, -45)
+texture = ExtResource("2_ml74m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104316617]
+position = Vector2(0, -46)
+shape = SubResource("CapsuleShape2D_8u7ty")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2106394316]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=316428025]
+shape = SubResource("CircleShape2D_h02qm")
+debug_color = Color(0.6000929, 0.36985418, 1, 0.41960785)
+
+[node name="CarriedItemMarker" type="Marker2D" parent="." unique_id=2014108726]
+position = Vector2(1, -112)

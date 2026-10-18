@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://byun7bpqqfgoc"]
 
 [ext_resource type="Script" uid="uid://d1riewe13sttr" path="res://scenes/main/main.gd" id="1_hyk8p"]
-[ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="2_iuonh"]
+[ext_resource type="Texture2D" uid="uid://2xybsw8cl775" path="res://assets/ui/menu bg.png" id="2_k2fmo"]
+[ext_resource type="FontFile" uid="uid://de3xr1ilwbokc" path="res://assets/fonts/ComicRelief-Regular.ttf" id="3_l3cfh"]
 
-[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "volume_slider", "next_lang", "prev_lang")]
+[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "volume_slider", "next_lang", "prev_lang", "label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,12 +18,25 @@ level_select = NodePath("VBoxContainer/LevelSelect")
 volume_slider = NodePath("VBoxContainer/Volume/HSlider")
 next_lang = NodePath("VBoxContainer/HBoxContainer/NextLanguage")
 prev_lang = NodePath("VBoxContainer/HBoxContainer/PreviousLanguage")
+label = NodePath("Label")
 
 [node name="BG" type="TextureRect" parent="." unique_id=2079453973]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_iuonh")
+texture = ExtResource("2_k2fmo")
+
+[node name="Label" type="Label" parent="." unique_id=63814025]
+layout_mode = 0
+offset_left = 777.00006
+offset_top = 199.99998
+offset_right = 1105.0
+offset_bottom = 244.99998
+rotation = -0.29670596
+theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
+theme_override_fonts/font = ExtResource("3_l3cfh")
+text = "title"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131936903]
 layout_mode = 1
@@ -38,11 +52,6 @@ offset_bottom = 42.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=63814025]
-layout_mode = 2
-text = "title"
-horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="VBoxContainer" unique_id=168650034]
 layout_mode = 2

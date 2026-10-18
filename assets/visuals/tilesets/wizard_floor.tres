@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ch1mpo856kh" path="res://assets/visuals/tiles/wizard/tile1.png" id="1_ny5a5"]
 [ext_resource type="Texture2D" uid="uid://dcoyvxq5r5csk" path="res://assets/visuals/tiles/wizard/tile2.png" id="2_hbt0c"]
 [ext_resource type="Texture2D" uid="uid://808qwowq1j6g" path="res://assets/visuals/tiles/wizard/tile3.png" id="3_cd0hv"]
+[ext_resource type="Texture2D" uid="uid://cuxbqy5x4w30r" path="res://assets/visuals/tiles/wizard/merged_tiles.png" id="3_hbt0c"]
 [ext_resource type="Texture2D" uid="uid://by36y4yhr8aly" path="res://assets/visuals/tiles/wizard/tile4.png" id="4_6kc32"]
 [ext_resource type="Texture2D" uid="uid://c0htdveia8c8r" path="res://assets/visuals/tiles/wizard/tile5.png" id="5_q66l3"]
 [ext_resource type="Texture2D" uid="uid://be7phys6a7npm" path="res://assets/visuals/tiles/wizard/tile6.png" id="6_5242u"]
@@ -20,6 +21,29 @@ texture_region_size = Vector2i(128, 128)
 texture = ExtResource("2_hbt0c")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cd0hv"]
+texture = ExtResource("3_hbt0c")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/next_alternative_id = 4
+1:0/0 = 0
+2:0/next_alternative_id = 2
+2:0/0 = 0
+3:0/next_alternative_id = 2
+3:0/0 = 0
+4:0/next_alternative_id = 2
+4:0/0 = 0
+5:0/next_alternative_id = 2
+5:0/0 = 0
+6:0/next_alternative_id = 2
+6:0/0 = 0
+7:0/next_alternative_id = 2
+7:0/0 = 0
+8:0/next_alternative_id = 2
+8:0/0 = 0
+9:0/next_alternative_id = 2
+9:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vekc6"]
 texture = ExtResource("3_cd0hv")
@@ -73,3 +97,4 @@ sources/6 = SubResource("TileSetAtlasSource_x7bav")
 sources/7 = SubResource("TileSetAtlasSource_ikm2k")
 sources/8 = SubResource("TileSetAtlasSource_wrc5x")
 sources/9 = SubResource("TileSetAtlasSource_42cg1")
+sources/10 = SubResource("TileSetAtlasSource_cd0hv")

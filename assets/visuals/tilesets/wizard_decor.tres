@@ -1,0 +1,27 @@
+[gd_resource type="TileSet" format=3 uid="uid://d8go5x27soo"]
+
+[ext_resource type="Texture2D" uid="uid://3er1qnjtbiv3" path="res://assets/visuals/wizard/vines.png" id="1_xxtm7"]
+[ext_resource type="Texture2D" uid="uid://c0n1wqhs8cw2h" path="res://assets/visuals/wizard/painting.png" id="5_eo8u6"]
+[ext_resource type="Texture2D" uid="uid://dxne62xqn67s1" path="res://assets/visuals/wizard/paintings.png" id="6_xg2aa"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppq28"]
+texture = ExtResource("1_xxtm7")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88db3"]
+texture = ExtResource("5_eo8u6")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfdve"]
+texture = ExtResource("6_xg2aa")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/7 = SubResource("TileSetAtlasSource_88db3")
+sources/8 = SubResource("TileSetAtlasSource_kfdve")
+sources/10 = SubResource("TileSetAtlasSource_ppq28")

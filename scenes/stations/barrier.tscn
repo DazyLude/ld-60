@@ -9,9 +9,15 @@
 [node name="Barrier" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("barrier_hitbox", "barrier_display", "book_holder")]
 script = ExtResource("1_vq7bl")
 barrier_hitbox = NodePath("PHB")
-barrier_display = NodePath("Dome")
+barrier_display = NodePath("Station/Dome")
 book_holder = NodePath("Station")
 metadata/_custom_type_script = "uid://db5f5adk7kmgr"
+
+[node name="PHB" type="StaticBody2D" parent="." unique_id=47777956]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHB" unique_id=1326440944]
+position = Vector2(-1, 58)
+polygon = PackedVector2Array(-161, 6, -179, -40, -118, -115, -35, -174, 40, -174, 120, -120, 185, -38, 163, 7, 116, 39, 66, 55, 1, 61, -69, 55, -128, 33)
 
 [node name="Circle" type="Sprite2D" parent="." unique_id=479752479]
 z_index = -1
@@ -19,15 +25,10 @@ position = Vector2(0, -62)
 texture = ExtResource("2_r402l")
 
 [node name="Station" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("4_16f5n")]
-starting_item = NodePath("../Grimoire")
+starting_item = NodePath("Grimoire")
 
-[node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("5_vnd4u")]
+[node name="Grimoire" parent="Station" unique_id=1737541831 instance=ExtResource("5_vnd4u")]
 
-[node name="Dome" type="Sprite2D" parent="." unique_id=1740550862]
+[node name="Dome" type="Sprite2D" parent="Station" unique_id=1740550862]
 position = Vector2(0, -62)
 texture = ExtResource("3_7e665")
-
-[node name="PHB" type="StaticBody2D" parent="." unique_id=47777956]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHB" unique_id=1326440944]
-polygon = PackedVector2Array(-119, -10, -76, -66, -34, -97, -6, -103, 10, -103, 49, -93, 96, -56, 119, -10, 107, 25, 62, 53, 1, 61, -61, 51, -102, 26)

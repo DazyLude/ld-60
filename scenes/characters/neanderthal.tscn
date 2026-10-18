@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dk6uwtk3br17r"]
 
 [ext_resource type="Script" uid="uid://cqpsssjp2m55h" path="res://scripts/types/player_character.gd" id="1_je5ps"]
-[ext_resource type="Texture2D" uid="uid://d2knk6wyftes2" path="res://assets/visuals/characters/neanderthal.png" id="2_h02qm"]
+[ext_resource type="Texture2D" uid="uid://p02vlth7c5b1" path="res://assets/visuals/characters/neandertal.png" id="2_h02qm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u7ty"]
 radius = 40.0

@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://c1j06w08j3eks" path="res://scenes/levels/wizard_3.gd" id="1_g810s"]
 [ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_vqc7k"]
 [ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_fiwvr"]
-[ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="4_q8y5x"]
+[ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_g810s"]
 [ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="5_a2ifj"]
+[ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="5_vqc7k"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="7_2smof"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_421ra"]
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="9_5p4tt"]
@@ -21,13 +22,19 @@ tile_set = ExtResource("2_vqc7k")
 navigation_enabled = false
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=816540336]
+z_index = -2
 tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAADAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAHAAQABwAAAAAAAAABAAIAAAAAAAAAAAADAAQACAAAAAAAAAAFAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAQAAAAAAAAAAAAGAAIABQAAAAAAAAAIAAQAAAAAAAAAAAADAAIAAAAAAAAAAAAFAAQABQAAAAAAAAAHAAIAAAAAAAAAAAABAAQABgAAAAAAAAABAAMAAAAAAAAAAAADAAEAAAAAAAAAAAAGAAEAAgAAAAAAAAAIAAMAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAEAAAAAAAAAAAAGAAMABgAAAAAAAAAIAAEAAQAAAAAAAAACAAMAAAAAAAAAAAAIAAIABgAAAAAAAAAGAAQAAAAAAAAAAAAFAAEABwAAAAAAAAACAAEAAAAAAAAAAAAEAAMABQAAAAAAAAAHAAEAAAAAAAAAAAAHAAMAAAAAAAAAAAAEAAIAAQAAAAAAAAA=")
 tile_set = ExtResource("3_fiwvr")
 
-[node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("4_q8y5x")]
-position = Vector2(270, 394)
+[node name="Decor" type="TileMapLayer" parent="." unique_id=1066946792]
+tile_map_data = PackedByteArray("AAAEAAUABwAAAAAAADA=")
+tile_set = ExtResource("4_g810s")
+navigation_enabled = false
 
-[node name="Camera2D2" type="Camera2D" parent="Neanderthal" unique_id=574103617]
+[node name="Wizard" parent="." unique_id=42250212 instance=ExtResource("5_vqc7k")]
+position = Vector2(269, 394)
+
+[node name="Camera2D2" type="Camera2D" parent="Wizard" unique_id=187168059]
 limit_left = 0
 limit_top = 24
 limit_right = 1280

@@ -5,7 +5,20 @@ resume_game,Resume Game,Продолжить
 volume,volume,громкость
 level_select,Level Select,Выбор Уровня
 language,English,Русский
+,,
+movement,movement,передвижение
+action,action,действие
+drop,drop,выбросить
+transmutation,transmutation,преобразование
+sacrifice,sacrifice,жертвоприношение
+tool,the tool,инструмент
+offering,an offering,жертва
+,,
 quest_wizard_1,Grab the Grimoire,Забери Гримуар
+quest_wizard_2,Grab the Forbidden Grimoire,Забери Запретный Гримуар
+quest_wizard_3,Grab the Forbidden Grimoire,Забери Запретный Гримуар
+quest_vampire,Summon the Ancient One,Призови Древнего
+quest_neanderthal,bonk,боньк
 ,,
 intro_narrator_1,Once upon a tim,"Однажды, давным дав"
 intro_narrator_2,"Not interested? Rather hear a joke, I see.","Неинтересно? Хотите что-нибудь смешное, понял."
