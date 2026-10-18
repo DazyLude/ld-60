@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://yleg5xd31p5e" path="res://assets/novel/characters/grimoire text field.png" id="21_t1uc7"]
 [ext_resource type="Texture2D" uid="uid://bxinfs05i3j6p" path="res://assets/novel/characters/squid text field.png" id="22_b70q5"]
 [ext_resource type="Texture2D" uid="uid://dp1486spqj5cy" path="res://assets/novel/characters/zoomer/zoomer text field.png" id="23_os8ye"]
+[ext_resource type="Texture2D" uid="uid://dtd3spgm60llw" path="res://assets/novel/characters/zoomer/zoomer.png" id="25_b70q5"]
 
 [sub_resource type="Resource" id="Resource_6pe36"]
 script = ExtResource("2_kxmp2")
@@ -82,7 +83,8 @@ sprites = {
 0: NodePath("Millenial"),
 1: NodePath("Wizard"),
 2: NodePath("Vampire"),
-3: NodePath("Ghost")
+3: NodePath("Ghost"),
+7: NodePath("Zoomer")
 }
 character_emotes = Dictionary[int, ExtResource("2_kxmp2")]({
 0: SubResource("Resource_6pe36"),
@@ -111,9 +113,13 @@ offset_bottom = 40.0
 texture = ExtResource("2_u6rad")
 
 [node name="Zoomer" type="TextureRect" parent="." unique_id=835397413]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -552.0
+offset_top = 168.0
+offset_right = -335.0
+offset_bottom = 529.0
+texture = ExtResource("25_b70q5")
 
 [node name="Millenial" type="TextureRect" parent="." unique_id=1737006229]
 layout_mode = 0
@@ -161,6 +167,7 @@ offset_left = 232.0
 offset_top = 134.0
 offset_right = 1100.0
 offset_bottom = 239.0
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters_behavior = 1

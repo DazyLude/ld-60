@@ -7,6 +7,11 @@ signal finished;
 @export var camera : Camera2D;
 
 
+var vnplayer : VNPlayer;
+@export var player_character : VNPlayer.Actor;
+@export var searching_engine : VNPlayer.Actor;
+
+
 func _ready() -> void:
 	HUD.show();
 
@@ -35,3 +40,33 @@ func randomize_position(time: float) -> void:
 
 func reset_position() -> void:
 	position = Vector2();
+
+
+func initialize_local_dialogue_player() -> void:
+	var canvas_layer := CanvasLayer.new();
+	canvas_layer.layer = 1;
+	
+	vnplayer = Gamestate.vnplayer.instantiate();
+	vnplayer.just_text_box();
+	canvas_layer.add_child(vnplayer);
+	
+	add_child(canvas_layer);
+
+
+func play_dialogue(dialogue: DialogueNode) -> void:
+	if vnplayer == null:
+		initialize_local_dialogue_player();
+	
+	vnplayer.play_dialogue(dialogue);
+
+
+func play_omake() -> void:
+	HUD.active_player.process_mode = Node.PROCESS_MODE_DISABLED;
+	
+	var omake := Gamestate.get_unseen_omake(
+		player_character, searching_engine
+	);
+	
+	play_dialogue(omake);
+	vnplayer.play_next();
+	vnplayer.finished.connect(finished.emit);

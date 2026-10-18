@@ -17,10 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://hnox1s2mhxu" path="res://assets/visuals/action_tip.png" id="15_hspqr"]
 [ext_resource type="Texture2D" uid="uid://nx6j6jubqxgl" path="res://assets/visuals/export_tip.png" id="16_jtiin"]
 
-[node name="Wizard1" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand")]
+[node name="Wizard1" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand", "camera")]
 y_sort_enabled = true
 script = ExtResource("1_2wy64")
 grimoire_stand = NodePath("bholder")
+camera = NodePath("Wizard/Camera2D2")
+player_character = 1
+searching_engine = 5
 metadata/_custom_type_script = "uid://bioviasxjhvur"
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1299441777]

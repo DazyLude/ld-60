@@ -26,13 +26,42 @@ var current_game_sequence : Array[PackedScene] = [
 var current_scene_idx := 0;
 
 
+var omake_keys : Array[String] = [
+	"omake_1_",
+]
+var omake_cache : Array[String] = omake_keys.duplicate();
+
+
+func get_unseen_omake(q_actor: VNPlayer.Actor, a_actor: VNPlayer.Actor) -> DialogueNode:
+	var key : String;
+	if omake_cache.size() > 0:
+		key = omake_cache.pick_random();
+		omake_cache.erase(key);
+	else:
+		key = omake_keys.pick_random();
+	
+	var q := DialogueNode.new();
+	q.actor = q_actor;
+	q.character_line = key + "q";
+	
+	var a := DialogueNode.new();
+	a.actor = a_actor;
+	a.character_line = key + "a";
+	
+	q.add_child(a);
+	
+	return q;
+
+
 func load_game_sequence() -> void:
+	HUD.in_menu = false;
 	current_game_sequence = main_game_sequence;
 	current_scene_idx = -1;
 	next_scene()
 
 
 func resume_game_sequence() -> void:
+	HUD.in_menu = false;
 	current_scene_idx -= 1;
 	next_scene();
 

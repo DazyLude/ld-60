@@ -13,6 +13,7 @@ autoplay_time = -1.0
 actor = 3
 emote = 4
 character_line = "ending_ghost_1"
+text_effect = 2
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Ghost2" type="Node" parent="." unique_id=1418782469]
@@ -20,6 +21,7 @@ script = ExtResource("1_irw1y")
 actor = 3
 emote = 1
 character_line = "ending_ghost_2"
+text_effect = 2
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Ghost3" type="Node" parent="." unique_id=1813934315]
@@ -36,7 +38,7 @@ actor = 4
 effect = 1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
-[node name="Ghost5" type="Node" parent="." unique_id=1552464790]
+[node name="Narrator" type="Node" parent="." unique_id=1552464790]
 script = ExtResource("1_irw1y")
 actor = 4
 character_line = "FIN"

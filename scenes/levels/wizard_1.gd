@@ -7,4 +7,4 @@ extends Level
 func _ready() -> void:
 	super();
 	HUD.quest_label.text = "quest_wizard_1";
-	grimoire_stand.item_removed.connect(finished.emit);
+	grimoire_stand.item_removed.connect(play_omake);

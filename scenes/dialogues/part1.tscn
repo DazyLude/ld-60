@@ -19,6 +19,7 @@ script = ExtResource("1_mtkbs")
 actor = 1
 emote = 1
 character_line = "p1_wizard_2"
+text_effect = 1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Wizard3" type="Node" parent="." unique_id=480090719]
@@ -35,6 +36,7 @@ script = ExtResource("1_mtkbs")
 actor = 2
 emote = 2
 character_line = "p1_vampire_1"
+text_effect = 1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire2" type="Node" parent="." unique_id=990594424]

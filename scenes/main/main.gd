@@ -14,6 +14,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	HUD.hide();
+	HUD.in_menu = true;
+	
 	start_game.pressed.connect(Gamestate.load_game_sequence);
 	continue_game.pressed.connect(Gamestate.resume_game_sequence);
 	
@@ -31,8 +33,6 @@ func update_title_label() -> void:
 			label.hide()
 		_:
 			label.show()
-
-
 
 
 func switch_language() -> void:

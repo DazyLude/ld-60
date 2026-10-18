@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ckjpebr888lms" path="res://scripts/types/item_slot.gd" id="3_uo2fv"]
 
 [node name="HUDRoot" type="CanvasLayer" unique_id=14687594 node_paths=PackedStringArray("inventory_display", "quest_label")]
+layer = 2
 script = ExtResource("1_5ysmq")
 inventory_display = NodePath("Hud/ItemSlot")
 quest_label = NodePath("Hud/Quest")

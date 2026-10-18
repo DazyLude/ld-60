@@ -9,5 +9,6 @@ class_name DialogueNode
 @export var emote := VNPlayer.Emotes.None;
 @export var reaction := VNPlayer.Reaction.None;
 @export var character_line : String;
+@export var text_effect := VNPlayer.TextEffect.None;
 
 @export var effect := VNPlayer.Effect.None;

@@ -31,8 +31,11 @@ enum Reaction {
 	None,
 	Nudge,
 	Shake,
+	Laugh,
+	TurnAround,
 	SlideIn,
 }
+
 
 enum Effect {
 	None,
@@ -41,8 +44,20 @@ enum Effect {
 }
 
 enum TextEffect {
-	Shaking,
+	None,
+	Shake,
 	Wave,
+}
+
+
+const te_prefixes : Dictionary[TextEffect, String] = {
+	TextEffect.Shake: "[shake rate=20.0 level=5 connected=1]",
+	TextEffect.Wave: "[wave amp=50.0 freq=5.0 connected=1]",
+}
+
+const te_postfixes : Dictionary[TextEffect, String] = {
+	TextEffect.Shake: "[/shake]",
+	TextEffect.Wave: "[/wave]",
 }
 
 
@@ -87,10 +102,16 @@ var current_idx : int = 0;
 
 var skippable : bool = true;
 
+var character_tweens : Dictionary[Actor, Tween] = {};
+var _default_positions : Dictionary[Actor, Vector2] = {};
+
 
 func _ready() -> void:
 	drapes.modulate = Color(1,1,1,0);
 	HUD.hide();
+	for actor in sprites:
+		_default_positions[actor] = sprites[actor].position;
+	
 	if _dialogue:
 		play_next();
 
@@ -153,16 +174,39 @@ func unblackout() -> void:
 
 func play_dialogue_node(node: DialogueNode) -> void:
 	clear_text();
+	var line := node.character_line;
 	
-	if node.character_line != "":
-		node.character_line = tr(node.character_line);
+	if line != "":
+		if node.reaction == Reaction.None:
+			node.reaction = Reaction.Nudge;
+		
+		line = tr(line);
+		match node.text_effect:
+			TextEffect.Wave:
+				line = te_prefixes[TextEffect.Wave] + line + te_postfixes[TextEffect.Wave];
+			TextEffect.Shake:
+				line = te_prefixes[TextEffect.Shake] + line + te_postfixes[TextEffect.Shake];
 		
 		match node.actor:
 			Actor.Narrator:
-				play_narrator_text(node.character_line);
+				play_narrator_text(line);
 			_:
 				setup_actor_box(node.actor);
-				play_actor_text(node.actor, node.character_line);
+				play_actor_text(node.actor, line);
+	
+	setup_actor_emote(node.actor, node.emote);
+	
+	match node.reaction:
+		Reaction.Nudge:
+			nudge(node.actor)
+		Reaction.Shake:
+			shake(node.actor)
+		Reaction.Laugh:
+			laugh(node.actor)
+		Reaction.TurnAround:
+			turn_around(node.actor)
+		Reaction.SlideIn:
+			pass;
 	
 	match node.effect:
 		Effect.FadeFromBlack:
@@ -205,6 +249,25 @@ func setup_actor_box(actor: Actor) -> void:
 	text_box.texture = box_textures.get(actor, null);
 
 
+func setup_actor_emote(actor: Actor, emote: Emotes) -> void:
+	if emote == Emotes.None:
+		return;
+	
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	var emote_table : EmoteTable = character_emotes.get(actor);
+	if emote_table == null:
+		return;
+	
+	var emote_texture := emote_table.get_emote(emote);
+	if emote_table == null:
+		return;
+	
+	sprite.texture = emote_texture;
+
+
 func setup_actor_theme(actor: Actor) -> void:
 	var current_locale := TranslationServer.get_locale();
 	var ltheme : Theme = null;
@@ -232,4 +295,102 @@ func play_actor_text(actor: Actor, text: String) -> void:
 	
 	label.visible_ratio = 0.0;
 	label.text = text;
-	text_tweener.tween_property(label, ^"visible_ratio", 1.0, text.length() * TIME_PER_CHARACTER);
+	var cc := label.get_total_character_count();
+	text_tweener.tween_property(label, ^"visible_ratio", 1.0, cc * TIME_PER_CHARACTER);
+
+
+func get_new_actor_tween(actor: Actor) -> Tween:
+	var character_tween : Tween = character_tweens.get(actor);
+	if character_tween:
+		character_tween.kill();
+		reset_actor(actor);
+	
+	character_tween = create_tween();
+	character_tweens[actor] = character_tween;
+	return character_tween;
+
+
+func reset_actor(actor: Actor) -> void:
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	sprite.position = _default_positions[actor];
+	sprite.scale = Vector2(1, 1);
+	sprite.rotation = 0.0;
+
+
+func laugh(actor: Actor) -> void:
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	var tween := get_new_actor_tween(actor);
+	var starting_pos := sprite.position;
+	
+	const delta : float = 0.1;
+	var laugh_offset_up := Vector2(0.0, -10.0)
+	var laugh_offset_down := Vector2(0.0, 10.0)
+	
+	if actor == Actor.Vampire:
+		laugh_offset_up *= Vector2(1.0, -1.0);
+		laugh_offset_down *= Vector2(1.0, -1.0);
+	
+	tween.tween_property(sprite, ^"position", starting_pos + laugh_offset_up, delta);
+	tween.tween_property(sprite, ^"position", starting_pos + laugh_offset_down, delta * 2);
+	tween.tween_property(sprite, ^"position", starting_pos + laugh_offset_up, delta * 2);
+	tween.tween_property(sprite, ^"position", starting_pos, delta);
+
+
+func nudge(actor: Actor) -> void:
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	var tween := get_new_actor_tween(actor);
+	var starting_pos := sprite.position;
+	const delta : float = 0.05;
+	var nudge_offset_up := Vector2(0.0, -10.0);
+	
+	if actor == Actor.Vampire:
+		nudge_offset_up *= Vector2(1.0, -1.0);
+	
+	tween.tween_property(sprite, ^"position", starting_pos + nudge_offset_up, delta);
+	tween.tween_property(sprite, ^"position", starting_pos, delta);
+
+
+func shake(actor: Actor) -> void:
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	var tween := get_new_actor_tween(actor);
+	var starting_pos := sprite.position;
+	const delta : float = 0.1;
+	
+	var point_1 := Vector2(10.0, -20.0);
+	var point_2 := Vector2(-20.0, 10.0);
+	var point_3 := Vector2(10.0, 20.0);
+	var point_4 := Vector2(-20.0, -10.0);
+	
+	tween.tween_property(sprite, ^"position", starting_pos + point_1, delta);
+	tween.tween_property(sprite, ^"position", starting_pos + point_2, delta);
+	tween.tween_property(sprite, ^"position", starting_pos + point_3, delta);
+	tween.tween_property(sprite, ^"position", starting_pos + point_4, delta);
+	tween.tween_property(sprite, ^"position", starting_pos, delta);
+
+
+func turn_around(actor: Actor) -> void:
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	sprite.flip_h = not sprite.flip_h;
+
+
+func just_text_box() -> void:
+	for child in get_children():
+		if child == text_box:
+			continue;
+		
+		child.hide();

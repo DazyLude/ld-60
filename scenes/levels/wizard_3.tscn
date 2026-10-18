@@ -16,10 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://dkx2ldeqmg846" path="res://scenes/obstacles/wizard/books.tscn" id="14_5p4tt"]
 [ext_resource type="PackedScene" uid="uid://bn72cmb7gyjop" path="res://scenes/obstacles/wizard/pots.tscn" id="15_bhmvj"]
 
-[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier")]
+[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier", "camera")]
 y_sort_enabled = true
 script = ExtResource("1_g810s")
 barrier = NodePath("Barrier")
+camera = NodePath("Wizard/Camera2D2")
+player_character = 1
+searching_engine = 5
 metadata/_custom_type_script = "uid://bioviasxjhvur"
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=2022304447]

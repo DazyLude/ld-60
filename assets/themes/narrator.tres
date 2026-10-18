@@ -1,9 +1,15 @@
 [gd_resource type="Theme" format=3 uid="uid://b4spilrfg0yi7"]
 
 [ext_resource type="FontFile" uid="uid://dem8b85w7s0nn" path="res://assets/fonts/Montserrat-Regular.ttf" id="1_2qvbb"]
+[ext_resource type="StyleBox" uid="uid://ddtcuxwo2d345" path="res://assets/themes/boxes/hover.tres" id="1_5ogvt"]
+[ext_resource type="StyleBox" uid="uid://78871a7mx3ht" path="res://assets/themes/boxes/normal.tres" id="2_511xn"]
+[ext_resource type="StyleBox" uid="uid://7sn2ygemj3f1" path="res://assets/themes/boxes/pressed.tres" id="3_pf2bm"]
 
 [resource]
 default_font = ExtResource("1_2qvbb")
 Button/font_sizes/font_size = 28
+Button/styles/hover = ExtResource("1_5ogvt")
+Button/styles/normal = ExtResource("2_511xn")
+Button/styles/pressed = ExtResource("3_pf2bm")
 Label/font_sizes/font_size = 32
 RichTextLabel/font_sizes/normal_font_size = 36
