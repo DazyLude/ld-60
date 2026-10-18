@@ -28,6 +28,14 @@ var current_scene_idx := 0;
 
 var omake_keys : Array[String] = [
 	"omake_1_",
+	"omake_2_",
+	"omake_3_",
+	"omake_4_",
+	"omake_5_",
+	"omake_6_",
+	"omake_7_",
+	"omake_8_",
+	"omake_9_",
 ]
 var omake_cache : Array[String] = omake_keys.duplicate();
 
@@ -82,11 +90,27 @@ func next_scene() -> void:
 	if instance is DialogueNode:
 		var vnplayer_instance : VNPlayer = vnplayer.instantiate();
 		vnplayer_instance.play_dialogue(instance as DialogueNode);
-		vnplayer_instance.finished.connect(next_scene);
+		vnplayer_instance.finished.connect(_on_dialogue_end.bind(vnplayer_instance));
 		get_tree().change_scene_to_node(vnplayer_instance);
 		return;
 	
 	if instance is Level:
-		(instance as Level).finished.connect(next_scene);
+		(instance as Level).finished.connect(_on_level_end.bind(instance));
 		get_tree().change_scene_to_node(instance);
 		return;
+
+
+func _on_dialogue_end(instance: VNPlayer) -> void:
+	instance.blackout();
+	
+	await get_tree().create_timer(VNPlayer.transition_time).timeout;
+	next_scene();
+
+
+func _on_level_end(instance: Level) -> void:
+	if instance.vnplayer == null:
+		instance.initialize_local_dialogue_player();
+	
+	instance.vnplayer.blackout();
+	await get_tree().create_timer(VNPlayer.transition_time).timeout;
+	next_scene();

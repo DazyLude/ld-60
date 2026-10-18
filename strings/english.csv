@@ -48,3 +48,22 @@ p2_vampire_4,…,…
 p2_vampire_5,"Ghost, you’re awfully quiet.","Привидение, а ты что молчишь?"
 p2_vampire_6,What was it that you did in the past?,Что ты делал во времена своей молодости?
 p2_ghost_1,ooo…,ууу…
+,,
+omake_1_q,how long cook rice for,сколько варить рис 
+omake_1_a,15 minutes,минут 15 
+omake_2_q,how long boil eggs for,сколько варить яйца 
+omake_2_a,5 minutes,минут 5 
+omake_3_q,I have sore throat,болит горло 
+omake_3_a,get well,поправляйся 
+omake_4_q,how many seconds in 8 hours,сколько секунд в 8 часах 
+omake_4_a,...28800,...28800 
+omake_5_q,how many hours in 8 seconds,сколько часов в 8 секундах 
+omake_5_a,I am not a calculator,я не калькулятор 
+omake_6_q,what holiday is it today,какой сегодня праздник 
+omake_6_a,International Chefs Day ,международный день повара
+omake_7_q,what zodiac sign is october,какой знак зодиака в октябре 
+omake_7_a,Libra and Scorpio,весы и скорпион 
+omake_8_q,what does the mog mean,что такое могну 
+omake_8_a,"to outclass, outshine, or dominate someone else ","могать означает заметно превосходить кого-то внешне: лицом, фигурой, ростом. "
+omake_9_q,what can you name a cat,как можно назвать кота 
+omake_9_a,"Meowy, Snickers, Jasper, Donut, Raisin, Yolkie","Барсик, Рыжик, Паштет, Пончик, Изюм, Желточек. "

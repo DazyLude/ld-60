@@ -41,6 +41,7 @@ enum Effect {
 	None,
 	FadeToBlack,
 	FadeFromBlack,
+	InstantToBlack,
 }
 
 enum TextEffect {
@@ -61,8 +62,6 @@ const te_postfixes : Dictionary[TextEffect, String] = {
 }
 
 
-const TIME_PER_CHARACTER := 0.06;
-var text_tweener : Tween;
 
 
 @export var sprites : Dictionary[Actor, TextureRect] = {};
@@ -105,9 +104,14 @@ var skippable : bool = true;
 var character_tweens : Dictionary[Actor, Tween] = {};
 var _default_positions : Dictionary[Actor, Vector2] = {};
 
+const transition_time := 0.5;
+var drapes_tween : Tween;
+const TIME_PER_CHARACTER := 0.06;
+var text_tweener : Tween;
+
 
 func _ready() -> void:
-	drapes.modulate = Color(1,1,1,0);
+	drapes.modulate = Color(1, 1, 1, 0);
 	HUD.hide();
 	for actor in sprites:
 		_default_positions[actor] = sprites[actor].position;
@@ -165,11 +169,26 @@ func play_next() -> void:
 
 
 func blackout() -> void:
-	drapes.modulate = Color(1,1,1,1);
+	if drapes_tween:
+		drapes_tween.kill();
+	
+	drapes_tween = create_tween();
+	drapes.show();
+	drapes_tween.tween_property(drapes, ^"modulate:a", 1.0, transition_time);
+
+
+func instant_blackout() -> void:
+	drapes.show();
+	drapes.modulate.a = 1.0;
 
 
 func unblackout() -> void:
-	drapes.modulate = Color(1,1,1,0);
+	if drapes_tween:
+		drapes_tween.kill();
+	
+	drapes_tween = create_tween();
+	drapes.show();
+	drapes_tween.tween_property(drapes, ^"modulate:a", 0.0, transition_time);
 
 
 func play_dialogue_node(node: DialogueNode) -> void:
@@ -213,6 +232,8 @@ func play_dialogue_node(node: DialogueNode) -> void:
 			unblackout();
 		Effect.FadeToBlack:
 			blackout();
+		Effect.InstantToBlack:
+			instant_blackout();
 	
 	if node.autoplay:
 		skippable = false;

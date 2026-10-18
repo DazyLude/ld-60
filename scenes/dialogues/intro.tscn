@@ -5,7 +5,7 @@
 [node name="Intro" type="Node" unique_id=1478509140]
 script = ExtResource("1_01dp3")
 autoplay = true
-effect = 1
+effect = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="NarratorIntro1" type="Node" parent="." unique_id=1055277449]
