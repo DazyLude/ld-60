@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bqqs64rniqfii"]
+
+[ext_resource type="FontFile" uid="uid://de3xr1ilwbokc" path="res://assets/fonts/ComicRelief-Regular.ttf" id="1_v3tbv"]
+
+[resource]
+default_font = ExtResource("1_v3tbv")

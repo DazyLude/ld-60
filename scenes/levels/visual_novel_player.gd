@@ -12,6 +12,9 @@ enum Actor {
 	Vampire,
 	Ghost,
 	Narrator,
+	Grimoire,
+	Takodachi,
+	Zoomer,
 }
 
 enum Emotes {
@@ -38,7 +41,8 @@ enum Effect {
 }
 
 enum TextEffect {
-	
+	Shaking,
+	Wave,
 }
 
 
@@ -54,8 +58,21 @@ var actor_themes : Dictionary[Actor, Theme] = {
 	Actor.Millenial: preload("res://assets/themes/millenial.tres"),
 	Actor.Narrator: preload("res://assets/themes/narrator.tres"),
 	Actor.Vampire: preload("res://assets/themes/vampire.tres"),
+	Actor.Takodachi: preload("res://assets/themes/vampire.tres"),
 	Actor.Wizard: preload("res://assets/themes/wizard.tres"),
+	Actor.Grimoire: preload("res://assets/themes/wizard.tres"),
+	Actor.Zoomer: preload("res://assets/themes/zoomer.tres"),
 }
+
+var actor_themes_cy : Dictionary[Actor, Theme] = {
+	Actor.Ghost: preload("res://assets/themes/cyrillic/ghost.tres"),
+	Actor.Millenial: preload("res://assets/themes/cyrillic/millenial.tres"),
+	Actor.Vampire: preload("res://assets/themes/cyrillic/vampire.tres"),
+	Actor.Takodachi: preload("res://assets/themes/cyrillic/vampire.tres"),
+	Actor.Wizard: preload("res://assets/themes/cyrillic/wizard.tres"),
+	Actor.Grimoire: preload("res://assets/themes/cyrillic/wizard.tres"),
+}
+
 
 @export var text_box : TextureRect;
 @export var label : RichTextLabel;
@@ -188,6 +205,20 @@ func setup_actor_box(actor: Actor) -> void:
 	text_box.texture = box_textures.get(actor, null);
 
 
+func setup_actor_theme(actor: Actor) -> void:
+	var current_locale := TranslationServer.get_locale();
+	var ltheme : Theme = null;
+	
+	if current_locale == "ru":
+		ltheme = actor_themes_cy.get(actor, null);
+		if ltheme != null:
+			label.theme = ltheme;
+			return;
+	
+	ltheme = actor_themes.get(actor, actor_themes[Actor.Narrator]);
+	label.theme = ltheme;
+
+
 func play_actor_text(actor: Actor, text: String) -> void:
 	if text == "":
 		return;
@@ -197,7 +228,7 @@ func play_actor_text(actor: Actor, text: String) -> void:
 	
 	text_tweener = create_tween();
 	
-	label.theme = actor_themes.get(actor, actor_themes[Actor.Narrator]);
+	setup_actor_theme(actor);
 	
 	label.visible_ratio = 0.0;
 	label.text = text;

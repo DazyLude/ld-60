@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b7iwrxkjn386l"]
+
+[ext_resource type="FontFile" uid="uid://dawowq6vj1vga" path="res://assets/fonts/cyrillic/Pangolin-Regular.ttf" id="1_8wjyy"]
+
+[resource]
+default_font = ExtResource("1_8wjyy")
+RichTextLabel/font_sizes/normal_font_size = 36

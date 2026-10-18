@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dka5oc22gki2k"]
+
+[ext_resource type="FontFile" uid="uid://xy4f4stsgeso" path="res://assets/fonts/cyrillic/IntrospectC.ttf" id="1_nretb"]
+
+[resource]
+default_font = ExtResource("1_nretb")
+RichTextLabel/font_sizes/normal_font_size = 36
