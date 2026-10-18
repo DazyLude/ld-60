@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://m5c6gkxwwuyl"]
+
+[ext_resource type="Script" uid="uid://2uh2hvfckvfl" path="res://scripts/types/dialogue_node.gd" id="1_irw1y"]
+
+[node name="Ending" type="Node" unique_id=1478509140]
+script = ExtResource("1_irw1y")
+autoplay = true
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Ghost1" type="Node" parent="." unique_id=1055277449]
+script = ExtResource("1_irw1y")
+autoplay_time = -1.0
+actor = 3
+emote = 4
+character_line = "ending_ghost_1"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Ghost2" type="Node" parent="." unique_id=1418782469]
+script = ExtResource("1_irw1y")
+actor = 3
+emote = 1
+character_line = "ending_ghost_2"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Ghost3" type="Node" parent="." unique_id=1813934315]
+script = ExtResource("1_irw1y")
+actor = 3
+emote = 5
+character_line = "..."
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Ghost4" type="Node" parent="." unique_id=439741671]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 4
+effect = 1
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Ghost5" type="Node" parent="." unique_id=1552464790]
+script = ExtResource("1_irw1y")
+actor = 4
+character_line = "FIN"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"

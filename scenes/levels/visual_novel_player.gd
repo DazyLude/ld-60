@@ -72,6 +72,7 @@ var skippable : bool = true;
 
 
 func _ready() -> void:
+	drapes.modulate = Color(1,1,1,0);
 	HUD.hide();
 	if _dialogue:
 		play_next();

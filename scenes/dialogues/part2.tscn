@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://lc82qs82lp82"]
+
+[ext_resource type="Script" uid="uid://2uh2hvfckvfl" path="res://scripts/types/dialogue_node.gd" id="1_xgvad"]
+
+[node name="Part2" type="Node" unique_id=1478509140]
+script = ExtResource("1_xgvad")
+autoplay = true
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire1" type="Node" parent="." unique_id=478795872]
+script = ExtResource("1_xgvad")
+actor = 2
+character_line = "p2_vampire_1"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire2" type="Node" parent="." unique_id=1127468369]
+script = ExtResource("1_xgvad")
+actor = 2
+character_line = "p2_vampire_2"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire3" type="Node" parent="." unique_id=774699823]
+script = ExtResource("1_xgvad")
+actor = 2
+character_line = "p2_vampire_3"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire4" type="Node" parent="." unique_id=1334561820]
+script = ExtResource("1_xgvad")
+actor = 2
+emote = 0
+character_line = "p2_vampire_4"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire5" type="Node" parent="." unique_id=1564070222]
+script = ExtResource("1_xgvad")
+actor = 2
+character_line = "p2_vampire_5"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire6" type="Node" parent="." unique_id=1381000081]
+script = ExtResource("1_xgvad")
+actor = 2
+character_line = "p2_vampire_6"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Ghost1" type="Node" parent="." unique_id=256574278]
+script = ExtResource("1_xgvad")
+actor = 3
+character_line = "p2_ghost_1"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"

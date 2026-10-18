@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cd3l5wkei6vyu"]
+
+[ext_resource type="Script" uid="uid://2uh2hvfckvfl" path="res://scripts/types/dialogue_node.gd" id="1_mtkbs"]
+
+[node name="Part1" type="Node" unique_id=1478509140]
+script = ExtResource("1_mtkbs")
+autoplay = true
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Wizard1" type="Node" parent="." unique_id=272602035]
+script = ExtResource("1_mtkbs")
+actor = 1
+emote = 3
+character_line = "p1_wizard_1"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Wizard2" type="Node" parent="." unique_id=364917868]
+script = ExtResource("1_mtkbs")
+actor = 1
+emote = 1
+character_line = "p1_wizard_2"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Wizard3" type="Node" parent="." unique_id=480090719]
+script = ExtResource("1_mtkbs")
+autoplay = true
+autoplay_time = -1.0
+actor = 1
+emote = 1
+character_line = "p1_wizard_3"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire1" type="Node" parent="." unique_id=1859954727]
+script = ExtResource("1_mtkbs")
+actor = 2
+emote = 2
+character_line = "p1_vampire_1"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="Vampire2" type="Node" parent="." unique_id=990594424]
+script = ExtResource("1_mtkbs")
+actor = 2
+emote = 1
+character_line = "p1_vampire_2"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"

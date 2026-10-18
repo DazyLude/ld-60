@@ -10,17 +10,19 @@ var main_game_sequence : Array[PackedScene] = [
 	preload("res://scenes/levels/wizard_1.tscn"),
 	preload("res://scenes/levels/wizard_2.tscn"),
 	preload("res://scenes/levels/wizard_3.tscn"),
-	preload("res://scenes/dialogues/intro.tscn"),
+	preload("res://scenes/dialogues/part1.tscn"),
 	preload("res://scenes/levels/wizard_1.tscn"),
 	preload("res://scenes/levels/wizard_2.tscn"),
 	preload("res://scenes/levels/wizard_3.tscn"),
-	preload("res://scenes/dialogues/intro.tscn"),
+	preload("res://scenes/dialogues/part2.tscn"),
 	preload("res://scenes/levels/wizard_1.tscn"),
-	preload("res://scenes/dialogues/intro.tscn"),
+	preload("res://scenes/dialogues/ending.tscn"),
 ]
 
 
-var current_game_sequence : Array[PackedScene] = [];
+var current_game_sequence : Array[PackedScene] = [
+	preload("res://scenes/dialogues/ending.tscn"),
+];
 var current_scene_idx := 0;
 
 
@@ -42,6 +44,8 @@ func continue_available() -> bool:
 func next_scene() -> void:
 	current_scene_idx += 1;
 	if current_scene_idx >= current_game_sequence.size():
+		current_game_sequence.clear();
+		current_scene_idx = 0;
 		get_tree().change_scene_to_packed(main_menu);
 		return;
 	
