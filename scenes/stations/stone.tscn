@@ -30,7 +30,7 @@ position = Vector2(3, -9)
 
 [node name="ItemSlot" type="Sprite2D" parent="." unique_id=1883115425 node_paths=PackedStringArray("item_sprite")]
 modulate = Color(1, 1, 1, 0.5019608)
-position = Vector2(0, -85)
+position = Vector2(3, -9)
 texture = ExtResource("3_3ic5c")
 script = ExtResource("4_fbgwf")
 item_sprite = NodePath("Item")

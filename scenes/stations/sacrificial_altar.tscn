@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bjq2wpgjdh1ui"]
+
+[ext_resource type="Script" uid="uid://nwolj6pwj01p" path="res://scenes/stations/sacrificial_altar.gd" id="1_lhvdl"]
+[ext_resource type="Texture2D" uid="uid://ltkr1ikogeni" path="res://assets/visuals/vampyr/circle.png" id="2_lhvdl"]
+[ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/stone.tscn" id="3_270q7"]
+[ext_resource type="Texture2D" uid="uid://d2smvvqn13bxc" path="res://assets/visuals/vampyr/big squid.png" id="4_270q7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_270q7"]
+atlas = ExtResource("4_270q7")
+
+[node name="SacrificialStone" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("cultist_holder", "takodachi_sprite")]
+script = ExtResource("1_lhvdl")
+cultist_holder = NodePath("Stone")
+takodachi_sprite = NodePath("Takodachi")
+metadata/_custom_type_script = "uid://db5f5adk7kmgr"
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=479752479]
+z_index = -1
+texture = ExtResource("2_lhvdl")
+
+[node name="Stone" parent="." unique_id=1972157419 instance=ExtResource("3_270q7")]
+position = Vector2(-4, -38)
+
+[node name="Takodachi" type="Sprite2D" parent="." unique_id=1861195250]
+position = Vector2(-246, -394)
+texture = SubResource("AtlasTexture_270q7")
+centered = false

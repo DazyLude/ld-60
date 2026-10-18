@@ -155,10 +155,14 @@ func try_use_something() -> void:
 		var inventory_occupied := inventory != null;
 		
 		match [station_occupied, inventory_occupied]:
-			#[true, true]: 
-				#var swap := station.dispense_item();
-				#station.receive_item(inventory);
-				#pick_item(swap);
+			[true, true]:
+				var station_item := station._item;
+				var is_cultist := station_item.item_name == "cultist";
+				var has_knife := inventory.item_name == "knife";
+				
+				if is_cultist and has_knife and station_item is NonPlayerCharacter:
+					var free_cultist : NonPlayerCharacter = station.dispense_item();
+					free_cultist.sacrifice();
 			
 			[false, true]:
 				station.receive_item(inventory);

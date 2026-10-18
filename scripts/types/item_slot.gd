@@ -3,6 +3,7 @@ class_name ItemSlot
 
 
 @export var item_sprite : Sprite2D;
+@export var ignore_cultist : bool = false;
 
 
 func activate() -> void:
@@ -17,6 +18,11 @@ func deactivate() -> void:
 
 
 func display_item(item: Item) -> void:
+	if item.item_name == "cultist" and not ignore_cultist:
+		item_sprite.hide()
+	else:
+		item_sprite.show()
+	
 	item_sprite.texture = item.item_texture;
 
 

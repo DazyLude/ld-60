@@ -9,22 +9,45 @@
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="7_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="8_7x1jh"]
 [ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="9_2mu0v"]
+[ext_resource type="Script" uid="uid://cbrw43b7f6vmt" path="res://scripts/types/waypoint.gd" id="9_eaa0b"]
 [ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="10_jmx14"]
 [ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="11_jmx14"]
+[ext_resource type="PackedScene" uid="uid://ctufa0gxxpknl" path="res://scenes/items/knife.tscn" id="13_a5rnb"]
+[ext_resource type="PackedScene" uid="uid://bjq2wpgjdh1ui" path="res://scenes/stations/sacrificial_altar.tscn" id="14_fqldq"]
 
-[node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick", "book_holder")]
+[sub_resource type="Resource" id="Resource_fqldq"]
+script = ExtResource("9_eaa0b")
+marker = Vector2(157, 80)
+time = 2.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_eaa0b"]
+script = ExtResource("9_eaa0b")
+marker = Vector2(177, 20)
+time = 2.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_a5rnb"]
+script = ExtResource("9_eaa0b")
+marker = Vector2(197, 40)
+time = 2.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[node name="TestLevel" type="Node2D" unique_id=1666038874 node_paths=PackedStringArray("stone", "target_stick", "book_holder", "sacrificial_stone", "camera")]
 y_sort_enabled = true
 script = ExtResource("1_48ne7")
 stone = NodePath("Station")
 target_stick = NodePath("Stick")
 book_holder = NodePath("bholder")
+sacrificial_stone = NodePath("SacrificialStone")
+camera = NodePath("Neanderthal/Camera2D")
 
 [node name="Neanderthal" parent="." unique_id=42250212 instance=ExtResource("1_fr1um")]
 
 [node name="Camera2D" type="Camera2D" parent="Neanderthal" unique_id=1729430041]
-limit_left = -1000
+limit_left = -1020
 limit_top = -600
-limit_right = 1000
+limit_right = 1020
 limit_bottom = 600
 
 [node name="Stick" parent="." unique_id=1737541831 instance=ExtResource("2_v45ci")]
@@ -34,34 +57,34 @@ position = Vector2(-516, 271)
 position = Vector2(-527, 156)
 
 [node name="Gem" parent="." unique_id=1656488786 instance=ExtResource("5_48ne7")]
-position = Vector2(158, -161)
+position = Vector2(-154, -333)
 
 [node name="Gem2" parent="." unique_id=2022153750 instance=ExtResource("5_48ne7")]
-position = Vector2(85, -202)
+position = Vector2(-227, -374)
 type = 1
 
 [node name="Gem3" parent="." unique_id=1885905884 instance=ExtResource("5_48ne7")]
-position = Vector2(-6, -220)
+position = Vector2(-318, -392)
 type = 2
 
 [node name="Gem4" parent="." unique_id=882460095 instance=ExtResource("5_48ne7")]
-position = Vector2(-97, -179)
+position = Vector2(-409, -351)
 type = 3
 
 [node name="Gem5" parent="." unique_id=1249308713 instance=ExtResource("5_48ne7")]
-position = Vector2(-188, -112)
+position = Vector2(-500, -284)
 type = 4
 
 [node name="Gem6" parent="." unique_id=863815189 instance=ExtResource("5_48ne7")]
-position = Vector2(-196, -29)
+position = Vector2(-508, -201)
 type = 5
 
 [node name="Gem7" parent="." unique_id=499162378 instance=ExtResource("5_48ne7")]
-position = Vector2(-155, 59)
+position = Vector2(-467, -113)
 type = 6
 
 [node name="Station2" parent="." unique_id=2140649539 instance=ExtResource("6_6xh4u")]
-position = Vector2(313, 292)
+position = Vector2(71, -381)
 
 [node name="Station3" parent="." unique_id=1114166825 instance=ExtResource("6_6xh4u")]
 position = Vector2(616, 150)
@@ -94,8 +117,11 @@ type = 7
 [node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("7_cyt5c")]
 position = Vector2(-313, -148)
 
-[node name="Cultist" parent="." unique_id=323613442 instance=ExtResource("8_7x1jh")]
+[node name="Cultist" parent="." unique_id=323613442 node_paths=PackedStringArray("respawn_point") instance=ExtResource("8_7x1jh")]
 position = Vector2(197, 40)
+route = Array[ExtResource("9_eaa0b")]([SubResource("Resource_fqldq"), SubResource("Resource_eaa0b"), SubResource("Resource_a5rnb")])
+reverse_loop = false
+respawn_point = NodePath("../Respawn")
 
 [node name="bholder" parent="." unique_id=1722944968 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_2mu0v")]
 position = Vector2(-282, 315)
@@ -107,3 +133,17 @@ position = Vector2(-204, 293)
 [node name="Barrier" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders") instance=ExtResource("11_jmx14")]
 position = Vector2(472, -113)
 gem_holders = [NodePath("../Station6")]
+
+[node name="Respawn" type="Marker2D" parent="." unique_id=452946915]
+position = Vector2(198, 42)
+
+[node name="Talking" type="Marker2D" parent="." unique_id=1209036004]
+position = Vector2(-45, -246)
+
+[node name="Knife" parent="." unique_id=1833910898 instance=ExtResource("13_a5rnb")]
+position = Vector2(-348, 6)
+
+[node name="SacrificialStone" parent="." unique_id=940767713 node_paths=PackedStringArray("gem_holders", "talking_position") instance=ExtResource("14_fqldq")]
+position = Vector2(168, -250)
+gem_holders = [NodePath("../Station2")]
+talking_position = NodePath("../Talking")

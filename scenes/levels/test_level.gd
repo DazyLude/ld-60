@@ -5,12 +5,14 @@ extends Level
 @export var target_stick : Item;
 
 @export var book_holder : Station;
+@export var sacrificial_stone : SacrificialAltar
 
 
 func _ready() -> void:
 	super();
 	stone.item_received.connect(check_wincon);
 	book_holder.item_removed.connect(pick_book_to_win);
+	sacrificial_stone.sacrifice_made.connect(shake);
 
 
 func check_wincon(item: Item) -> void:

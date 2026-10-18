@@ -31,6 +31,7 @@ position = Vector2(68, 184)
 texture = ExtResource("2_6fi6k")
 script = ExtResource("3_uo2fv")
 item_sprite = NodePath("Item")
+ignore_cultist = true
 metadata/_custom_type_script = "uid://ckjpebr888lms"
 
 [node name="Item" type="Sprite2D" parent="Hud/ItemSlot" unique_id=2114952701]
