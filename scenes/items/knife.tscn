@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ctufa0gxxpknl"]
 
 [ext_resource type="Script" uid="uid://kcijktpqlpou" path="res://scripts/types/item.gd" id="1_bgb47"]
-[ext_resource type="Texture2D" uid="uid://bn64c7lgk7b0s" path="res://assets/visuals/items/stick.png" id="2_rsxpc"]
-[ext_resource type="Texture2D" uid="uid://caprqcc270f4b" path="res://assets/visuals/items/stick_h.png" id="3_kh8ro"]
+[ext_resource type="Texture2D" uid="uid://k63kwsvu2om2" path="res://assets/visuals/items/sacrifices/knife.png" id="2_kh8ro"]
+[ext_resource type="Texture2D" uid="uid://bhfv3m078wonm" path="res://assets/visuals/items/sacrifices/knife_h.png" id="3_8t8nb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhyfn"]
 size = Vector2(59, 57)
@@ -10,25 +10,17 @@ size = Vector2(59, 57)
 [node name="Knife" type="Node2D" unique_id=1737541831 node_paths=PackedStringArray("hitbox", "sprite")]
 script = ExtResource("1_bgb47")
 item_name = "knife"
-item_texture = ExtResource("2_rsxpc")
-highlighted_texture = ExtResource("3_kh8ro")
+item_texture = ExtResource("2_kh8ro")
+highlighted_texture = ExtResource("3_8t8nb")
 hitbox = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
 metadata/_custom_type_script = "uid://kcijktpqlpou"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073497469]
-texture = ExtResource("2_rsxpc")
+texture = ExtResource("2_kh8ro")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1509468262]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1162187772]
-position = Vector2(-0.5, 3.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_hhyfn")
-
-[node name="Label" type="Label" parent="." unique_id=1184515964]
-offset_left = -22.0
-offset_top = -12.0
-offset_right = 24.0
-offset_bottom = 11.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "KNIFE"

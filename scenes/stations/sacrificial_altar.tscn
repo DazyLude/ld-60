@@ -22,6 +22,7 @@ texture = ExtResource("2_lhvdl")
 position = Vector2(-4, -38)
 
 [node name="Takodachi" type="Sprite2D" parent="." unique_id=1861195250]
+visible = false
 position = Vector2(-246, -394)
 texture = SubResource("AtlasTexture_270q7")
 centered = false
