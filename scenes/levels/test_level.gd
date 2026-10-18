@@ -8,6 +8,7 @@ extends Level
 
 
 func _ready() -> void:
+	super();
 	stone.item_received.connect(check_wincon);
 	book_holder.item_removed.connect(pick_book_to_win);
 

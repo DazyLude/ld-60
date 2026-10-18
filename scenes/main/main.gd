@@ -6,14 +6,24 @@ extends Control
 @export var level_select : BaseButton;
 @export var volume_slider : HSlider;
 
+@export var next_lang : BaseButton;
+@export var prev_lang : BaseButton;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	HUD.hide();
 	start_game.pressed.connect(Gamestate.load_game_sequence);
 	continue_game.pressed.connect(Gamestate.resume_game_sequence);
+	
+	next_lang.pressed.connect(switch_language);
+	prev_lang.pressed.connect(switch_language);
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func switch_language() -> void:
+	var current_locale := TranslationServer.get_locale();
+	
+	match current_locale:
+		"en_US":
+			TranslationServer.set_locale("ru");
+		"ru":
+			TranslationServer.set_locale("en_US");

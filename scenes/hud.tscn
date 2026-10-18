@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c6iqug8ngk14m" path="res://assets/visuals/item_slot.png" id="2_6fi6k"]
 [ext_resource type="Script" uid="uid://ckjpebr888lms" path="res://scripts/types/item_slot.gd" id="3_uo2fv"]
 
-[node name="HUDRoot" type="CanvasLayer" unique_id=14687594 node_paths=PackedStringArray("inventory_display")]
+[node name="HUDRoot" type="CanvasLayer" unique_id=14687594 node_paths=PackedStringArray("inventory_display", "quest_label")]
 script = ExtResource("1_5ysmq")
 inventory_display = NodePath("Hud/ItemSlot")
+quest_label = NodePath("Hud/Quest")
 
 [node name="Hud" type="Control" parent="." unique_id=2087808399]
 layout_mode = 3
@@ -26,7 +27,7 @@ offset_bottom = 46.0
 text = "???"
 
 [node name="ItemSlot" type="Sprite2D" parent="Hud" unique_id=1129365853 node_paths=PackedStringArray("item_sprite")]
-position = Vector2(69, 106)
+position = Vector2(68, 184)
 texture = ExtResource("2_6fi6k")
 script = ExtResource("3_uo2fv")
 item_sprite = NodePath("Item")

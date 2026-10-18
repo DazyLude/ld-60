@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cd2swov1n6rff"]
+
+[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="1_f7u1x"]
+
+[resource]
+RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/fonts/normal_font = ExtResource("1_f7u1x")

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bp2fc78mfl5p0"]
+
+[ext_resource type="FontFile" uid="uid://b0qcrhbgwaop2" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="1_wbiy4"]
+
+[resource]
+RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/fonts/normal_font = ExtResource("1_wbiy4")

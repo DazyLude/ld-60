@@ -15,7 +15,6 @@ func _process(_delta: float) -> void:
 			inventory_display.clear();
 
 
-
 func register_player(player: Character) -> void:
 	active_player = player;
 

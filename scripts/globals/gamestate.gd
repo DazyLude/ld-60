@@ -7,6 +7,16 @@ var main_menu := preload("res://scenes/main/main.tscn");
 
 var main_game_sequence : Array[PackedScene] = [
 	preload("res://scenes/dialogues/intro.tscn"),
+	preload("res://scenes/levels/wizard_1.tscn"),
+	preload("res://scenes/levels/wizard_2.tscn"),
+	preload("res://scenes/levels/wizard_3.tscn"),
+	preload("res://scenes/dialogues/intro.tscn"),
+	preload("res://scenes/levels/wizard_1.tscn"),
+	preload("res://scenes/levels/wizard_2.tscn"),
+	preload("res://scenes/levels/wizard_3.tscn"),
+	preload("res://scenes/dialogues/intro.tscn"),
+	preload("res://scenes/levels/wizard_1.tscn"),
+	preload("res://scenes/dialogues/intro.tscn"),
 ]
 
 
@@ -39,5 +49,11 @@ func next_scene() -> void:
 	if instance is DialogueNode:
 		var vnplayer_instance : VNPlayer = vnplayer.instantiate();
 		vnplayer_instance.play_dialogue(instance as DialogueNode);
-		get_tree().change_scene_to_node(vnplayer_instance);
 		vnplayer_instance.finished.connect(next_scene);
+		get_tree().change_scene_to_node(vnplayer_instance);
+		return;
+	
+	if instance is Level:
+		(instance as Level).finished.connect(next_scene);
+		get_tree().change_scene_to_node(instance);
+		return;

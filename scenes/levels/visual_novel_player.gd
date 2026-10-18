@@ -49,8 +49,15 @@ var text_tweener : Tween;
 @export var sprites : Dictionary[Actor, TextureRect] = {};
 @export var character_emotes : Dictionary[Actor, EmoteTable] = {};
 @export var box_textures : Dictionary[Actor, Texture2D] = {};
+var actor_themes : Dictionary[Actor, Theme] = {
+	Actor.Ghost: preload("res://assets/themes/ghost.tres"),
+	Actor.Millenial: preload("res://assets/themes/millenial.tres"),
+	Actor.Narrator: preload("res://assets/themes/narrator.tres"),
+	Actor.Vampire: preload("res://assets/themes/vampire.tres"),
+	Actor.Wizard: preload("res://assets/themes/wizard.tres"),
+}
 
-
+@export var text_box : TextureRect;
 @export var label : RichTextLabel;
 @export var narrator_label : Label;
 @export var drapes : TextureRect;
@@ -60,6 +67,8 @@ var _dialogue : Node;
 var current_root_node : Node;
 var current_siblings : Array[Node] = [];
 var current_idx : int = 0;
+
+var skippable : bool = true;
 
 
 func _ready() -> void:
@@ -76,13 +85,15 @@ func _notification(what: int) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"action"):
-		play_next();
+		if skippable:
+			play_next();
 		return;
 	
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not event.is_echo():
 		var mbevent := event as InputEventMouseButton;
 		if mbevent.pressed and mbevent.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-			play_next();
+			if skippable:
+				play_next();
 			return;
 
 
@@ -96,6 +107,9 @@ func play_dialogue(dialogue: DialogueNode) -> void:
 
 
 func play_next() -> void:
+	if text_tweener and text_tweener.is_running():
+		return;
+	
 	if current_siblings.is_empty(): # play the root node
 		current_siblings = current_root_node.get_children();
 		current_idx = -1;
@@ -122,19 +136,32 @@ func unblackout() -> void:
 func play_dialogue_node(node: DialogueNode) -> void:
 	clear_text();
 	
-	match node.actor:
-		Actor.Narrator:
-			play_narrator_text(node.character_line);
-		_:
-			play_actor_text(node.character_line);
+	if node.character_line != "":
+		node.character_line = tr(node.character_line);
+		
+		match node.actor:
+			Actor.Narrator:
+				play_narrator_text(node.character_line);
+			_:
+				setup_actor_box(node.actor);
+				play_actor_text(node.actor, node.character_line);
 	
 	match node.effect:
 		Effect.FadeFromBlack:
 			unblackout();
-	
+		Effect.FadeToBlack:
+			blackout();
 	
 	if node.autoplay:
+		skippable = false;
+		if node.autoplay_time == -1.0 and text_tweener and text_tweener.is_running():
+			await text_tweener.finished
+		else:
+			await get_tree().create_timer(node.autoplay_time).timeout;
+		
 		play_next();
+	else:
+		skippable = true;
 
 
 func clear_text() -> void:
@@ -156,7 +183,11 @@ func play_narrator_text(text: String) -> void:
 	text_tweener.tween_property(narrator_label, ^"visible_ratio", 1.0, text.length() * TIME_PER_CHARACTER);
 
 
-func play_actor_text(text: String) -> void:
+func setup_actor_box(actor: Actor) -> void:
+	text_box.texture = box_textures.get(actor, null);
+
+
+func play_actor_text(actor: Actor, text: String) -> void:
 	if text == "":
 		return;
 	
@@ -164,6 +195,8 @@ func play_actor_text(text: String) -> void:
 		text_tweener.kill();
 	
 	text_tweener = create_tween();
+	
+	label.theme = actor_themes.get(actor, actor_themes[Actor.Narrator]);
 	
 	label.visible_ratio = 0.0;
 	label.text = text;

@@ -67,7 +67,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_j0wf1"]
 gradient = SubResource("Gradient_liyao")
 
-[node name="VisualNovelPlayer" type="Control" unique_id=1367113482 node_paths=PackedStringArray("sprites", "label", "narrator_label", "drapes")]
+[node name="VisualNovelPlayer" type="Control" unique_id=1367113482 node_paths=PackedStringArray("sprites", "text_box", "label", "narrator_label", "drapes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,6 +93,7 @@ box_textures = Dictionary[int, Texture2D]({
 2: ExtResource("19_t1m6q"),
 3: ExtResource("7_bc5sb")
 })
+text_box = NodePath("TextBox")
 label = NodePath("TextBox/Label")
 narrator_label = NodePath("Drapes/Label")
 drapes = NodePath("Drapes")

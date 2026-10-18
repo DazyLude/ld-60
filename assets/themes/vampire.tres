@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dp0lpwakplatj"]
+
+[ext_resource type="FontFile" uid="uid://uutmc5e0a5cb" path="res://assets/fonts/NewRocker-Regular.ttf" id="1_uydjg"]
+
+[resource]
+RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/fonts/normal_font = ExtResource("1_uydjg")

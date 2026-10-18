@@ -17,15 +17,14 @@ z_index = -1
 position = Vector2(0, -62)
 texture = ExtResource("2_r402l")
 
-[node name="Dome" type="Sprite2D" parent="." unique_id=1740550862]
-z_index = 1
-position = Vector2(0, -62)
-texture = ExtResource("3_7e665")
-
 [node name="Station" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("4_16f5n")]
 starting_item = NodePath("../Grimoire")
 
 [node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("5_vnd4u")]
+
+[node name="Dome" type="Sprite2D" parent="." unique_id=1740550862]
+position = Vector2(0, -62)
+texture = ExtResource("3_7e665")
 
 [node name="PHB" type="StaticBody2D" parent="." unique_id=47777956]
 

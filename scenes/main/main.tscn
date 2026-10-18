@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d1riewe13sttr" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="2_iuonh"]
 
-[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "volume_slider")]
+[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "volume_slider", "next_lang", "prev_lang")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,8 @@ start_game = NodePath("VBoxContainer/Start")
 continue_game = NodePath("VBoxContainer/Resume")
 level_select = NodePath("VBoxContainer/LevelSelect")
 volume_slider = NodePath("VBoxContainer/Volume/HSlider")
+next_lang = NodePath("VBoxContainer/HBoxContainer/NextLanguage")
+prev_lang = NodePath("VBoxContainer/HBoxContainer/PreviousLanguage")
 
 [node name="BG" type="TextureRect" parent="." unique_id=2079453973]
 layout_mode = 0
@@ -39,23 +41,40 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=63814025]
 layout_mode = 2
-text = "An Old Joke"
+text = "title"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="VBoxContainer" unique_id=168650034]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "resume game"
+text = "resume_game"
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=853700913]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "start new game"
+text = "new_game"
 
 [node name="LevelSelect" type="Button" parent="VBoxContainer" unique_id=1430569065]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "level select"
+text = "level_select"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1099938131]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PreviousLanguage" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1960343237]
+layout_mode = 2
+text = "<"
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1189811714]
+layout_mode = 2
+text = "language"
+
+[node name="NextLanguage" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1441159355]
+layout_mode = 2
+text = ">"
 
 [node name="Volume" type="HBoxContainer" parent="VBoxContainer" unique_id=2005503708]
 layout_mode = 2
@@ -63,7 +82,7 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/Volume" unique_id=349596681]
 layout_mode = 2
-text = "Volume"
+text = "volume"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/Volume" unique_id=2125550518]
 layout_mode = 2

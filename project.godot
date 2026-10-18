@@ -82,6 +82,10 @@ cancel={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://strings/english.en.translation", "res://strings/english.ru.translation")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
