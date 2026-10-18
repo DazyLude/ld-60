@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://tg2fulbo5ic2"]
+
+[ext_resource type="Script" uid="uid://2uh2hvfckvfl" path="res://scripts/types/dialogue_node.gd" id="1_01dp3"]
+
+[node name="Intro" type="Node" unique_id=1478509140]
+script = ExtResource("1_01dp3")
+autoplay = true
+effect = 1
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="NarratorRamblings2" type="Node" parent="." unique_id=1055277449]
+script = ExtResource("1_01dp3")
+actor = 4
+character_line = "Once upon a time..."
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="NarratorRamblings4" type="Node" parent="." unique_id=1418782469]
+script = ExtResource("1_01dp3")
+actor = 4
+character_line = "Not interested? Rather hear a joke, I see."
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="NarratorRamblings" type="Node" parent="." unique_id=961590594]
+script = ExtResource("1_01dp3")
+actor = 4
+character_line = "Jokes? I know jokes."
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="NarratorRamblings3" type="Node" parent="." unique_id=2031085627]
+script = ExtResource("1_01dp3")
+actor = 4
+character_line = "A millennial, a wizard, a vampire and a ghost walked into a bar."
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="ShowScene" type="Node" parent="." unique_id=1937288853]
+script = ExtResource("1_01dp3")
+actor = 0
+character_line = "..."
+effect = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"

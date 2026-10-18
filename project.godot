@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AnOldJoke"
-run/main_scene="uid://7twhqee02nw3"
+run/main_scene="uid://byun7bpqqfgoc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -38,6 +38,10 @@ gdscript/warnings/unsafe_call_argument=1
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[gui]
+
+theme/custom="uid://b4spilrfg0yi7"
 
 [input]
 

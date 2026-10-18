@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://byun7bpqqfgoc"]
 
 [ext_resource type="Script" uid="uid://d1riewe13sttr" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="2_iuonh"]
 
-[node name="Main" type="Control" unique_id=557696987]
+[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "volume_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hyk8p")
+start_game = NodePath("VBoxContainer/Start")
+continue_game = NodePath("VBoxContainer/Resume")
+level_select = NodePath("VBoxContainer/LevelSelect")
+volume_slider = NodePath("VBoxContainer/Volume/HSlider")
+
+[node name="BG" type="TextureRect" parent="." unique_id=2079453973]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_iuonh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131936903]
 layout_mode = 1
@@ -28,15 +39,20 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=63814025]
 layout_mode = 2
-text = "Name"
+text = "An Old Joke"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=168650034]
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=168650034]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "start"
+text = "resume game"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1430569065]
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=853700913]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "start new game"
+
+[node name="LevelSelect" type="Button" parent="VBoxContainer" unique_id=1430569065]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "level select"
@@ -52,3 +68,7 @@ text = "Volume"
 [node name="HSlider" type="HSlider" parent="VBoxContainer/Volume" unique_id=2125550518]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5

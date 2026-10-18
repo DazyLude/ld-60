@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://b4spilrfg0yi7"]
+
+[ext_resource type="FontFile" uid="uid://dem8b85w7s0nn" path="res://assets/fonts/Montserrat-Regular.ttf" id="1_2qvbb"]
+
+[resource]
+default_font = ExtResource("1_2qvbb")
+Button/font_sizes/font_size = 28
+Label/font_sizes/font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 32

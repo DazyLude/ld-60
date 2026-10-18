@@ -1,14 +1,73 @@
 [gd_scene format=3 uid="uid://lf5u86637iur"]
 
 [ext_resource type="Script" uid="uid://c1nbrwvp2iosa" path="res://scenes/levels/visual_novel_player.gd" id="1_3smag"]
+[ext_resource type="Script" uid="uid://cm4ll7obmjt32" path="res://scripts/types/emote_table.gd" id="2_kxmp2"]
 [ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="2_u6rad"]
 [ext_resource type="Texture2D" uid="uid://b30t6tskfw6op" path="res://assets/novel/characters/millenial/millenial.png" id="3_rqat7"]
+[ext_resource type="Texture2D" uid="uid://dh3y78nlh1ero" path="res://assets/novel/characters/millenial/millenial speaks.png" id="4_j88jo"]
 [ext_resource type="Texture2D" uid="uid://dex1axfuh6puk" path="res://assets/novel/characters/wizard/wizard.png" id="4_xh2g5"]
+[ext_resource type="Texture2D" uid="uid://cf3qwi6srh4pw" path="res://assets/novel/characters/millenial/millenial shocked.png" id="5_ehmqi"]
 [ext_resource type="Texture2D" uid="uid://dici4uotgoyx3" path="res://assets/novel/characters/vampire/vampire.png" id="5_wurvx"]
 [ext_resource type="Texture2D" uid="uid://cu3jmjt30u47g" path="res://assets/novel/characters/ghost/ghost.png" id="6_043yu"]
 [ext_resource type="Texture2D" uid="uid://b2c4b2sn66elo" path="res://assets/novel/characters/ghost/ghost text field.png" id="7_bc5sb"]
+[ext_resource type="Texture2D" uid="uid://cav3sm38q1li" path="res://assets/novel/characters/wizard/wizard speaks.png" id="7_trpe4"]
+[ext_resource type="Texture2D" uid="uid://ds5bqsdcve1q8" path="res://assets/novel/characters/wizard/wizard shocked.png" id="8_liyao"]
+[ext_resource type="Texture2D" uid="uid://ciciiopy6xjfu" path="res://assets/novel/characters/wizard/wizard sad.png" id="9_j0wf1"]
+[ext_resource type="Texture2D" uid="uid://dwe4c2b1nb4rw" path="res://assets/novel/characters/vampire/vampire speaking.png" id="11_t1m6q"]
+[ext_resource type="Texture2D" uid="uid://bn1npegx1m8ya" path="res://assets/novel/characters/vampire/vampire shocked.png" id="12_t1uc7"]
+[ext_resource type="Texture2D" uid="uid://c4cxcmx4xiwcc" path="res://assets/novel/characters/ghost/ghost speaking.png" id="14_b70q5"]
+[ext_resource type="Texture2D" uid="uid://da2a4eeixnqhd" path="res://assets/novel/characters/ghost/ghost speaking UUUU.png" id="15_os8ye"]
+[ext_resource type="Texture2D" uid="uid://cw0mp177qj00o" path="res://assets/novel/characters/ghost/ghost drinking tea.png" id="16_j88jo"]
+[ext_resource type="Texture2D" uid="uid://f360vmkj04qo" path="res://assets/novel/characters/millenial/millenial text field.png" id="17_liyao"]
+[ext_resource type="Texture2D" uid="uid://bwt084u5up2y1" path="res://assets/novel/characters/wizard/wizard text field.png" id="18_j0wf1"]
+[ext_resource type="Texture2D" uid="uid://c3japmtbf7e2j" path="res://assets/novel/characters/vampire/vampire text field.png" id="19_t1m6q"]
 
-[node name="VisualNovelPlayer" type="Control" unique_id=1367113482]
+[sub_resource type="Resource" id="Resource_6pe36"]
+script = ExtResource("2_kxmp2")
+_d = Dictionary[int, Texture2D]({
+0: ExtResource("3_rqat7"),
+1: ExtResource("4_j88jo"),
+2: ExtResource("5_ehmqi")
+})
+metadata/_custom_type_script = "uid://cm4ll7obmjt32"
+
+[sub_resource type="Resource" id="Resource_1i4g2"]
+script = ExtResource("2_kxmp2")
+_d = Dictionary[int, Texture2D]({
+0: ExtResource("4_xh2g5"),
+1: ExtResource("7_trpe4"),
+2: ExtResource("8_liyao"),
+3: ExtResource("9_j0wf1")
+})
+metadata/_custom_type_script = "uid://cm4ll7obmjt32"
+
+[sub_resource type="Resource" id="Resource_b1scw"]
+script = ExtResource("2_kxmp2")
+_d = Dictionary[int, Texture2D]({
+0: ExtResource("5_wurvx"),
+1: ExtResource("11_t1m6q"),
+2: ExtResource("12_t1uc7")
+})
+metadata/_custom_type_script = "uid://cm4ll7obmjt32"
+
+[sub_resource type="Resource" id="Resource_gwfgc"]
+script = ExtResource("2_kxmp2")
+_d = Dictionary[int, Texture2D]({
+0: ExtResource("6_043yu"),
+1: ExtResource("14_b70q5"),
+4: ExtResource("15_os8ye"),
+5: ExtResource("16_j88jo")
+})
+metadata/_custom_type_script = "uid://cm4ll7obmjt32"
+
+[sub_resource type="Gradient" id="Gradient_liyao"]
+offsets = PackedFloat32Array(0.31746033, 0.71428573)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j0wf1"]
+gradient = SubResource("Gradient_liyao")
+
+[node name="VisualNovelPlayer" type="Control" unique_id=1367113482 node_paths=PackedStringArray("sprites", "label", "narrator_label", "drapes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +75,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3smag")
+sprites = {
+0: NodePath("Millenial"),
+1: NodePath("Wizard"),
+2: NodePath("Vampire"),
+3: NodePath("Ghost")
+}
+character_emotes = Dictionary[int, ExtResource("2_kxmp2")]({
+0: SubResource("Resource_6pe36"),
+1: SubResource("Resource_1i4g2"),
+2: SubResource("Resource_b1scw"),
+3: SubResource("Resource_gwfgc")
+})
+box_textures = Dictionary[int, Texture2D]({
+0: ExtResource("17_liyao"),
+1: ExtResource("18_j0wf1"),
+2: ExtResource("19_t1m6q"),
+3: ExtResource("7_bc5sb")
+})
+label = NodePath("TextBox/Label")
+narrator_label = NodePath("Drapes/Label")
+drapes = NodePath("Drapes")
 
 [node name="BG" type="TextureRect" parent="." unique_id=7447062]
 layout_mode = 0
@@ -63,11 +143,35 @@ offset_right = 1211.0
 offset_bottom = 709.0
 texture = ExtResource("7_bc5sb")
 
-[node name="Label" type="Label" parent="TextBox" unique_id=1836721754]
+[node name="Label" type="RichTextLabel" parent="TextBox" unique_id=1968360508]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 134.0
 offset_right = 1100.0
 offset_bottom = 239.0
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="Drapes" type="TextureRect" parent="." unique_id=785873414]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_j0wf1")
+
+[node name="Label" type="Label" parent="Drapes" unique_id=1688845757]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "sample text"
 horizontal_alignment = 1
 vertical_alignment = 1
