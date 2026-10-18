@@ -1,18 +1,16 @@
 [gd_scene format=4 uid="uid://dpemk2wtd8qh8"]
 
-[ext_resource type="Script" uid="uid://b75eqj8pk8alr" path="res://scenes/levels/wizard_1.gd" id="1_mb5d8"]
+[ext_resource type="Script" uid="uid://bu3wvj8gc5v0x" path="res://scenes/levels/wizard_2.gd" id="1_6ull5"]
 [ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_re1m4"]
 [ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_m10yr"]
 [ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="4_hg7wf"]
-[ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="5_v16jc"]
-[ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="6_630k7"]
+[ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="5_2u1a8"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="7_lakh4"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_5utlp"]
-[ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="9_ckcpp"]
 
-[node name="Wizard2" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand")]
-script = ExtResource("1_mb5d8")
-grimoire_stand = NodePath("bholder")
+[node name="Wizard2" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier")]
+script = ExtResource("1_6ull5")
+barrier = NodePath("Barrier")
 metadata/_custom_type_script = "uid://bioviasxjhvur"
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=1299441777]
@@ -33,36 +31,31 @@ limit_top = 24
 limit_right = 1280
 limit_bottom = 744
 
-[node name="bholder" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("5_v16jc")]
-position = Vector2(994, 434)
-starting_item = NodePath("../Grimoire")
+[node name="Barrier" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders") instance=ExtResource("5_2u1a8")]
+y_sort_enabled = true
+position = Vector2(984, 378)
+gem_holders = [NodePath("../RedHolder"), NodePath("../YellowHolder"), NodePath("../GreenHolder")]
 
-[node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("6_630k7")]
-position = Vector2(1071, 412)
+[node name="RedHolder" parent="." unique_id=598054325 instance=ExtResource("7_lakh4")]
+position = Vector2(891, 287)
+type = 1
 
-[node name="Station4" parent="." unique_id=598054325 instance=ExtResource("7_lakh4")]
-position = Vector2(810, 589)
-type = 2
-
-[node name="Station5" parent="." unique_id=1933131375 instance=ExtResource("7_lakh4")]
-position = Vector2(662, 589)
+[node name="YellowHolder" parent="." unique_id=1933131375 node_paths=PackedStringArray("starting_item") instance=ExtResource("7_lakh4")]
+position = Vector2(1079, 315)
 type = 3
+starting_item = NodePath("../Citrine")
 
-[node name="Station6" parent="." unique_id=1400855312 instance=ExtResource("7_lakh4")]
-position = Vector2(499, 586)
-type = 4
-
-[node name="Gem5" parent="." unique_id=431509241 instance=ExtResource("8_5utlp")]
-position = Vector2(191, 405)
-type = 4
-
-[node name="Gem6" parent="." unique_id=708147492 instance=ExtResource("8_5utlp")]
-position = Vector2(183, 488)
+[node name="GreenHolder" parent="." unique_id=1400855312 instance=ExtResource("7_lakh4")]
+position = Vector2(894, 466)
 type = 5
 
-[node name="Gem7" parent="." unique_id=1346957613 instance=ExtResource("8_5utlp")]
-position = Vector2(224, 576)
-type = 6
+[node name="Ruby" parent="." unique_id=431509241 instance=ExtResource("8_5utlp")]
+position = Vector2(532, 201)
 
-[node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("9_ckcpp")]
-position = Vector2(504, 195)
+[node name="Citrine" parent="." unique_id=708147492 instance=ExtResource("8_5utlp")]
+position = Vector2(423, 279)
+type = 2
+
+[node name="Emerald" parent="." unique_id=1346957613 instance=ExtResource("8_5utlp")]
+position = Vector2(442, 176)
+type = 4

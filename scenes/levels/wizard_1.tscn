@@ -6,11 +6,9 @@
 [ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_x2q6h"]
 [ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="5_2wy64"]
 [ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="6_tjsu0"]
-[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="7_6u6tv"]
-[ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_j2owc"]
-[ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="9_gb1ja"]
 
 [node name="Wizard1" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand")]
+y_sort_enabled = true
 script = ExtResource("1_2wy64")
 grimoire_stand = NodePath("bholder")
 metadata/_custom_type_script = "uid://bioviasxjhvur"
@@ -39,30 +37,3 @@ starting_item = NodePath("../Grimoire")
 
 [node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("6_tjsu0")]
 position = Vector2(1071, 412)
-
-[node name="Station4" parent="." unique_id=598054325 instance=ExtResource("7_6u6tv")]
-position = Vector2(810, 589)
-type = 2
-
-[node name="Station5" parent="." unique_id=1933131375 instance=ExtResource("7_6u6tv")]
-position = Vector2(662, 589)
-type = 3
-
-[node name="Station6" parent="." unique_id=1400855312 instance=ExtResource("7_6u6tv")]
-position = Vector2(499, 586)
-type = 4
-
-[node name="Gem5" parent="." unique_id=431509241 instance=ExtResource("8_j2owc")]
-position = Vector2(191, 405)
-type = 4
-
-[node name="Gem6" parent="." unique_id=708147492 instance=ExtResource("8_j2owc")]
-position = Vector2(183, 488)
-type = 5
-
-[node name="Gem7" parent="." unique_id=1346957613 instance=ExtResource("8_j2owc")]
-position = Vector2(224, 576)
-type = 6
-
-[node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("9_gb1ja")]
-position = Vector2(504, 195)

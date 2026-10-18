@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="4_16f5n"]
 [ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="5_vnd4u"]
 
-[node name="Barrier" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("barrier_hitbox", "barrier_display")]
+[node name="Barrier" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("barrier_hitbox", "barrier_display", "book_holder")]
 script = ExtResource("1_vq7bl")
 barrier_hitbox = NodePath("PHB")
 barrier_display = NodePath("Dome")
+book_holder = NodePath("Station")
 metadata/_custom_type_script = "uid://db5f5adk7kmgr"
 
 [node name="Circle" type="Sprite2D" parent="." unique_id=479752479]

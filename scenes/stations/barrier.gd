@@ -1,12 +1,19 @@
 extends Node2D
+class_name Barrier
+
+
+signal book_taken;
 
 
 @export var gem_holders : Array[Station] = [];
 @export var barrier_hitbox : StaticBody2D;
 @export var barrier_display : Node2D;
+@export var book_holder : Station;
 
 
 func _ready() -> void:
+	book_holder.item_removed.connect(book_taken.emit);
+	
 	for holder in gem_holders:
 		holder.item_received.connect(check_solution.bind(holder))
 
