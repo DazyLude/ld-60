@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_5utlp"]
 [ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="9_re1m4"]
 [ext_resource type="Texture2D" uid="uid://cm3mbjy0rjx8n" path="res://assets/visuals/drop_tip.png" id="10_m10yr"]
+[ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="11_v16jc"]
+[ext_resource type="PackedScene" uid="uid://bn72cmb7gyjop" path="res://scenes/obstacles/wizard/pots.tscn" id="12_630k7"]
+[ext_resource type="PackedScene" uid="uid://dkx2ldeqmg846" path="res://scenes/obstacles/wizard/books.tscn" id="13_lakh4"]
 
 [node name="Wizard2" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier")]
 y_sort_enabled = true
@@ -28,6 +31,7 @@ tile_map_data = PackedByteArray("AAABAAEACgAJAAAAAAADAAMAAAAAAAAAAAAFAAIAAAAAAAA
 tile_set = ExtResource("3_m10yr")
 
 [node name="Decor" type="TileMapLayer" parent="." unique_id=932404333]
+tile_map_data = PackedByteArray("AAACAAAACgAAAAAAAAAEAAAACgAAAAAAAAAAAAEACgAAAAAAAGAAAAIACgAAAAAAAGAAAAUACgAAAAAAAGAHAAcACAAAAAAAADAJAAcACAAAAAAAADAKAAUABwAAAAAAAFA=")
 tile_set = ExtResource("4_2u1a8")
 navigation_enabled = false
 
@@ -59,27 +63,79 @@ position = Vector2(847, 861)
 type = 5
 
 [node name="Ruby" parent="." unique_id=431509241 instance=ExtResource("8_5utlp")]
-position = Vector2(409, 664)
+position = Vector2(510, 629)
 
 [node name="Citrine" parent="." unique_id=708147492 instance=ExtResource("8_5utlp")]
-position = Vector2(326, 566)
+position = Vector2(427, 531)
 type = 2
 
 [node name="Emerald" parent="." unique_id=1346957613 instance=ExtResource("8_5utlp")]
-position = Vector2(510, 645)
+position = Vector2(611, 610)
 type = 4
 
 [node name="Label" type="Label" parent="." unique_id=572440454]
 z_index = -2
-offset_left = 416.0
-offset_top = 565.0
-offset_right = 467.0
-offset_bottom = 610.0
+offset_left = 524.0
+offset_top = 543.0
+offset_right = 575.0
+offset_bottom = 588.0
 theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
 theme_override_fonts/font = ExtResource("9_re1m4")
 text = "drop"
 
 [node name="DropTip" type="Sprite2D" parent="." unique_id=1754927215]
-position = Vector2(525, 606)
+z_index = -2
+position = Vector2(626.00006, 591)
 scale = Vector2(0.99609375, 1)
 texture = ExtResource("10_m10yr")
+
+[node name="Bookshelf" parent="." unique_id=415810828 instance=ExtResource("11_v16jc")]
+position = Vector2(826, 172)
+
+[node name="Bookshelf2" parent="." unique_id=316738426 instance=ExtResource("11_v16jc")]
+position = Vector2(955, 172)
+
+[node name="Bookshelf3" parent="." unique_id=1891007428 instance=ExtResource("11_v16jc")]
+position = Vector2(1083, 172)
+
+[node name="Bookshelf4" parent="." unique_id=89909220 instance=ExtResource("11_v16jc")]
+position = Vector2(1211, 172)
+
+[node name="Bookshelf5" parent="." unique_id=1230063870 instance=ExtResource("11_v16jc")]
+position = Vector2(833, 265)
+
+[node name="Bookshelf6" parent="." unique_id=794683254 instance=ExtResource("11_v16jc")]
+position = Vector2(962, 265)
+
+[node name="Bookshelf7" parent="." unique_id=1656793795 instance=ExtResource("11_v16jc")]
+position = Vector2(1090, 265)
+
+[node name="Bookshelf8" parent="." unique_id=1356889628 instance=ExtResource("11_v16jc")]
+position = Vector2(1218, 265)
+
+[node name="Bookshelf9" parent="." unique_id=2024821355 instance=ExtResource("11_v16jc")]
+position = Vector2(818, 356)
+
+[node name="Bookshelf10" parent="." unique_id=593826517 instance=ExtResource("11_v16jc")]
+position = Vector2(947, 356)
+
+[node name="Bookshelf11" parent="." unique_id=1776220867 instance=ExtResource("11_v16jc")]
+position = Vector2(1075, 356)
+
+[node name="Bookshelf12" parent="." unique_id=2022337728 instance=ExtResource("11_v16jc")]
+position = Vector2(1203, 356)
+
+[node name="Pots" parent="." unique_id=1116984424 instance=ExtResource("12_630k7")]
+position = Vector2(439, 147)
+
+[node name="Books" parent="." unique_id=1010775333 instance=ExtResource("13_lakh4")]
+position = Vector2(1143, 393)
+
+[node name="Books2" parent="." unique_id=1204405816 instance=ExtResource("13_lakh4")]
+position = Vector2(720, 873)
+
+[node name="Pots2" parent="." unique_id=1942170904 instance=ExtResource("12_630k7")]
+position = Vector2(194, 863)
+
+[node name="Pots3" parent="." unique_id=463271525 instance=ExtResource("12_630k7")]
+position = Vector2(192, 239)
