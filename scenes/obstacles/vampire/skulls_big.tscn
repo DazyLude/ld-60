@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://batvvyytpkc4k"]
+
+[ext_resource type="Script" uid="uid://bdmi8a32sayfa" path="res://scenes/obstacles/wizard/pots.gd" id="1_colqw"]
+[ext_resource type="Texture2D" uid="uid://ddrh4j10t8lr3" path="res://assets/visuals/vampyr/skulls.png" id="2_nevs5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nevs5"]
+radius = 14.0
+height = 74.0
+
+[node name="Pots" type="Node2D" unique_id=1116984424 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_colqw")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1616499882]
+position = Vector2(-1, -24)
+texture = ExtResource("2_nevs5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1604756447]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1500729895]
+position = Vector2(4, -8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nevs5")

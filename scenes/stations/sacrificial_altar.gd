@@ -49,6 +49,8 @@ func check_all(cultist : Item) -> void:
 	
 	cultist.sacrificed.disconnect(check_all);
 	if correct:
+		cultist_holder.hitbox.monitorable = false;
+		cultist_holder.deactivate();
 		sacrifice_made.emit();
 		spawn_takodachi();
 
@@ -66,10 +68,13 @@ func spawn_takodachi() -> void:
 	takodachi_texture.region.size.y = 1.0;
 	
 	var player := HUD.active_player;
-	
+	player.assume_direct_control = true;
+	player.force_plushing = true;
 	
 	takodachi_tween.tween_property(takodachi_sprite, ^"position:y", starting_y, appearance_time);
 	takodachi_tween.parallel().tween_property(
 		takodachi_texture, ^"region:size:y", sprite_height, appearance_time);
 	takodachi_tween.parallel().tween_property(
 		player, ^"global_position", talking_position.global_position, appearance_time)
+	takodachi_tween.tween_callback(
+		func() -> void: player.force_plushing = false);

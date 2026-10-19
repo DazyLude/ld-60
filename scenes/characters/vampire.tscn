@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://csrjxiwb0o12d" path="res://assets/visuals/characters/vampire.png" id="2_ml74m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u7ty"]
-radius = 40.0
-height = 120.0
+radius = 17.0
+height = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h02qm"]
-radius = 73.0
+radius = 63.0
 
-[node name="Wizard" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position")]
+[node name="Vampire" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position")]
 motion_mode = 1
 slide_on_ceiling = false
 platform_floor_layers = 4278190080
@@ -22,15 +22,16 @@ carried_item_position = NodePath("CarriedItemMarker")
 metadata/_custom_type_script = "uid://cqpsssjp2m55h"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428816770]
-position = Vector2(-4, -45)
+position = Vector2(-2, -50)
 texture = ExtResource("2_ml74m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104316617]
-position = Vector2(0, -46)
+position = Vector2(0, -2)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8u7ty")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2106394316]
-position = Vector2(0, -10)
+position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=316428025]
 shape = SubResource("CircleShape2D_h02qm")

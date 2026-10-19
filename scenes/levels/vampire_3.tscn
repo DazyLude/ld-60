@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://8ssqaj81p4e5"]
+
+[ext_resource type="Script" uid="uid://b3km6lqexgdi0" path="res://scenes/levels/vampire_3.gd" id="1_feyoq"]
+[ext_resource type="TileSet" uid="uid://b5ciy0g8aqvyu" path="res://assets/visuals/tilesets/vampire.tres" id="2_qlwga"]
+[ext_resource type="PackedScene" uid="uid://folvkjk2nngi" path="res://scenes/characters/vampire.tscn" id="3_ksg8m"]
+[ext_resource type="PackedScene" uid="uid://bjq2wpgjdh1ui" path="res://scenes/stations/sacrificial_altar.tscn" id="4_albfw"]
+[ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="5_x0g0s"]
+
+[node name="Vampire2" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("sacrificial", "camera")]
+y_sort_enabled = true
+script = ExtResource("1_feyoq")
+sacrificial = NodePath("SacrificialStone")
+camera = NodePath("Vampire/Camera2D2")
+player_character = 2
+searching_engine = 6
+metadata/_custom_type_script = "uid://bioviasxjhvur"
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=2022304447]
+tile_set = ExtResource("2_qlwga")
+navigation_enabled = false
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1031338355]
+z_index = -2
+tile_set = ExtResource("2_qlwga")
+
+[node name="Decor" type="TileMapLayer" parent="." unique_id=1749607590]
+tile_set = ExtResource("2_qlwga")
+navigation_enabled = false
+
+[node name="Vampire" parent="." unique_id=42250212 instance=ExtResource("3_ksg8m")]
+
+[node name="Camera2D2" type="Camera2D" parent="Vampire" unique_id=187168059]
+limit_left = 18
+limit_top = 5
+limit_right = 1376
+limit_bottom = 989
+
+[node name="SacrificialStone" parent="." unique_id=1301439559 instance=ExtResource("4_albfw")]
+
+[node name="Cultist" parent="." unique_id=323613442 node_paths=PackedStringArray("respawn_point") instance=ExtResource("5_x0g0s")]
+respawn_point = NodePath("../Respawn")
+
+[node name="Respawn" type="Marker2D" parent="." unique_id=809228609]

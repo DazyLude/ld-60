@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://grsihvc11ju8"]
+
+[ext_resource type="Script" uid="uid://d3flcyr1vx32y" path="res://scenes/obstacles/wizard/bookshelf.gd" id="1_wu5il"]
+[ext_resource type="Texture2D" uid="uid://cukvggqouy3s5" path="res://assets/visuals/vampyr/bookshelf1.png" id="2_4u8ob"]
+[ext_resource type="Texture2D" uid="uid://cuu85uyhlrqwx" path="res://assets/visuals/vampyr/bookshelf2.png" id="3_powlu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f45d"]
+size = Vector2(127, 52)
+
+[node name="Bookshelf" type="Node2D" unique_id=415810828 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_wu5il")
+variants = Array[Texture2D]([ExtResource("2_4u8ob"), ExtResource("3_powlu")])
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=833923180]
+position = Vector2(0, -64)
+texture = ExtResource("2_4u8ob")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1360917331]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=647545948]
+position = Vector2(0.5, -26)
+shape = SubResource("RectangleShape2D_4f45d")

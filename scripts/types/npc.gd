@@ -89,15 +89,17 @@ func start_movement() -> void:
 	movement_tween = create_tween();
 	movement_tween.set_loops();
 	
+	var vd := respawn_point.position;
+	
 	for idx in route.size():
 		var wp := route[idx];
-		movement_tween.tween_property(self, ^"position", wp.marker, wp.time);
+		movement_tween.tween_property(self, ^"position", vd + wp.marker, wp.time);
 	
 	if reverse_loop:
 		for neg_idx in route.size() - 1:
 			var idx := route.size() - neg_idx - 2;
 			var wp := route[idx];
-			movement_tween.tween_property(self, ^"position", wp.marker, wp.time);
+			movement_tween.tween_property(self, ^"position", vd + wp.marker, wp.time);
 
 
 func stop_movement() -> void:

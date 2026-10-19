@@ -3,6 +3,7 @@ class_name Level
 
 @warning_ignore("unused_signal")
 signal finished;
+signal shake_finished;
 
 @export var camera : Camera2D;
 
@@ -23,6 +24,7 @@ func shake() -> void:
 	var shake_tween := create_tween();
 	shake_tween.tween_method(randomize_position, 0.0, SacrificialAltar.appearance_time * 10.0, SacrificialAltar.appearance_time)
 	shake_tween.tween_callback(reset_position)
+	shake_tween.tween_callback(shake_finished.emit)
 	shake_tween.tween_callback(shake_tween.kill);
 
 

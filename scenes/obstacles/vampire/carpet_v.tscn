@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://clonmaj8mbxqk"]
+
+[ext_resource type="Texture2D" uid="uid://bj8mtplvhm4c0" path="res://assets/visuals/vampyr/carpet1.png" id="1_xrun2"]
+
+[node name="Carpets" type="Node2D" unique_id=1738673141]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1394078956]
+z_index = -1
+texture = ExtResource("1_xrun2")
