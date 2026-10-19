@@ -7,6 +7,7 @@ extends Level
 func _ready() -> void:
 	super()
 	HUD.quest_label.text = "quest_vampire";
+	BGMPlayer.change_track(BGMPlayer.MusicID.Vampire);
 	
 	sacrificial.sacrifice_made.connect(_on_successful_sacrifice);
 

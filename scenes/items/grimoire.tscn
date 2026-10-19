@@ -14,6 +14,7 @@ item_texture = ExtResource("2_x4max")
 highlighted_texture = ExtResource("3_vvil4")
 hitbox = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
+take_sound = 5
 metadata/_custom_type_script = "uid://kcijktpqlpou"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073497469]

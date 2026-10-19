@@ -158,7 +158,7 @@ func try_use_something() -> void:
 			pick_item(item);
 			_remove_area(item.hitbox);
 		
-		if inventory != null:
+		if inventory != null and inventory != item:
 			drop_item(item);
 			_remove_area(item.hitbox);
 	
@@ -180,6 +180,7 @@ func try_use_something() -> void:
 			
 			[false, true]:
 				station.receive_item(inventory);
+				BGMPlayer.play_one_off(inventory.insert_sound);
 				inventory = null;
 			
 			[true, false]:
@@ -194,12 +195,16 @@ func pick_item(item: Item) -> void:
 	if inventory != null:
 		return;
 	
+	if item == null:
+		return;
+	
 	inventory = item;
 	if item.visible_when_carred:
 		item.show();
 	else:
 		item.hide();
 	
+	BGMPlayer.play_one_off(item.take_sound);
 	item.reparent(self);
 	item.position = item.carried_offset + carried_item_position.position;
 	item.deactivate();
@@ -209,6 +214,8 @@ func pick_item(item: Item) -> void:
 func drop_item(swap_with: Item = null) -> void:
 	if inventory == null:
 		return;
+	
+	BGMPlayer.play_one_off(inventory.drop_sound);
 	
 	if swap_with == null:
 		inventory.position = Vector2();
@@ -221,6 +228,9 @@ func drop_item(swap_with: Item = null) -> void:
 
 
 func _drop_item() -> void:
+	if inventory == null:
+		return;
+	
 	inventory.reparent(get_parent());
 	inventory.unmark_taken();
 	inventory.show();

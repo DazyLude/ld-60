@@ -10,11 +10,19 @@ enum MusicID {
 	PaleorockClassic,
 	Nature,
 	Jazz,
+	Wizard,
+	Vampire,
 }
 
 enum EffectID {
 	None = 0,
 	Bonk = 1,
+	
+	GemDrop,
+	GemInsert,
+	GemTake,
+	
+	BookTake,
 }
 
 
@@ -23,12 +31,18 @@ const uid_per_music_id : Dictionary[MusicID, String] = {
 	MusicID.PaleorockClassic: "res://assets/music/finale_music.wav",
 	MusicID.Nature: "res://assets/music/nature.wav",
 	MusicID.Jazz: "res://assets/music/jazz.wav",
+	MusicID.Wizard: "res://assets/music/wizardlvl_music.wav",
+	MusicID.Vampire: "res://assets/music/vampirelvl_music.wav",
 }
 
 
 const uid_per_sfx_id : Dictionary[EffectID, String] = {
 	EffectID.None: "",
 	EffectID.Bonk: "res://assets/sfx/stone_hit.wav",
+	EffectID.GemDrop: "res://assets/sfx/gem_drop.ogg",
+	EffectID.GemInsert: "res://assets/sfx/gem_insert.ogg",
+	EffectID.GemTake: "res://assets/sfx/gem_take.ogg",
+	EffectID.BookTake: "res://assets/sfx/book.ogg",
 }
 
 

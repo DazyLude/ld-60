@@ -15,6 +15,10 @@ var taken : bool;
 @export var carried_offset : Vector2;
 @export var visible_when_carred : bool = false;
 
+@export var take_sound := BGMPlayer.EffectID.GemTake;
+@export var drop_sound := BGMPlayer.EffectID.None;
+@export var insert_sound := BGMPlayer.EffectID.None;
+
 
 func _ready() -> void:
 	sprite.texture = item_texture;
