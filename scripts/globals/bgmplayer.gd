@@ -25,6 +25,24 @@ enum EffectID {
 	BookTake,
 	
 	Ritual,
+	
+	Voice1,
+	Voice2,
+	Voice3,
+	Voice4,
+	Voice5,
+	Voice6,
+	Voice7,
+	Voice8,
+	Voice9,
+	Voice10,
+	Voice11,
+	Voice12,
+	Voice13,
+	Voice14,
+	Voice15,
+	Voice16,
+	VoiceSlurp,
 }
 
 
@@ -47,6 +65,25 @@ const uid_per_sfx_id : Dictionary[EffectID, String] = {
 	EffectID.BookTake: "res://assets/sfx/book.ogg",
 	
 	EffectID.Ritual: "res://assets/sfx/ritual.ogg",
+	
+	EffectID.Voice1: "res://assets/voice/voice1.wav",
+	EffectID.Voice2: "res://assets/voice/voice2.wav",
+	EffectID.Voice3: "res://assets/voice/voice3.wav",
+	EffectID.Voice4: "res://assets/voice/voice4.wav",
+	EffectID.Voice5: "res://assets/voice/voice5.wav",
+	EffectID.Voice6: "res://assets/voice/voice6.wav",
+	EffectID.Voice7: "res://assets/voice/voice7.wav",
+	EffectID.Voice8: "res://assets/voice/voice8.wav",
+	EffectID.Voice9: "res://assets/voice/voice9.wav",
+	EffectID.Voice10: "res://assets/voice/voice10.wav",
+	EffectID.Voice11: "res://assets/voice/voice11.wav",
+	EffectID.Voice12: "res://assets/voice/voice12.wav",
+	EffectID.Voice13: "res://assets/voice/voice13.wav",
+	EffectID.Voice14: "res://assets/voice/voice14.wav",
+	EffectID.Voice15: "res://assets/voice/voice15.wav",
+	EffectID.Voice16: "res://assets/voice/voice16.wav",
+	EffectID.VoiceSlurp: "res://assets/voice/slurp.wav",
+	
 }
 
 
