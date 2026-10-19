@@ -64,6 +64,7 @@ func _reset_position(node: Node2D, trigger_data: MovementTriggerData) -> void:
 
 func move_node(node: Node2D, where: Vector2, speed: float = 1.0) -> void:
 	var tween := get_new_node_tween(node);
+	BGMPlayer.play_one_off(BGMPlayer.EffectID.DissapearanceBarrierSuzumia);
 	tween.tween_property(node, ^"position", where, speed)
 
 
