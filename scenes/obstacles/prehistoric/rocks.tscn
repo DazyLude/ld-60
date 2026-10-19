@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://676v6jhxnr7x"]
+
+[ext_resource type="Script" uid="uid://d3flcyr1vx32y" path="res://scenes/obstacles/wizard/bookshelf.gd" id="1_wqvnb"]
+[ext_resource type="Texture2D" uid="uid://obyngs3p6a5j" path="res://assets/visuals/caveman/stones1.png" id="2_l5j15"]
+
+[node name="Stones" type="Node2D" unique_id=1010775333 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_wqvnb")
+variants = Array[Texture2D]([ExtResource("2_l5j15")])
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=498672390]
+position = Vector2(0, -45)
+texture = ExtResource("2_l5j15")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=588699051]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=712051770]
+polygon = PackedVector2Array(13, 11, 20, 1, 53, -8, 53, -20, -12, -28, -51, -21, -48, -10, -17, -3, -14, 12)

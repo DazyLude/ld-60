@@ -2,15 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cqpsssjp2m55h" path="res://scripts/types/player_character.gd" id="1_je5ps"]
 [ext_resource type="Texture2D" uid="uid://p02vlth7c5b1" path="res://assets/visuals/characters/neandertal.png" id="2_h02qm"]
+[ext_resource type="Texture2D" uid="uid://c2vbocfv3k008" path="res://assets/visuals/smoke_cloud.png" id="3_8u7ty"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u7ty"]
-radius = 40.0
-height = 120.0
+radius = 28.0
+height = 92.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h02qm"]
 radius = 73.0
 
-[node name="Neanderthal" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position")]
+[node name="Neanderthal" type="CharacterBody2D" unique_id=42250212 node_paths=PackedStringArray("interaction_hitbox", "sprite", "carried_item_position", "smoke_cloud")]
 motion_mode = 1
 slide_on_ceiling = false
 platform_floor_layers = 4278190080
@@ -19,6 +20,7 @@ script = ExtResource("1_je5ps")
 interaction_hitbox = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
 carried_item_position = NodePath("CarriedItemMarker")
+smoke_cloud = NodePath("Cloud")
 metadata/_custom_type_script = "uid://cqpsssjp2m55h"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428816770]
@@ -26,7 +28,8 @@ position = Vector2(-4, -45)
 texture = ExtResource("2_h02qm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104316617]
-position = Vector2(0, -46)
+position = Vector2(0, -11)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8u7ty")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2106394316]
@@ -38,3 +41,8 @@ debug_color = Color(0.6000929, 0.36985418, 1, 0.41960785)
 
 [node name="CarriedItemMarker" type="Marker2D" parent="." unique_id=2014108726]
 position = Vector2(1, -112)
+
+[node name="Cloud" type="Sprite2D" parent="." unique_id=486273183]
+visible = false
+position = Vector2(3, -35)
+texture = ExtResource("3_8u7ty")

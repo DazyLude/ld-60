@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1tx6xo0wshog"]
+
+[ext_resource type="Script" uid="uid://d3flcyr1vx32y" path="res://scenes/obstacles/wizard/bookshelf.gd" id="1_8qttm"]
+[ext_resource type="Texture2D" uid="uid://brhsjsle564ux" path="res://assets/visuals/caveman/trunk.png" id="2_8qttm"]
+
+[node name="Trunk" type="Node2D" unique_id=1010775333 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_8qttm")
+variants = Array[Texture2D]([ExtResource("2_8qttm")])
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=498672390]
+position = Vector2(1, -22)
+texture = ExtResource("2_8qttm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=588699051]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=712051770]
+position = Vector2(0, -3)
+polygon = PackedVector2Array(27, 7, 42, 0, 41, -8, 7, -10, -25, -9, -30, -2, -19, 4, 2, 9)

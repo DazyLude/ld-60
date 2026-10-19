@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b5x2c0j15us8l"]
+
+[ext_resource type="Script" uid="uid://bdmi8a32sayfa" path="res://scenes/obstacles/wizard/pots.gd" id="1_khfi1"]
+[ext_resource type="Texture2D" uid="uid://dwwlur7do8wkq" path="res://assets/visuals/caveman/cave.png" id="2_48obv"]
+
+[node name="Cave" type="Node2D" unique_id=1116984424 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_khfi1")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1616499882]
+position = Vector2(3, -50)
+texture = ExtResource("2_48obv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1604756447]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1999118568]
+polygon = PackedVector2Array(-127, 21, -100, -7, -3, -6, 18, 9, 57, 1, 75, -6, 101, -5, 170, -31, 162, -45, -133, -45, -156, -34, -164, -9, -150, 11)

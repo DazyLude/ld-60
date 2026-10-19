@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" format=3 uid="uid://byraewaksy0ba"]
+
+[ext_resource type="Texture2D" uid="uid://c5bvfb0dlilf4" path="res://assets/visuals/caveman/merged_tiles.png" id="1_eqtvg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rdd50"]
+texture = ExtResource("1_eqtvg")
+texture_region_size = Vector2i(128, 128)
+4:0/0 = 0
+5:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+sources/6 = SubResource("TileSetAtlasSource_rdd50")

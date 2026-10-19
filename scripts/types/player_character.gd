@@ -8,7 +8,11 @@ class_name Character
 @export var carried_item_position : Marker2D;
 
 @export var speed : float = 400;
+@export var smoke_cloud : Sprite2D;
 
+
+var assume_direct_control : bool = false;
+var force_plushing : bool = false;
 
 
 var _stored_movement := Vector2()
@@ -26,6 +30,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if assume_direct_control:
+		return;
+	
 	if event.is_action_pressed(&"action"):
 		try_use_something();
 	
@@ -37,6 +44,9 @@ func _process(_delta: float) -> void:
 	if _stored_movement != Vector2() and plush_tween == null:
 		start_plushing();
 		_stored_movement = Vector2();
+	
+	if assume_direct_control and force_plushing and plush_tween == null:
+		start_plushing();
 	
 	var closest := get_closest();
 	if closest != _previously_activated:
@@ -55,6 +65,10 @@ func _physics_process(_delta: float) -> void:
 		input_movement += Vector2(-1.0, 0.0);
 	if Input.is_action_pressed(&"move_right"):
 		input_movement += Vector2(1.0, 0.0);
+	
+	if assume_direct_control:
+		input_movement = Vector2();
+		return;
 	
 	velocity = input_movement * speed;
 	move_and_slide()
@@ -216,3 +230,41 @@ func _drop_item() -> void:
 func try_drop_something() -> void:
 	if inventory != null:
 		drop_item();
+
+
+var _smoke_tween : Tween;
+func explode() -> void:
+	if smoke_cloud == null:
+		return;
+	
+	if _smoke_tween:
+		_smoke_tween.kill();
+	
+	_smoke_tween = create_tween();
+	var random_rotation := randf() * 2.0 * PI;
+	var explosion_time := 0.05;
+	var dissipation_time := 0.2;
+	
+	smoke_cloud.self_modulate = Color(1, 1, 1, 0.5)
+	smoke_cloud.scale = Vector2(0.5, 0.5)
+	smoke_cloud.rotation = random_rotation - 0.1;
+	smoke_cloud.show();
+	
+	# explosion
+	_smoke_tween.tween_property(
+		smoke_cloud, ^"self_modulate", Color(1, 1, 1, 1.0), explosion_time)
+	_smoke_tween.parallel().tween_property(
+		smoke_cloud, ^"scale", Vector2(1, 1), explosion_time)
+	_smoke_tween.parallel().tween_property(
+		smoke_cloud, ^"rotation", random_rotation, explosion_time)
+	
+	# dissipation
+	_smoke_tween.tween_property(
+		smoke_cloud, ^"self_modulate", Color(1, 1, 1, 0.2), dissipation_time)
+	_smoke_tween.parallel().tween_property(
+		smoke_cloud, ^"scale", Vector2(1.2, 1.2), dissipation_time)
+	_smoke_tween.parallel().tween_property(
+		smoke_cloud, ^"rotation", random_rotation + 0.2, dissipation_time)
+	
+	# hide
+	_smoke_tween.tween_callback(smoke_cloud.hide);

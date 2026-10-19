@@ -7,18 +7,23 @@ extends Node
 ## UX - mouse and UI feedback sounds
 enum MusicID {
 	None = 0,
+	PaleorockClassic,
+	
 }
 
 enum EffectID {
 	None = 0,
+	Bonk = 1,
 }
 
 
 const uid_per_music_id : Dictionary[MusicID, String] = {
+	MusicID.PaleorockClassic: "res://assets/music/finale_music.wav",
 }
 
 
 const uid_per_sfx_id : Dictionary[EffectID, String] = {
+	EffectID.Bonk: "res://assets/sfx/stone_hit.wav",
 }
 
 

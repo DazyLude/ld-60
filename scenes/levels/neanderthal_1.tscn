@@ -1,0 +1,100 @@
+[gd_scene format=4 uid="uid://ychjnleqavy3"]
+
+[ext_resource type="Script" uid="uid://b1l5sbir3ptl0" path="res://scenes/levels/neanderthal_1.gd" id="1_vwqex"]
+[ext_resource type="PackedScene" uid="uid://dk6uwtk3br17r" path="res://scenes/characters/neanderthal.tscn" id="2_c4386"]
+[ext_resource type="TileSet" uid="uid://bcxkktmhd8rpv" path="res://assets/visuals/tilesets/prehistoric_walls.tres" id="2_wcsin"]
+[ext_resource type="TileSet" uid="uid://byraewaksy0ba" path="res://assets/visuals/tilesets/prehistoric_floor.tres" id="3_28one"]
+[ext_resource type="PackedScene" uid="uid://c1shhfnl2fifi" path="res://scenes/items/stick.tscn" id="5_jsubt"]
+[ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/stone.tscn" id="6_3h2k5"]
+[ext_resource type="PackedScene" uid="uid://b5x2c0j15us8l" path="res://scenes/obstacles/prehistoric/cave.tscn" id="7_psx6l"]
+[ext_resource type="PackedScene" uid="uid://676v6jhxnr7x" path="res://scenes/obstacles/prehistoric/rocks.tscn" id="8_8cq0o"]
+[ext_resource type="PackedScene" uid="uid://dral7l18bjily" path="res://scenes/obstacles/prehistoric/small_rocks.tscn" id="9_6qqbb"]
+[ext_resource type="PackedScene" uid="uid://1tx6xo0wshog" path="res://scenes/obstacles/prehistoric/trunk.tscn" id="10_vbbfk"]
+
+[node name="Neanderthal1" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("stone", "player", "doll1", "doll2", "route", "camera")]
+y_sort_enabled = true
+script = ExtResource("1_vwqex")
+stone = NodePath("Stone")
+player = NodePath("Player")
+doll1 = NodePath("Neanderthal1")
+doll2 = NodePath("Neanderthal2")
+route = [NodePath("Marker2D"), NodePath("Marker2D6"), NodePath("Marker2D2"), NodePath("Marker2D7"), NodePath("Marker2D3"), NodePath("Marker2D8"), NodePath("Marker2D4"), NodePath("Marker2D5")]
+camera = NodePath("Player/Camera2D2")
+player_character = 3
+searching_engine = 3
+metadata/_custom_type_script = "uid://bioviasxjhvur"
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1299441777]
+tile_map_data = PackedByteArray("AAAJAAAACAADAAAAAAAAAAAACAACAAAAAAAAAAcACAABAAEAAAAJAAYACAACAAEAAAAJAAUACAACAAEAAAAJAAQACAACAAEAAAAJAAMACAACAAEAAAAJAAIACAACAAEAAAAJAAEACAACAAEAAAAIAAAACAADAAEAAAAHAAAACAADAAEAAAAGAAAACAADAAEAAAAFAAAACAADAAEAAAAEAAAACAADAAEAAAADAAAACAADAAEAAAACAAAACAADAAEAAAABAAAACAADAAEAAAAAAAEACAABAAEAAAAAAAIACAABAAEAAAAAAAMACAABAAEAAAAAAAQACAABAAEAAAAAAAUACAABAAEAAAAAAAYACAABAAEAAAAIAAkACAAAAAEAAAAHAAkACAAAAAEAAAAGAAkACAAAAAEAAAAFAAkACAAAAAEAAAAEAAkACAAAAAEAAAADAAkACAAAAAEAAAACAAkACAAAAAEAAAABAAkACAAAAAEAAAAAAAgACAABAAEAAAAJAAgACAACAAEAAAAJAAkACAABAAAAAAAAAAkACAAAAAAAAAAJAAcACAACAAEAAAA=")
+tile_set = ExtResource("2_wcsin")
+navigation_enabled = false
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=816540336]
+z_index = -2
+tile_map_data = PackedByteArray("AAABAAgABgAAAAAAAAABAAcABgACAAAAAAABAAYABgABAAAAAAABAAUABgACAAAAAAABAAQABgABAAAAAAABAAMABgACAAAAAAABAAIABgADAAAAAAABAAEABgABAAAAAAACAAEABgACAAAAAAADAAEABgAFAAAAAAAEAAEABgABAAAAAAAFAAEABgAEAAAAAAAGAAEABgADAAAAAAAHAAEABgABAAAAAAAIAAEABgAFAAAAAAAIAAIABgABAAAAAAAIAAMABgAEAAAAAAAIAAQABgADAAAAAAAIAAUABgABAAAAAAAIAAYABgABAAAAAAAIAAcABgACAAAAAAAIAAgABgABAAAAAAAHAAgABgABAAAAAAAGAAgABgAAAAAAAAAFAAgABgAAAAAAAAAEAAgABgAEAAAAAAADAAgABgAFAAAAAAACAAgABgADAAAAAAACAAcABgACAAAAAAADAAcABgADAAAAAAAEAAcABgAEAAAAAAAFAAcABgADAAAAAAAGAAcABgADAAAAAAAHAAcABgACAAAAAAAHAAYABgAAAAAAAAAHAAUABgADAAAAAAAHAAQABgAFAAAAAAAHAAMABgAEAAAAAAAHAAIABgADAAAAAAAGAAIABgADAAAAAAAFAAIABgADAAAAAAAEAAIABgADAAAAAAADAAIABgABAAAAAAACAAIABgAEAAAAAAACAAMABgAAAAAAAAACAAQABgAEAAAAAAACAAUABgAAAAAAAAACAAYABgACAAAAAAADAAYABgAAAAAAAAAEAAYABgAEAAAAAAAFAAYABgADAAAAAAAGAAYABgAEAAAAAAAGAAUABgAAAAAAAAAFAAUABgABAAAAAAAEAAUABgAAAAAAAAADAAUABgACAAAAAAADAAQABgAFAAAAAAAEAAQABgABAAAAAAAFAAQABgACAAAAAAAGAAQABgAAAAAAAAAGAAMABgAFAAAAAAAFAAMABgAFAAAAAAAEAAMABgAEAAAAAAADAAMABgAEAAAAAAA=")
+tile_set = ExtResource("3_28one")
+
+[node name="Player" parent="." unique_id=42250212 instance=ExtResource("2_c4386")]
+position = Vector2(653, 1009)
+
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=574103617]
+limit_left = 0
+limit_top = 24
+limit_right = 1280
+limit_bottom = 1264
+
+[node name="Neanderthal1" parent="." unique_id=1265027018 instance=ExtResource("2_c4386")]
+visible = false
+position = Vector2(784, 188)
+
+[node name="Neanderthal2" parent="." unique_id=498165966 instance=ExtResource("2_c4386")]
+visible = false
+position = Vector2(879, 198)
+
+[node name="Stick" parent="." unique_id=1737541831 instance=ExtResource("5_jsubt")]
+position = Vector2(421, 778)
+
+[node name="Stone" parent="." unique_id=1972157419 instance=ExtResource("6_3h2k5")]
+position = Vector2(438, 259)
+
+[node name="Cave" parent="." unique_id=1116984424 instance=ExtResource("7_psx6l")]
+position = Vector2(912, 174)
+
+[node name="Stones" parent="." unique_id=1010775333 instance=ExtResource("8_8cq0o")]
+position = Vector2(699, 158)
+
+[node name="Stones3" parent="." unique_id=1969983584 instance=ExtResource("8_8cq0o")]
+position = Vector2(1079, 883)
+
+[node name="Stones2" parent="." unique_id=1887786028 instance=ExtResource("9_6qqbb")]
+position = Vector2(1073, 204)
+
+[node name="Stones4" parent="." unique_id=973769672 instance=ExtResource("9_6qqbb")]
+position = Vector2(211, 190)
+
+[node name="Books" parent="." unique_id=1615682054 instance=ExtResource("10_vbbfk")]
+position = Vector2(320, 838)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=55236737]
+position = Vector2(368, 261)
+
+[node name="Marker2D6" type="Marker2D" parent="." unique_id=1254848703]
+position = Vector2(392, 307)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1600356794]
+position = Vector2(445, 323)
+
+[node name="Marker2D7" type="Marker2D" parent="." unique_id=1006425501]
+position = Vector2(498, 306)
+
+[node name="Marker2D3" type="Marker2D" parent="." unique_id=93996201]
+position = Vector2(515, 269)
+
+[node name="Marker2D8" type="Marker2D" parent="." unique_id=689788603]
+position = Vector2(492, 213)
+
+[node name="Marker2D4" type="Marker2D" parent="." unique_id=509960800]
+position = Vector2(443, 208)
+
+[node name="Marker2D5" type="Marker2D" parent="." unique_id=353875725]
+position = Vector2(396, 222)

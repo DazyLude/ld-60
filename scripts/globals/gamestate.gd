@@ -15,13 +15,13 @@ var main_game_sequence : Array[PackedScene] = [
 	preload("res://scenes/levels/wizard_2.tscn"),
 	preload("res://scenes/levels/wizard_3.tscn"),
 	preload("res://scenes/dialogues/part2.tscn"),
-	preload("res://scenes/levels/wizard_1.tscn"),
+	preload("res://scenes/levels/neanderthal_1.tscn"),
 	preload("res://scenes/dialogues/ending.tscn"),
 ]
 
 
 var current_game_sequence : Array[PackedScene] = [
-	preload("res://scenes/dialogues/ending.tscn"),
+	preload("res://scenes/levels/neanderthal_1.tscn"),
 ];
 var current_scene_idx := 0;
 
