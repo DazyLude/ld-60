@@ -32,5 +32,6 @@ func check_all() -> void:
 	if correct:
 		barrier_hitbox.collision_layer = 0;
 		barrier_display.hide();
+		BGMPlayer.play_one_off(BGMPlayer.EffectID.DissapearanceBarrierSuzumia);
 	else:
 		barrier_hitbox.collision_layer = 1;

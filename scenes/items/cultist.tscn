@@ -28,6 +28,7 @@ highlighted_texture = ExtResource("5_632h3")
 hitbox = NodePath("FreeHB")
 sprite = NodePath("Body")
 visible_when_carred = true
+drop_sound = 26
 metadata/_custom_type_script = "uid://db5f5adk7kmgr"
 
 [node name="Body" type="Sprite2D" parent="." unique_id=485133197]

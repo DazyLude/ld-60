@@ -152,6 +152,8 @@ func do_animation() -> void:
 	if _smoke_tween:
 		_smoke_tween.kill();
 	
+	BGMPlayer.play_one_off(BGMPlayer.EffectID.Alchemy);
+	
 	_smoke_tween = create_tween();
 	var random_rotation := randf() * 2.0 * PI;
 	var explosion_time := 0.05;

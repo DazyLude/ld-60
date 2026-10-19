@@ -155,6 +155,8 @@ func start_plushing() -> void:
 func sacrifice() -> void:
 	sacrificed.emit();
 	
+	BGMPlayer.play_one_off(BGMPlayer.EffectID.BodyStab);
+	
 	var temp_position := global_position;
 	reparent(respawn_point.get_parent());
 	position = respawn_point.position;

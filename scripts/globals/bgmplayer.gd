@@ -43,6 +43,12 @@ enum EffectID {
 	Voice15,
 	Voice16,
 	VoiceSlurp,
+	
+	Alchemy,
+	DissapearanceBarrierSuzumia,
+	BodyFall,
+	BodyStab,
+	ObjectFall,
 }
 
 
@@ -83,6 +89,12 @@ const uid_per_sfx_id : Dictionary[EffectID, String] = {
 	EffectID.Voice15: "res://assets/voice/voice15.wav",
 	EffectID.Voice16: "res://assets/voice/voice16.wav",
 	EffectID.VoiceSlurp: "res://assets/voice/slurp.wav",
+	
+	EffectID.Alchemy: "res://assets/sfx/alchemy_craft.wav",
+	EffectID.DissapearanceBarrierSuzumia: "res://assets/sfx/barrier_dissapear.wav",
+	EffectID.BodyFall: "res://assets/sfx/body_fall.wav",
+	EffectID.BodyStab: "res://assets/sfx/body_stab.wav",
+	EffectID.ObjectFall: "res://assets/sfx/object_fall.wav",
 }
 
 
