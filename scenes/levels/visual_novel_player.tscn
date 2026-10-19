@@ -78,7 +78,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_j0wf1"]
 gradient = SubResource("Gradient_liyao")
 
-[node name="VisualNovelPlayer" type="Control" unique_id=1367113482 node_paths=PackedStringArray("sprites", "text_box", "label", "narrator_label", "drapes")]
+[node name="VisualNovelPlayer" type="Control" unique_id=1367113482 node_paths=PackedStringArray("sprites", "text_box", "label", "narrator_label", "drapes", "tip")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,6 +113,7 @@ text_box = NodePath("TextBox")
 label = NodePath("TextBox/Label")
 narrator_label = NodePath("Drapes/Label")
 drapes = NodePath("Drapes")
+tip = NodePath("Drapes/Tip")
 
 [node name="BG" type="TextureRect" parent="." unique_id=7447062]
 layout_mode = 0
@@ -181,7 +182,6 @@ vertical_alignment = 1
 visible_characters_behavior = 1
 
 [node name="Drapes" type="TextureRect" parent="." unique_id=785873414]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -203,3 +203,21 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Tip" type="Label" parent="Drapes" unique_id=402500555]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -693.0
+offset_top = -46.0
+offset_right = -10.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Press Spacebar, Z key or left mouse button to continue"
+horizontal_alignment = 2

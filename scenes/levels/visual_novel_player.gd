@@ -93,6 +93,8 @@ var actor_themes_cy : Dictionary[Actor, Theme] = {
 @export var narrator_label : Label;
 @export var drapes : TextureRect;
 
+@export var tip : Label;
+
 
 var _dialogue : Node;
 var current_root_node : Node;
@@ -110,7 +112,14 @@ const TIME_PER_CHARACTER := 0.06;
 var text_tweener : Tween;
 
 
+var inactivity_timer : float = 0.0;
+const inactivity_threshold := 5.0;
+const inactivity_slope := 20.0;
+var succesful_input_count : int = 0;
+
+
 func _ready() -> void:
+	tip.modulate.a = 0.0;
 	drapes.modulate = Color(1, 1, 1, 0);
 	HUD.hide();
 	for actor in sprites:
@@ -118,6 +127,18 @@ func _ready() -> void:
 	
 	if _dialogue:
 		play_next();
+
+
+func _process(delta: float) -> void:
+	if succesful_input_count < 3:
+		inactivity_timer += delta;
+	else:
+		inactivity_timer = 0.0;
+	
+	var alpha := (inactivity_timer - inactivity_threshold) / inactivity_slope;
+	alpha = clampf(alpha, 0.0, 1.0);
+	
+	tip.modulate.a = alpha;
 
 
 func _notification(what: int) -> void:
@@ -129,6 +150,8 @@ func _notification(what: int) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"action"):
 		if skippable:
+			succesful_input_count += 1;
+			inactivity_timer = 0.0;
 			play_next();
 		return;
 	
@@ -136,6 +159,8 @@ func _input(event: InputEvent) -> void:
 		var mbevent := event as InputEventMouseButton;
 		if mbevent.pressed and mbevent.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if skippable:
+				succesful_input_count += 1;
+				inactivity_timer = 0.0;
 				play_next();
 			return;
 
