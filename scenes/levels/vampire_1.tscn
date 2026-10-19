@@ -136,17 +136,17 @@ texture = ExtResource("7_gwumo")
 
 [node name="Label" type="Label" parent="ExportTip3" unique_id=1329485531]
 z_index = -2
-offset_left = -70.33871
-offset_top = -85.07324
-offset_right = 40.661293
-offset_bottom = -40.073242
+offset_left = -140.76382
+offset_top = -173.30768
+offset_right = 124.236176
+offset_bottom = -128.30768
 rotation = 1.2217305
 theme = ExtResource("12_j6ma1")
 text = "sacrifice"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ExportTip3" unique_id=106221235]
-position = Vector2(-174.96246, 33.884155)
+position = Vector2(-130.7969, 17.809208)
 rotation = 1.2217305
 texture = ExtResource("13_j6ma1")
 
