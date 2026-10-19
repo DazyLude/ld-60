@@ -90,6 +90,7 @@ metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 [node name="Ghost1" type="Node" parent="." unique_id=256574278]
 script = ExtResource("1_xgvad")
 actor = 3
+emote = 4
 character_line = "p2_ghost_1"
 text_effect = 2
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"

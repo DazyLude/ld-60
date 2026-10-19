@@ -86,6 +86,9 @@ func _on_end() -> void:
 	vnplayer.just_text_box();
 	vnplayer.text_box.hide();
 	
+	Settings.game_finished = true;
+	Settings.save_state();
+	
 	finished.emit();
 
 

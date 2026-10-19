@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://d1riewe13sttr" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Texture2D" uid="uid://2xybsw8cl775" path="res://assets/ui/menu bg.png" id="2_k2fmo"]
+[ext_resource type="StyleBox" uid="uid://78871a7mx3ht" path="res://assets/themes/boxes/normal.tres" id="3_6q06x"]
 [ext_resource type="FontFile" uid="uid://de3xr1ilwbokc" path="res://assets/fonts/ComicRelief-Regular.ttf" id="3_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="4_l3cfh"]
+[ext_resource type="Script" uid="uid://bl8hwp0pbojb1" path="res://scenes/main/level_select.gd" id="6_hujxm"]
+[ext_resource type="PackedScene" uid="uid://tg2fulbo5ic2" path="res://scenes/dialogues/intro.tscn" id="7_nvumn"]
+[ext_resource type="FontFile" uid="uid://cygtowexbyv8q" path="res://assets/fonts/Fondamento-Regular.ttf" id="7_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://cd3l5wkei6vyu" path="res://scenes/dialogues/part1.tscn" id="8_ou6is"]
+[ext_resource type="PackedScene" uid="uid://lc82qs82lp82" path="res://scenes/dialogues/part2.tscn" id="9_necax"]
+[ext_resource type="PackedScene" uid="uid://m5c6gkxwwuyl" path="res://scenes/dialogues/ending.tscn" id="10_r4lks"]
+[ext_resource type="PackedScene" uid="uid://dvausutcstp77" path="res://scenes/levels/wizard_1.tscn" id="11_pg34l"]
+[ext_resource type="PackedScene" uid="uid://dpemk2wtd8qh8" path="res://scenes/levels/wizard_2.tscn" id="12_m4h2d"]
+[ext_resource type="PackedScene" uid="uid://clta41jnh5lqa" path="res://scenes/levels/wizard_3.tscn" id="13_p8abn"]
+[ext_resource type="PackedScene" uid="uid://bm0sx38terirh" path="res://scenes/levels/vampire_1.tscn" id="14_s17dp"]
+[ext_resource type="PackedScene" uid="uid://8ssqaj81p4e5" path="res://scenes/levels/vampire_3.tscn" id="15_37hlw"]
+[ext_resource type="PackedScene" uid="uid://c2ves4rhuy3ex" path="res://scenes/levels/vampire_2.tscn" id="16_6llfj"]
+[ext_resource type="PackedScene" uid="uid://ychjnleqavy3" path="res://scenes/levels/neanderthal_1.tscn" id="17_ou6is"]
 
-[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "volume_slider", "next_lang", "prev_lang", "label")]
+[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "from_level_select", "volume_slider", "next_lang", "prev_lang", "label", "level_select_root")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,13 +27,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hyk8p")
-start_game = NodePath("VBoxContainer/Start")
-continue_game = NodePath("VBoxContainer/Resume")
-level_select = NodePath("VBoxContainer/LevelSelect")
-volume_slider = NodePath("VBoxContainer/Volume/HSlider")
-next_lang = NodePath("VBoxContainer/HBoxContainer/NextLanguage")
-prev_lang = NodePath("VBoxContainer/HBoxContainer/PreviousLanguage")
-label = NodePath("Label")
+start_game = NodePath("BG/VBoxContainer/Start")
+continue_game = NodePath("BG/VBoxContainer/Resume")
+level_select = NodePath("BG/VBoxContainer/LevelSelect")
+from_level_select = NodePath("BGLevelSelect/VBoxContainer/Back")
+volume_slider = NodePath("BG/PanelContainer/Volume/HSlider")
+next_lang = NodePath("BG/HBoxContainer/NextLanguage")
+prev_lang = NodePath("BG/HBoxContainer/PreviousLanguage")
+label = NodePath("BG/Label")
+level_select_root = NodePath("BGLevelSelect")
 
 [node name="BG" type="TextureRect" parent="." unique_id=2079453973]
 layout_mode = 0
@@ -26,7 +43,52 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_k2fmo")
 
-[node name="Label" type="Label" parent="." unique_id=63814025]
+[node name="PanelContainer" type="PanelContainer" parent="BG" unique_id=1775422788]
+layout_mode = 0
+offset_left = 937.0
+offset_top = 650.0
+offset_right = 1229.0
+offset_bottom = 714.0
+theme_override_styles/panel = ExtResource("3_6q06x")
+
+[node name="Volume" type="HBoxContainer" parent="BG/PanelContainer" unique_id=2005503708]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="BG/PanelContainer/Volume" unique_id=349596681]
+layout_mode = 2
+text = "volume"
+
+[node name="HSlider" type="HSlider" parent="BG/PanelContainer/Volume" unique_id=2125550518]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG" unique_id=1099938131]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 648.0
+offset_right = 342.0
+offset_bottom = 708.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PreviousLanguage" type="Button" parent="BG/HBoxContainer" unique_id=1960343237]
+layout_mode = 2
+text = "<"
+
+[node name="Label" type="Label" parent="BG/HBoxContainer" unique_id=1189811714]
+layout_mode = 2
+text = "language"
+
+[node name="NextLanguage" type="Button" parent="BG/HBoxContainer" unique_id=1441159355]
+layout_mode = 2
+text = ">"
+
+[node name="Label" type="Label" parent="BG" unique_id=63814025]
 layout_mode = 0
 offset_left = 777.00006
 offset_top = 199.99998
@@ -38,7 +100,7 @@ theme_override_fonts/font = ExtResource("3_l3cfh")
 text = "title"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131936903]
+[node name="VBoxContainer" type="VBoxContainer" parent="BG" unique_id=131936903]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,57 +108,127 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -163.0
-offset_top = -42.5
+offset_top = -148.0
 offset_right = 165.0
-offset_bottom = 42.5
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Resume" type="Button" parent="VBoxContainer" unique_id=168650034]
+[node name="Resume" type="Button" parent="BG/VBoxContainer" unique_id=168650034]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "resume_game"
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=853700913]
+[node name="Start" type="Button" parent="BG/VBoxContainer" unique_id=853700913]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "new_game"
 
-[node name="LevelSelect" type="Button" parent="VBoxContainer" unique_id=1430569065]
+[node name="LevelSelect" type="Button" parent="BG/VBoxContainer" unique_id=1430569065]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "level_select"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1099938131]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="BGLevelSelect" type="TextureRect" parent="." unique_id=952210019 node_paths=PackedStringArray("button_to_levels", "bonus_root")]
+self_modulate = Color(0.641934, 0.641934, 0.641934, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_l3cfh")
+script = ExtResource("6_hujxm")
+button_to_levels = {
+NodePath("VBoxContainer/HBoxContainer/Dialogues/intro"): ExtResource("7_nvumn"),
+NodePath("VBoxContainer/HBoxContainer/Dialogues/part1"): ExtResource("8_ou6is"),
+NodePath("VBoxContainer/HBoxContainer/Levels/part2"): ExtResource("9_necax"),
+NodePath("VBoxContainer/HBoxContainer/Levels/outro"): ExtResource("10_r4lks"),
+NodePath("VBoxContainer/HBoxContainer/Dialogues/w1"): ExtResource("11_pg34l"),
+NodePath("VBoxContainer/HBoxContainer/Dialogues/w2"): ExtResource("12_m4h2d"),
+NodePath("VBoxContainer/HBoxContainer/Dialogues/w3"): ExtResource("13_p8abn"),
+NodePath("VBoxContainer/HBoxContainer/Dialogues/v1"): ExtResource("14_s17dp"),
+NodePath("VBoxContainer/HBoxContainer/Levels/v2"): ExtResource("15_37hlw"),
+NodePath("VBoxContainer/HBoxContainer/Levels/v3"): ExtResource("16_6llfj"),
+NodePath("VBoxContainer/HBoxContainer/Levels/n1"): ExtResource("17_ou6is")
+}
+bonus_root = NodePath("VBoxContainer/HBoxContainer/BonusLevels")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BGLevelSelect" unique_id=1172340389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
-[node name="PreviousLanguage" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1960343237]
+[node name="Label" type="Label" parent="BGLevelSelect/VBoxContainer" unique_id=1717292015]
 layout_mode = 2
-text = "<"
+theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
+theme_override_fonts/font = ExtResource("7_yyfjg")
+theme_override_font_sizes/font_size = 64
+text = "Level Select"
+horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1189811714]
+[node name="HBoxContainer" type="HBoxContainer" parent="BGLevelSelect/VBoxContainer" unique_id=1584459144]
 layout_mode = 2
-text = "language"
+alignment = 1
 
-[node name="NextLanguage" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1441159355]
+[node name="Dialogues" type="VBoxContainer" parent="BGLevelSelect/VBoxContainer/HBoxContainer" unique_id=856244409]
 layout_mode = 2
-text = ">"
+alignment = 1
 
-[node name="Volume" type="HBoxContainer" parent="VBoxContainer" unique_id=2005503708]
+[node name="intro" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Dialogues" unique_id=447485046]
 layout_mode = 2
-size_flags_vertical = 3
+text = "d_intro"
 
-[node name="Label" type="Label" parent="VBoxContainer/Volume" unique_id=349596681]
+[node name="w1" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Dialogues" unique_id=519254981]
 layout_mode = 2
-text = "volume"
+text = "l_wizard1"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/Volume" unique_id=2125550518]
+[node name="w2" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Dialogues" unique_id=1770560178]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 1.0
-step = 0.01
-value = 0.5
+text = "l_wizard2"
+
+[node name="w3" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Dialogues" unique_id=948438713]
+layout_mode = 2
+text = "l_wizard3"
+
+[node name="part1" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Dialogues" unique_id=918592153]
+layout_mode = 2
+text = "d_part_1"
+
+[node name="v1" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Dialogues" unique_id=1841198521]
+layout_mode = 2
+text = "l_vampire1"
+
+[node name="Levels" type="VBoxContainer" parent="BGLevelSelect/VBoxContainer/HBoxContainer" unique_id=908104924]
+layout_mode = 2
+alignment = 1
+
+[node name="v2" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Levels" unique_id=2039413401]
+layout_mode = 2
+text = "l_vampire2"
+
+[node name="v3" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Levels" unique_id=561380026]
+layout_mode = 2
+text = "l_vampire3"
+
+[node name="part2" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Levels" unique_id=481490561]
+layout_mode = 2
+text = "d_part_2"
+
+[node name="n1" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Levels" unique_id=1520227208]
+layout_mode = 2
+text = "l_neanderthal"
+
+[node name="outro" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/Levels" unique_id=1845059304]
+layout_mode = 2
+text = "d_outro"
+
+[node name="BonusLevels" type="VBoxContainer" parent="BGLevelSelect/VBoxContainer/HBoxContainer" unique_id=134429998]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="BGLevelSelect/VBoxContainer" unique_id=436187553]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "back_to_menu"

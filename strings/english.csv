@@ -5,6 +5,7 @@ resume_game,Resume Game,Продолжить
 volume,volume,громкость
 level_select,Level Select,Выбор Уровня
 language,English,Русский
+back_to_menu,Back to the Menu,Назад в Меню
 ,,
 movement,movement,передвижение
 action,action,действие
@@ -69,3 +70,15 @@ omake_8_q,what does the mog mean,что такое могну
 omake_8_a,"to outclass, outshine, or dominate someone else ","могать означает заметно превосходить кого-то внешне: лицом, фигурой, ростом. "
 omake_9_q,what can you name a cat,как можно назвать кота 
 omake_9_a,"Meowy, Snickers, Jasper, Donut, Raisin, Yolkie","Барсик, Рыжик, Паштет, Пончик, Изюм, Желточек. "
+,,
+d_intro,Intro,Вступление
+d_part_1,Grimoires,Гримуары
+d_part_2,Summoning,Призыв
+d_outro,Ending,Конец
+l_wizard1,Level 1,Уровень 1
+l_wizard2,Level 2,Уровень 2
+l_wizard3,Level 3,Уровень 3
+l_vampire1,Level 4,Уровень 4
+l_vampire2,Level 5,Уровень 5
+l_vampire3,Level 6,Уровень 6
+l_neanderthal,Level 7,Уровень 7
