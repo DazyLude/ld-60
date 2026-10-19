@@ -60,7 +60,7 @@ const uid_per_music_id : Dictionary[MusicID, String] = {
 	MusicID.Jazz: "res://assets/music/jazz.wav",
 	MusicID.Wizard: "res://assets/music/wizardlvl_music.wav",
 	MusicID.Vampire: "res://assets/music/vampirelvl_music.wav",
-	MusicID.UnwelcomeJazz: "res://assets/music/jazz.wav",
+	MusicID.UnwelcomeJazz: "res://assets/music/jazz_finale.wav",
 }
 
 
