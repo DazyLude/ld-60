@@ -51,7 +51,7 @@ tile_map_data = PackedByteArray("AAABAAEAFAAAAAAAAAABAAIAFAAEAAAAAAABAAMAFAACAAA
 tile_set = ExtResource("2_qlwga")
 
 [node name="Decor" type="TileMapLayer" parent="." unique_id=1749607590]
-tile_map_data = PackedByteArray("AAAGAAAAGgAAAAAAAAADAAAAGgAAAAAAAAAEAAAAGgADAAAAAAAIAAAAGgABAAAAAAABAAAAGgACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAGAAAAGgAAAAAAAAADAAAAGgAAAAAAAAAEAAAAGgADAAAAAAAIAAAAGgABAAAAAAABAAAAGgACAAAAAAAAAAMAGgABAAAAAGADAAUAGgACAAAAADAAAAQAGgADAAAAAGA=")
 tile_set = ExtResource("2_qlwga")
 navigation_enabled = false
 
@@ -92,6 +92,11 @@ position = Vector2(375, 149)
 
 [node name="Skull" type="Sprite2D" parent="." unique_id=249772324]
 position = Vector2(1016, 346)
+texture = ExtResource("10_qsnii")
+
+[node name="Skull2" type="Sprite2D" parent="." unique_id=1745344103]
+position = Vector2(152, 535)
+rotation = -1.5707964
 texture = ExtResource("10_qsnii")
 
 [node name="Diamond" parent="." unique_id=500583757 instance=ExtResource("10_haowr")]

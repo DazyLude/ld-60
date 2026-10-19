@@ -18,11 +18,13 @@ enum EffectID {
 
 
 const uid_per_music_id : Dictionary[MusicID, String] = {
+	MusicID.None: "",
 	MusicID.PaleorockClassic: "res://assets/music/finale_music.wav",
 }
 
 
 const uid_per_sfx_id : Dictionary[EffectID, String] = {
+	EffectID.None: "",
 	EffectID.Bonk: "res://assets/sfx/stone_hit.wav",
 }
 

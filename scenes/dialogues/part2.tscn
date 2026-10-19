@@ -7,22 +7,55 @@ script = ExtResource("1_xgvad")
 autoplay = true
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
+[node name="MillenialReaction" type="Node" parent="." unique_id=201656295]
+script = ExtResource("1_xgvad")
+autoplay = true
+actor = 0
+emote = 2
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="WizardReaction" type="Node" parent="." unique_id=196916057]
+script = ExtResource("1_xgvad")
+autoplay = true
+actor = 1
+emote = 2
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="GhostReaction" type="Node" parent="." unique_id=1925796502]
+script = ExtResource("1_xgvad")
+autoplay = true
+actor = 3
+emote = 5
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
 [node name="Vampire1" type="Node" parent="." unique_id=478795872]
 script = ExtResource("1_xgvad")
 actor = 2
+emote = 1
 character_line = "p2_vampire_1"
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire2" type="Node" parent="." unique_id=1127468369]
 script = ExtResource("1_xgvad")
 actor = 2
+emote = 1
 character_line = "p2_vampire_2"
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire3" type="Node" parent="." unique_id=774699823]
 script = ExtResource("1_xgvad")
 actor = 2
+emote = 1
 character_line = "p2_vampire_3"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="GhostReaction2" type="Node" parent="." unique_id=2094861434]
+script = ExtResource("1_xgvad")
+autoplay = true
+actor = 3
+emote = 0
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire4" type="Node" parent="." unique_id=1334561820]
@@ -35,13 +68,23 @@ metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 [node name="Vampire5" type="Node" parent="." unique_id=1564070222]
 script = ExtResource("1_xgvad")
 actor = 2
+emote = 1
+reaction = 4
 character_line = "p2_vampire_5"
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire6" type="Node" parent="." unique_id=1381000081]
 script = ExtResource("1_xgvad")
 actor = 2
+emote = 1
 character_line = "p2_vampire_6"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="VampireReaction" type="Node" parent="." unique_id=905411589]
+script = ExtResource("1_xgvad")
+autoplay = true
+actor = 2
+emote = 0
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Ghost1" type="Node" parent="." unique_id=256574278]

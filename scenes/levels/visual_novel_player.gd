@@ -225,7 +225,7 @@ func play_dialogue_node(node: DialogueNode) -> void:
 		Reaction.TurnAround:
 			turn_around(node.actor)
 		Reaction.SlideIn:
-			pass;
+			slide_in(node.actor)
 	
 	match node.effect:
 		Effect.FadeFromBlack:
@@ -398,6 +398,23 @@ func shake(actor: Actor) -> void:
 	tween.tween_property(sprite, ^"position", starting_pos + point_2, delta);
 	tween.tween_property(sprite, ^"position", starting_pos + point_3, delta);
 	tween.tween_property(sprite, ^"position", starting_pos + point_4, delta);
+	tween.tween_property(sprite, ^"position", starting_pos, delta);
+
+
+func slide_in(actor: Actor) -> void:
+	var sprite : TextureRect = sprites.get(actor);
+	if sprite == null:
+		return;
+	
+	var tween := get_new_actor_tween(actor);
+	var starting_pos := sprite.position;
+	const delta : float = 0.75;
+	var slide_offset_start := Vector2(-300.0, 0.0);
+	
+	sprite.position = starting_pos + slide_offset_start;
+	sprite.show();
+	
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD);
 	tween.tween_property(sprite, ^"position", starting_pos, delta);
 
 

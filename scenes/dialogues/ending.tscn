@@ -7,6 +7,22 @@ script = ExtResource("1_irw1y")
 autoplay = true
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
+[node name="WizardInitialReaction" type="Node" parent="." unique_id=647309634]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 1
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="VampireInitialReaction" type="Node" parent="." unique_id=990142787]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 2
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
 [node name="Ghost1" type="Node" parent="." unique_id=1055277449]
 script = ExtResource("1_irw1y")
 autoplay_time = -1.0
@@ -24,6 +40,59 @@ character_line = "ending_ghost_2"
 text_effect = 2
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
+[node name="WizardReaction" type="Node" parent="." unique_id=682120228]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 1
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="VampireReaction" type="Node" parent="." unique_id=1432037875]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = 0.5
+actor = 2
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="MillenialReaction" type="Node" parent="." unique_id=609112263]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = 0.4
+actor = 0
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="WizardReaction2" type="Node" parent="." unique_id=1542315216]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = 0.1
+actor = 1
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="VampireReaction2" type="Node" parent="." unique_id=641581915]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = 0.2
+actor = 2
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="MillenialReaction2" type="Node" parent="." unique_id=1798642512]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = 0.5
+actor = 0
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
 [node name="Ghost3" type="Node" parent="." unique_id=1813934315]
 script = ExtResource("1_irw1y")
 actor = 3
@@ -31,14 +100,80 @@ emote = 5
 character_line = "..."
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
-[node name="Ghost4" type="Node" parent="." unique_id=439741671]
+[node name="ZoomerAppearance" type="Node" parent="." unique_id=1856667309]
+script = ExtResource("1_irw1y")
+actor = 7
+emote = 0
+reaction = 5
+character_line = "ending_zoomer_1"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="WizardReaction3" type="Node" parent="." unique_id=421555398]
 script = ExtResource("1_irw1y")
 autoplay = true
+actor = 1
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="VampireReaction3" type="Node" parent="." unique_id=530977397]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 2
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="MillenialReaction3" type="Node" parent="." unique_id=960077195]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 0
+emote = 0
+reaction = 4
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="ZoomerAppearance2" type="Node" parent="." unique_id=545502806]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = -1.0
+actor = 7
+emote = 0
+character_line = "ending_zoomer_2"
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="WizardReaction4" type="Node" parent="." unique_id=1081927914]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 1
+emote = 3
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="VampireReaction4" type="Node" parent="." unique_id=483309766]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 2
+emote = 2
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="MillenialReaction4" type="Node" parent="." unique_id=1669988867]
+script = ExtResource("1_irw1y")
+autoplay = true
+actor = 0
+emote = 1
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="FadeToBlack" type="Node" parent="." unique_id=439741671]
+script = ExtResource("1_irw1y")
+autoplay = true
+autoplay_time = 0.5
 actor = 4
 effect = 1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
-[node name="Narrator" type="Node" parent="." unique_id=1552464790]
+[node name="FIN" type="Node" parent="." unique_id=1552464790]
 script = ExtResource("1_irw1y")
 actor = 4
 character_line = "FIN"

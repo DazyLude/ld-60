@@ -78,6 +78,8 @@ func start_cutscene(_i: Item) -> void:
 
 
 func _on_end() -> void:
+	BGMPlayer.change_track(BGMPlayer.MusicID.None);
+	
 	if vnplayer == null:
 		initialize_local_dialogue_player();
 	

@@ -7,6 +7,14 @@ script = ExtResource("1_mtkbs")
 autoplay = true
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
+[node name="MillenialReaction" type="Node" parent="." unique_id=936135542]
+script = ExtResource("1_mtkbs")
+autoplay = true
+actor = 0
+emote = 2
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
 [node name="Wizard1" type="Node" parent="." unique_id=272602035]
 script = ExtResource("1_mtkbs")
 actor = 1
@@ -27,7 +35,7 @@ script = ExtResource("1_mtkbs")
 autoplay = true
 autoplay_time = -1.0
 actor = 1
-emote = 1
+emote = 0
 character_line = "p1_wizard_3"
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
@@ -35,6 +43,7 @@ metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 script = ExtResource("1_mtkbs")
 actor = 2
 emote = 2
+reaction = 2
 character_line = "p1_vampire_1"
 text_effect = 1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"

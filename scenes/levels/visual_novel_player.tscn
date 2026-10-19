@@ -64,6 +64,13 @@ _d = Dictionary[int, Texture2D]({
 })
 metadata/_custom_type_script = "uid://cm4ll7obmjt32"
 
+[sub_resource type="Resource" id="Resource_b70q5"]
+script = ExtResource("2_kxmp2")
+_d = Dictionary[int, Texture2D]({
+0: ExtResource("25_b70q5")
+})
+metadata/_custom_type_script = "uid://cm4ll7obmjt32"
+
 [sub_resource type="Gradient" id="Gradient_liyao"]
 offsets = PackedFloat32Array(0.31746033, 0.71428573)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -90,7 +97,8 @@ character_emotes = Dictionary[int, ExtResource("2_kxmp2")]({
 0: SubResource("Resource_6pe36"),
 1: SubResource("Resource_1i4g2"),
 2: SubResource("Resource_b1scw"),
-3: SubResource("Resource_gwfgc")
+3: SubResource("Resource_gwfgc"),
+7: SubResource("Resource_b70q5")
 })
 box_textures = Dictionary[int, Texture2D]({
 0: ExtResource("17_liyao"),
@@ -115,10 +123,10 @@ texture = ExtResource("2_u6rad")
 [node name="Zoomer" type="TextureRect" parent="." unique_id=835397413]
 visible = false
 layout_mode = 0
-offset_left = -552.0
-offset_top = 168.0
-offset_right = -335.0
-offset_bottom = 529.0
+offset_left = 25.0
+offset_top = 112.0
+offset_right = 242.0
+offset_bottom = 473.0
 texture = ExtResource("25_b70q5")
 
 [node name="Millenial" type="TextureRect" parent="." unique_id=1737006229]
@@ -173,6 +181,7 @@ vertical_alignment = 1
 visible_characters_behavior = 1
 
 [node name="Drapes" type="TextureRect" parent="." unique_id=785873414]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
