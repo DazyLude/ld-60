@@ -119,10 +119,10 @@ texture = ExtResource("7_gwumo")
 
 [node name="Label" type="Label" parent="ExportTip2" unique_id=28371964]
 z_index = -2
-offset_left = -169.73393
-offset_top = 16.0122
-offset_right = -58.733932
-offset_bottom = 61.0122
+offset_left = -146.80573
+offset_top = 39.725014
+offset_right = -35.805725
+offset_bottom = 84.72501
 rotation = -0.5235988
 theme = ExtResource("12_j6ma1")
 text = "tool"
