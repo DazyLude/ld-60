@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b0wlqwj8vnc1r" path="res://scenes/levels/bonus/the_vault.tscn" id="19_r4lks"]
 [ext_resource type="PackedScene" uid="uid://2oijnvhyya30" path="res://scenes/levels/bonus/the_test.tscn" id="20_pg34l"]
 
-[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "from_level_select", "volume_slider", "next_lang", "prev_lang", "label", "level_select_root")]
+[node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "from_level_select", "volume_slider", "next_lang", "prev_lang", "label", "level_select_root", "bonus_levels_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +39,7 @@ next_lang = NodePath("BG/HBoxContainer/NextLanguage")
 prev_lang = NodePath("BG/HBoxContainer/PreviousLanguage")
 label = NodePath("BG/Label")
 level_select_root = NodePath("BGLevelSelect")
+bonus_levels_label = NodePath("BG/VBoxContainer/LevelSelect/Label")
 
 [node name="BG" type="TextureRect" parent="." unique_id=2079453973]
 layout_mode = 0
@@ -132,6 +133,23 @@ text = "new_game"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "level_select"
+
+[node name="Label" type="Label" parent="BG/VBoxContainer/LevelSelect" unique_id=218145406]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = 35.0
+offset_right = 213.0
+offset_bottom = 75.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "bonus_levels_available"
+vertical_alignment = 1
 
 [node name="BGLevelSelect" type="TextureRect" parent="." unique_id=952210019 node_paths=PackedStringArray("button_to_levels", "bonus_root")]
 visible = false

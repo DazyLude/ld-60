@@ -13,6 +13,7 @@ extends Control
 @export var label : Label;
 
 @export var level_select_root : Control;
+@export var bonus_levels_label : Label;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +25,8 @@ func _ready() -> void:
 	
 	level_select_root.hide();
 	Settings.load_state();
+	
+	bonus_levels_label.visible = Settings.game_finished;
 	volume_slider.value = Settings.volume;
 	
 	start_game.pressed.connect(Gamestate.load_game_sequence);
