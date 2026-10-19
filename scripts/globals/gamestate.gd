@@ -20,9 +20,7 @@ var main_game_sequence : Array[PackedScene] = [
 ]
 
 
-var current_game_sequence : Array[PackedScene] = [
-	preload("res://scenes/dialogues/part2.tscn"),
-];
+var current_game_sequence : Array[PackedScene] = [];
 var current_scene_idx := 0;
 
 
@@ -63,7 +61,7 @@ func get_unseen_omake(q_actor: VNPlayer.Actor, a_actor: VNPlayer.Actor) -> Dialo
 
 func load_game_sequence() -> void:
 	HUD.in_menu = false;
-	current_game_sequence = main_game_sequence;
+	current_game_sequence = main_game_sequence.duplicate();
 	current_scene_idx = -1;
 	next_scene()
 

@@ -1,0 +1,279 @@
+[gd_scene format=4 uid="uid://b0wlqwj8vnc1r"]
+
+[ext_resource type="Script" uid="uid://c1j06w08j3eks" path="res://scenes/levels/wizard_3.gd" id="1_h5j48"]
+[ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_anxj3"]
+[ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_1f1l6"]
+[ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_13i1n"]
+[ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="5_phe4d"]
+[ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="7_8mdda"]
+[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="8_rd4qu"]
+[ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="9_vfu32"]
+[ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="10_11cyv"]
+[ext_resource type="PackedScene" uid="uid://bn72cmb7gyjop" path="res://scenes/obstacles/wizard/pots.tscn" id="11_1f1l6"]
+[ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="11_4x58u"]
+[ext_resource type="PackedScene" uid="uid://dkx2ldeqmg846" path="res://scenes/obstacles/wizard/books.tscn" id="12_13i1n"]
+[ext_resource type="PackedScene" uid="uid://cjh81qtisp6la" path="res://scenes/stations/just_barrier.tscn" id="13_phe4d"]
+[ext_resource type="Texture2D" uid="uid://n6mnln0n85o0" path="res://assets/visuals/wizard/carpet1.png" id="14_phe4d"]
+[ext_resource type="Texture2D" uid="uid://bgk3d3ict48dj" path="res://assets/visuals/wizard/carpet2.png" id="15_y4qu0"]
+
+[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier", "camera")]
+y_sort_enabled = true
+script = ExtResource("1_h5j48")
+barrier = NodePath("Barrier")
+camera = NodePath("Wizard/Camera2D2")
+player_character = 1
+searching_engine = 5
+metadata/_custom_type_script = "uid://bioviasxjhvur"
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=2022304447]
+tile_map_data = PackedByteArray("AAABAAAAAAADAAEAAAACAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAAAAAAAAADAAAAAAAOAAAAAAACAAEAAAAOAAoAAAABAAEAAAAAAAoAAAACAAAAAAAOAAkAAAAAAAEAAAAOAAgAAAAAAAEAAAAOAAcAAAAAAAEAAAAOAAYAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAQAAAAAAAEAAAAOAAMAAAAAAAEAAAAOAAIAAAAAAAEAAAAOAAEAAAAAAAEAAAAAAAkAAAABAAAAAAAAAAgAAAABAAAAAAAAAAcAAAABAAAAAAAAAAYAAAABAAAAAAAAAAUAAAABAAAAAAAAAAQAAAABAAAAAAAAAAMAAAABAAAAAAAAAAIAAAABAAAAAAAAAAEAAAABAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAA=")
+tile_set = ExtResource("2_anxj3")
+navigation_enabled = false
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1031338355]
+z_index = -2
+tile_map_data = PackedByteArray("AAABAAEACgAEAAAAAAABAAIACgAFAAAAAAABAAMACgAFAAAAAAABAAQACgAIAAAAAAABAAUACgAAAAAAAAABAAYACgAEAAAAAAABAAcACgABAAAAAAABAAgACgAEAAAAAAABAAkACgAGAAAAAAACAAEACgAHAAAAAAACAAIACgAAAAAAAAACAAMACgADAAAAAAACAAQACgABAAAAAAACAAUACgAAAAAAAAACAAYACgACAAAAAAACAAcACgAJAAAAAAACAAgACgAGAAAAAAACAAkACgADAAAAAAADAAEACgACAAAAAAADAAIACgAJAAAAAAADAAMACgAFAAAAAAADAAQACgADAAAAAAADAAUACgAFAAAAAAADAAYACgAFAAAAAAADAAcACgAIAAAAAAADAAgACgAEAAAAAAADAAkACgAGAAAAAAAEAAEACgAAAAAAAAAEAAIACgAHAAAAAAAEAAMACgAFAAAAAAAEAAQACgAJAAAAAAAEAAUACgAFAAAAAAAEAAYACgAEAAAAAAAEAAcACgAJAAAAAAAEAAgACgABAAAAAAAEAAkACgAAAAAAAAAFAAEACgAGAAAAAAAFAAIACgABAAAAAAAFAAMACgAAAAAAAAAFAAQACgABAAAAAAAFAAUACgABAAAAAAAFAAYACgAHAAAAAAAFAAcACgAIAAAAAAAFAAgACgADAAAAAAAFAAkACgADAAAAAAAGAAEACgAEAAAAAAAGAAIACgAJAAAAAAAGAAMACgAEAAAAAAAGAAQACgAIAAAAAAAGAAUACgAGAAAAAAAGAAYACgADAAAAAAAGAAcACgABAAAAAAAGAAgACgAAAAAAAAAGAAkACgAFAAAAAAAHAAEACgAGAAAAAAAHAAIACgAJAAAAAAAHAAMACgABAAAAAAAHAAQACgAHAAAAAAAHAAUACgACAAAAAAAHAAYACgAHAAAAAAAHAAcACgAAAAAAAAAHAAgACgAFAAAAAAAHAAkACgACAAAAAAAIAAEACgAGAAAAAAAIAAIACgAGAAAAAAAIAAMACgAFAAAAAAAIAAQACgAIAAAAAAAIAAUACgABAAAAAAAIAAYACgAEAAAAAAAIAAcACgAGAAAAAAAIAAgACgAEAAAAAAAIAAkACgAJAAAAAAAJAAEACgAGAAAAAAAJAAIACgABAAAAAAAJAAMACgAAAAAAAAAJAAQACgABAAAAAAAJAAUACgADAAAAAAAJAAYACgAEAAAAAAAJAAcACgAEAAAAAAAJAAgACgAEAAAAAAAJAAkACgACAAAAAAAKAAEACgAIAAAAAAAKAAIACgAAAAAAAAAKAAMACgAGAAAAAAAKAAQACgACAAAAAAAKAAUACgADAAAAAAAKAAYACgAFAAAAAAAKAAcACgAJAAAAAAAKAAgACgABAAAAAAAKAAkACgAJAAAAAAALAAEACgAGAAAAAAALAAIACgAAAAAAAAALAAMACgAJAAAAAAALAAQACgAAAAAAAAALAAUACgADAAAAAAALAAYACgAGAAAAAAALAAcACgAHAAAAAAALAAgACgABAAAAAAALAAkACgAEAAAAAAAMAAEACgAEAAAAAAAMAAIACgAFAAAAAAAMAAMACgAIAAAAAAAMAAQACgAAAAAAAAAMAAUACgACAAAAAAAMAAYACgACAAAAAAAMAAcACgABAAAAAAAMAAgACgAAAAAAAAAMAAkACgACAAAAAAANAAEACgAAAAAAAAANAAIACgAHAAAAAAANAAMACgABAAAAAAANAAQACgABAAAAAAANAAUACgADAAAAAAANAAYACgAFAAAAAAANAAcACgAHAAAAAAANAAgACgAIAAAAAAANAAkACgAFAAAAAAA=")
+tile_set = ExtResource("3_1f1l6")
+
+[node name="Decor" type="TileMapLayer" parent="." unique_id=1749607590]
+tile_map_data = PackedByteArray("AAABAAAACgAAAAAAAAADAAAACgAAAAAAAAALAAAACAAAAAAAAAAMAAAABwAAAAAAAAAAAAgABwAAAAAAAGACAAoACAAAAAAAADAFAAoACgAAAAAAADAIAAoACgAAAAAAADAEAAoACgAAAAAAADAJAAoACgAAAAAAADAMAAoACgAAAAAAAAA=")
+tile_set = ExtResource("4_13i1n")
+navigation_enabled = false
+
+[node name="Wizard" parent="." unique_id=42250212 instance=ExtResource("5_phe4d")]
+position = Vector2(1331, 1014)
+
+[node name="Camera2D2" type="Camera2D" parent="Wizard" unique_id=187168059]
+limit_left = 16
+limit_top = 15
+limit_right = 1904
+limit_bottom = 1394
+
+[node name="Barrier" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders") instance=ExtResource("7_8mdda")]
+position = Vector2(1583, 1122)
+gem_holders = [NodePath("../WHolder")]
+
+[node name="WHolder" parent="." unique_id=598054325 instance=ExtResource("8_rd4qu")]
+position = Vector2(1580, 962)
+type = 6
+
+[node name="Ruby" parent="." unique_id=1737541831 instance=ExtResource("9_vfu32")]
+position = Vector2(1478, 936)
+
+[node name="Sapphire" parent="." unique_id=339303105 instance=ExtResource("9_vfu32")]
+position = Vector2(805, 214)
+type = 1
+
+[node name="Citrine" parent="." unique_id=184059248 instance=ExtResource("9_vfu32")]
+position = Vector2(359, 250)
+type = 2
+
+[node name="Ruby2" parent="." unique_id=417624680 instance=ExtResource("9_vfu32")]
+position = Vector2(1589, 261)
+
+[node name="Saph" parent="." unique_id=119154512 instance=ExtResource("9_vfu32")]
+position = Vector2(1512, 203)
+type = 1
+
+[node name="Onyx" parent="." unique_id=2116424574 instance=ExtResource("9_vfu32")]
+position = Vector2(871, 1030)
+type = 6
+item_name = "Onyx"
+
+[node name="RHolder" parent="." unique_id=1972157419 instance=ExtResource("8_rd4qu")]
+position = Vector2(283, 908)
+type = 1
+
+[node name="YHolder" parent="." unique_id=357326049 instance=ExtResource("8_rd4qu")]
+position = Vector2(720, 492)
+type = 3
+
+[node name="GHolder" parent="." unique_id=675869708 instance=ExtResource("8_rd4qu")]
+position = Vector2(1131, 260)
+type = 5
+
+[node name="GHolder2" parent="." unique_id=45684026 instance=ExtResource("8_rd4qu")]
+position = Vector2(1207, 481)
+type = 5
+
+[node name="PHolder" parent="." unique_id=1369016974 instance=ExtResource("8_rd4qu")]
+position = Vector2(770, 897)
+type = 4
+
+[node name="PHolder2" parent="." unique_id=1521442562 instance=ExtResource("8_rd4qu")]
+position = Vector2(684, 927)
+type = 4
+
+[node name="PHolder3" parent="." unique_id=1767560842 instance=ExtResource("8_rd4qu")]
+position = Vector2(980, 902)
+type = 4
+
+[node name="PHolder4" parent="." unique_id=1625431392 instance=ExtResource("8_rd4qu")]
+position = Vector2(1052, 923)
+type = 4
+
+[node name="JustBarrier" parent="." unique_id=112423325 node_paths=PackedStringArray("gem_holders") instance=ExtResource("13_phe4d")]
+position = Vector2(322, 1183)
+gem_holders = [NodePath("../RHolder")]
+
+[node name="JustBarrier2" parent="." unique_id=1129974291 node_paths=PackedStringArray("gem_holders") instance=ExtResource("13_phe4d")]
+position = Vector2(682, 396)
+gem_holders = [NodePath("../YHolder")]
+
+[node name="JustBarrier3" parent="." unique_id=528276061 node_paths=PackedStringArray("gem_holders") instance=ExtResource("13_phe4d")]
+position = Vector2(1314, 385)
+gem_holders = [NodePath("../GHolder"), NodePath("../GHolder2")]
+
+[node name="JustBarrier4" parent="." unique_id=1382497936 node_paths=PackedStringArray("gem_holders") instance=ExtResource("13_phe4d")]
+position = Vector2(875, 1103)
+gem_holders = [NodePath("../PHolder"), NodePath("../PHolder2"), NodePath("../PHolder3"), NodePath("../PHolder4")]
+
+[node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("10_11cyv")]
+position = Vector2(328, 1129)
+
+[node name="TransmutationRoom" type="Node2D" parent="." unique_id=625809168]
+y_sort_enabled = true
+
+[node name="Bookshelf" parent="TransmutationRoom" unique_id=415810828 instance=ExtResource("11_4x58u")]
+position = Vector2(192, 918)
+
+[node name="Bookshelf2" parent="TransmutationRoom" unique_id=737900588 instance=ExtResource("11_4x58u")]
+position = Vector2(488, 915)
+
+[node name="Bookshelf3" parent="TransmutationRoom" unique_id=1804918265 instance=ExtResource("11_4x58u")]
+position = Vector2(571, 964)
+
+[node name="Pots" parent="TransmutationRoom" unique_id=1116984424 instance=ExtResource("11_1f1l6")]
+position = Vector2(563, 985)
+random_flip = true
+
+[node name="Books" parent="TransmutationRoom" unique_id=1010775333 instance=ExtResource("12_13i1n")]
+position = Vector2(574, 1025)
+
+[node name="Pots2" parent="TransmutationRoom" unique_id=1790319284 instance=ExtResource("11_1f1l6")]
+position = Vector2(564, 1044)
+random_flip = true
+
+[node name="Books2" parent="TransmutationRoom" unique_id=392518066 instance=ExtResource("12_13i1n")]
+position = Vector2(575, 1084)
+flip = true
+
+[node name="Pots3" parent="TransmutationRoom" unique_id=522543762 instance=ExtResource("11_1f1l6")]
+position = Vector2(558, 1103)
+random_flip = true
+
+[node name="Books3" parent="TransmutationRoom" unique_id=1607253876 instance=ExtResource("12_13i1n")]
+position = Vector2(569, 1143)
+
+[node name="Pots4" parent="TransmutationRoom" unique_id=1924275623 instance=ExtResource("11_1f1l6")]
+position = Vector2(562, 1162)
+random_flip = true
+
+[node name="Books4" parent="TransmutationRoom" unique_id=1453905746 instance=ExtResource("12_13i1n")]
+position = Vector2(573, 1202)
+
+[node name="Pots5" parent="TransmutationRoom" unique_id=1312685598 instance=ExtResource("11_1f1l6")]
+position = Vector2(565, 1222)
+random_flip = true
+
+[node name="Books5" parent="TransmutationRoom" unique_id=425092696 instance=ExtResource("12_13i1n")]
+position = Vector2(576, 1262)
+flip = true
+
+[node name="Pots6" parent="TransmutationRoom" unique_id=800836014 instance=ExtResource("11_1f1l6")]
+position = Vector2(1146, 987)
+random_flip = true
+
+[node name="Books6" parent="TransmutationRoom" unique_id=361860834 instance=ExtResource("12_13i1n")]
+position = Vector2(1157, 1027)
+
+[node name="Pots7" parent="TransmutationRoom" unique_id=1598488834 instance=ExtResource("11_1f1l6")]
+position = Vector2(1147, 1046)
+random_flip = true
+
+[node name="Books7" parent="TransmutationRoom" unique_id=847834656 instance=ExtResource("12_13i1n")]
+position = Vector2(1158, 1086)
+flip = true
+
+[node name="Pots8" parent="TransmutationRoom" unique_id=1075813278 instance=ExtResource("11_1f1l6")]
+position = Vector2(1141, 1105)
+random_flip = true
+
+[node name="Books8" parent="TransmutationRoom" unique_id=814964147 instance=ExtResource("12_13i1n")]
+position = Vector2(1152, 1145)
+
+[node name="Pots9" parent="TransmutationRoom" unique_id=1161059481 instance=ExtResource("11_1f1l6")]
+position = Vector2(1145, 1164)
+random_flip = true
+
+[node name="Books9" parent="TransmutationRoom" unique_id=194854712 instance=ExtResource("12_13i1n")]
+position = Vector2(1156, 1204)
+
+[node name="Pots10" parent="TransmutationRoom" unique_id=1597910636 instance=ExtResource("11_1f1l6")]
+position = Vector2(1148, 1224)
+random_flip = true
+
+[node name="Books10" parent="TransmutationRoom" unique_id=378244868 instance=ExtResource("12_13i1n")]
+position = Vector2(1159, 1264)
+flip = true
+
+[node name="Bookshelf" parent="." unique_id=661083711 instance=ExtResource("11_4x58u")]
+position = Vector2(186, 485)
+
+[node name="Bookshelf5" parent="." unique_id=1054367898 instance=ExtResource("11_4x58u")]
+position = Vector2(690, 198)
+
+[node name="Bookshelf2" parent="." unique_id=1476117733 instance=ExtResource("11_4x58u")]
+position = Vector2(475, 508)
+
+[node name="Bookshelf4" parent="." unique_id=715087702 instance=ExtResource("11_4x58u")]
+position = Vector2(615, 506)
+
+[node name="Bookshelf6" parent="." unique_id=30932266 instance=ExtResource("11_4x58u")]
+position = Vector2(1238, 196)
+
+[node name="Bookshelf7" parent="." unique_id=733375280 instance=ExtResource("11_4x58u")]
+position = Vector2(1456, 504)
+
+[node name="Bookshelf8" parent="." unique_id=780789663 instance=ExtResource("11_4x58u")]
+position = Vector2(1584, 504)
+
+[node name="Bookshelf9" parent="." unique_id=1575088454 instance=ExtResource("11_4x58u")]
+position = Vector2(1328, 506)
+
+[node name="Bookshelf10" parent="." unique_id=27755418 instance=ExtResource("11_4x58u")]
+position = Vector2(1716, 504)
+
+[node name="Bookshelf3" parent="." unique_id=1824561861 instance=ExtResource("11_4x58u")]
+position = Vector2(325, 506)
+
+[node name="Bookshelf11" parent="." unique_id=749117982 instance=ExtResource("11_4x58u")]
+position = Vector2(1195, 936)
+
+[node name="Bookshelf12" parent="." unique_id=128747588 instance=ExtResource("11_4x58u")]
+position = Vector2(1585, 815)
+
+[node name="Bookshelf13" parent="." unique_id=1150399429 instance=ExtResource("11_4x58u")]
+position = Vector2(1725, 813)
+
+[node name="Carpet1" type="Sprite2D" parent="." unique_id=1038689029]
+z_index = -2
+position = Vector2(974, 682)
+texture = ExtResource("14_phe4d")
+
+[node name="Carpet2" type="Sprite2D" parent="." unique_id=1324416339]
+z_index = -2
+position = Vector2(968, 335)
+texture = ExtResource("15_y4qu0")
+
+[node name="Carpet3" type="Sprite2D" parent="." unique_id=262393034]
+z_index = -2
+position = Vector2(616, 679)
+rotation = 1.5886724
+texture = ExtResource("15_y4qu0")
+
+[node name="Carpet4" type="Sprite2D" parent="." unique_id=2003480266]
+z_index = -2
+position = Vector2(1315, 704.00006)
+rotation = 1.6422455
+texture = ExtResource("15_y4qu0")
