@@ -36,7 +36,6 @@ func randomize_position(time: float) -> void:
 		var rand_x := randf() - 0.5;
 		var rand_y := randf() - 0.5;
 		
-		print(Vector2(rand_x, rand_y))
 		position = Vector2(20.0, 50.0) * Vector2(rand_x, rand_y);
 
 

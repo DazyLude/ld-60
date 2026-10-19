@@ -1,10 +1,36 @@
-[gd_scene format=3 uid="uid://c2ves4rhuy3ex"]
+[gd_scene format=4 uid="uid://c2ves4rhuy3ex"]
 
 [ext_resource type="Script" uid="uid://etjtdaoq04nf" path="res://scenes/levels/vampire_2.gd" id="1_7q6g0"]
 [ext_resource type="TileSet" uid="uid://b5ciy0g8aqvyu" path="res://assets/visuals/tilesets/vampire.tres" id="2_7q6g0"]
 [ext_resource type="PackedScene" uid="uid://folvkjk2nngi" path="res://scenes/characters/vampire.tscn" id="3_46cft"]
 [ext_resource type="PackedScene" uid="uid://bjq2wpgjdh1ui" path="res://scenes/stations/sacrificial_altar.tscn" id="4_l41x4"]
 [ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="5_2ahur"]
+[ext_resource type="Script" uid="uid://cbrw43b7f6vmt" path="res://scripts/types/waypoint.gd" id="6_i8eh6"]
+[ext_resource type="PackedScene" uid="uid://ctufa0gxxpknl" path="res://scenes/items/knife.tscn" id="7_5m5ey"]
+[ext_resource type="PackedScene" uid="uid://grsihvc11ju8" path="res://scenes/obstacles/vampire/bookshelf_v.tscn" id="8_jxi5i"]
+[ext_resource type="PackedScene" uid="uid://batvvyytpkc4k" path="res://scenes/obstacles/vampire/skulls_big.tscn" id="9_a1kfn"]
+[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="9_fgqx4"]
+[ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="10_ewbns"]
+[ext_resource type="Texture2D" uid="uid://1ow15350mwp2" path="res://assets/visuals/vampyr/skull.png" id="10_q51nt"]
+[ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="11_0y7fv"]
+[ext_resource type="PackedScene" uid="uid://cjh81qtisp6la" path="res://scenes/stations/just_barrier.tscn" id="14_5m5ey"]
+
+[sub_resource type="Resource" id="Resource_qb374"]
+script = ExtResource("6_i8eh6")
+marker = Vector2(50, -30)
+time = 2.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_j6ma1"]
+script = ExtResource("6_i8eh6")
+marker = Vector2(50, 30)
+time = 2.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_twopi"]
+script = ExtResource("6_i8eh6")
+time = 2.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
 
 [node name="Vampire2" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("sacrificial", "camera")]
 y_sort_enabled = true
@@ -16,28 +42,135 @@ searching_engine = 6
 metadata/_custom_type_script = "uid://bioviasxjhvur"
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=2022304447]
+tile_map_data = PackedByteArray("AAAAAAAAEwACAAAAAAAKAAAAEwADAAAAAAABAAAAEwADAAEAAAACAAAAEwADAAEAAAADAAAAEwADAAEAAAAEAAAAEwADAAEAAAAFAAAAEwADAAEAAAAGAAAAEwADAAEAAAAHAAAAEwADAAEAAAAIAAAAEwADAAEAAAAJAAAAEwADAAEAAAAKAAEAEwACAAEAAAAKAAIAEwACAAEAAAAKAAMAEwACAAEAAAAKAAQAEwACAAEAAAAAAAQAEwABAAEAAAAAAAMAEwABAAEAAAAAAAIAEwABAAEAAAAAAAEAEwABAAEAAAAAAAUAEwABAAEAAAAAAAYAEwABAAEAAAAAAAcAEwABAAEAAAAAAAgAEwAAAAAAAAAKAAgAEwABAAAAAAABAAgAEwAAAAEAAAACAAgAEwAAAAEAAAADAAgAEwAAAAEAAAAEAAgAEwAAAAEAAAAFAAgAEwAAAAEAAAAGAAgAEwAAAAEAAAAHAAgAEwAAAAEAAAAIAAgAEwAAAAEAAAAJAAgAEwAAAAEAAAAKAAcAEwACAAEAAAAKAAYAEwACAAEAAAAKAAUAEwACAAEAAAA=")
 tile_set = ExtResource("2_7q6g0")
 navigation_enabled = false
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1031338355]
 z_index = -2
+tile_map_data = PackedByteArray("AAABAAEAFAAAAAAAAAABAAIAFAAEAAAAAAABAAMAFAACAAAAAAABAAQAFAABAAAAAAACAAEAFAADAAAAAAACAAIAFAACAAAAAAACAAMAFAADAAAAAAACAAQAFAAAAAAAAAADAAEAFAAEAAAAAAADAAIAFAABAAAAAAADAAMAFAAAAAAAAAADAAQAFAAAAAAAAAAEAAEAFAADAAAAAAAEAAIAFAAAAAAAAAAEAAMAFAAAAAAAAAAEAAQAFAACAAAAAAAFAAEAFAAEAAAAAAAFAAIAFAACAAAAAAAFAAMAFAADAAAAAAAFAAQAFAACAAAAAAAGAAEAFAABAAAAAAAGAAIAFAAEAAAAAAAGAAMAFAAAAAAAAAAGAAQAFAABAAAAAAAHAAEAFAAAAAAAAAAHAAIAFAACAAAAAAAHAAMAFAADAAAAAAAHAAQAFAAEAAAAAAAIAAEAFAADAAAAAAAIAAIAFAAEAAAAAAAIAAMAFAAEAAAAAAAIAAQAFAABAAAAAAAJAAEAFAADAAAAAAAJAAIAFAAEAAAAAAAJAAMAFAADAAAAAAAJAAQAFAADAAAAAAABAAUAFAAEAAAAAAABAAYAFAABAAAAAAABAAcAFAAAAAAAAAACAAUAFAABAAAAAAACAAYAFAAAAAAAAAACAAcAFAAAAAAAAAADAAUAFAADAAAAAAADAAYAFAAAAAAAAAADAAcAFAAEAAAAAAAEAAUAFAADAAAAAAAEAAYAFAADAAAAAAAEAAcAFAABAAAAAAAFAAUAFAAAAAAAAAAFAAYAFAACAAAAAAAFAAcAFAABAAAAAAAGAAUAFAAAAAAAAAAGAAYAFAADAAAAAAAGAAcAFAAAAAAAAAAHAAUAFAACAAAAAAAHAAYAFAAEAAAAAAAHAAcAFAABAAAAAAAIAAUAFAACAAAAAAAIAAYAFAAAAAAAAAAIAAcAFAAEAAAAAAAJAAUAFAABAAAAAAAJAAYAFAAEAAAAAAAJAAcAFAAEAAAAAAA=")
 tile_set = ExtResource("2_7q6g0")
 
 [node name="Decor" type="TileMapLayer" parent="." unique_id=1749607590]
+tile_map_data = PackedByteArray("AAAFAAAAGgADAAAAAAAAAAUAGgAAAAAAAGAAAAcAGgAAAAAAAGAKAAUAGgABAAAAAFAKAAcAGgACAAAAAFAIAAgAGgABAAAAADA=")
 tile_set = ExtResource("2_7q6g0")
 navigation_enabled = false
 
 [node name="Vampire" parent="." unique_id=42250212 instance=ExtResource("3_46cft")]
+position = Vector2(339, 764)
 
 [node name="Camera2D2" type="Camera2D" parent="Vampire" unique_id=187168059]
 limit_left = 18
-limit_top = 5
-limit_right = 1376
-limit_bottom = 989
+limit_top = 14
+limit_right = 1389
+limit_bottom = 1135
 
-[node name="SacrificialStone" parent="." unique_id=1301439559 instance=ExtResource("4_l41x4")]
+[node name="SacrificialStone" parent="." unique_id=1301439559 node_paths=PackedStringArray("talking_position") instance=ExtResource("4_l41x4")]
+position = Vector2(954, 384)
+talking_position = NodePath("../TalkingPosition")
 
 [node name="Cultist" parent="." unique_id=323613442 node_paths=PackedStringArray("respawn_point") instance=ExtResource("5_2ahur")]
+position = Vector2(642, 244)
+route = Array[ExtResource("6_i8eh6")]([SubResource("Resource_qb374"), SubResource("Resource_j6ma1"), SubResource("Resource_twopi")])
+reverse_loop = false
 respawn_point = NodePath("../Respawn")
 
-[node name="Respawn" type="Marker2D" parent="." unique_id=809228609]
+[node name="Respawn" type="Marker2D" parent="." unique_id=672683846]
+position = Vector2(641, 244)
+
+[node name="TalkingPosition" type="Marker2D" parent="." unique_id=112555937]
+position = Vector2(684, 456)
+
+[node name="Knife" parent="." unique_id=1737541831 instance=ExtResource("7_5m5ey")]
+position = Vector2(997, 448)
+
+[node name="Bookshelf" parent="." unique_id=415810828 instance=ExtResource("8_jxi5i")]
+position = Vector2(190, 283)
+
+[node name="Bookshelf2" parent="." unique_id=247977105 instance=ExtResource("8_jxi5i")]
+position = Vector2(316, 283)
+
+[node name="Bookshelf3" parent="." unique_id=1010544970 instance=ExtResource("8_jxi5i")]
+position = Vector2(444, 283)
+
+[node name="Bookshelf6" parent="." unique_id=50042056 instance=ExtResource("8_jxi5i")]
+position = Vector2(575, 973)
+rotation = -3.1415923
+
+[node name="Bookshelf5" parent="." unique_id=590070587 instance=ExtResource("8_jxi5i")]
+position = Vector2(829, 974)
+rotation = 3.1415927
+
+[node name="Bookshelf4" parent="." unique_id=960294624 instance=ExtResource("8_jxi5i")]
+position = Vector2(701, 974)
+rotation = -3.1415925
+
+[node name="Skulls" parent="." unique_id=1116984424 instance=ExtResource("9_a1kfn")]
+position = Vector2(178, 192)
+random_flip = true
+
+[node name="Skulls2" parent="." unique_id=1453879762 instance=ExtResource("9_a1kfn")]
+position = Vector2(223, 164)
+random_flip = true
+
+[node name="Skulls3" parent="." unique_id=2052329704 instance=ExtResource("9_a1kfn")]
+position = Vector2(278, 143)
+random_flip = true
+
+[node name="Skulls4" parent="." unique_id=6722637 instance=ExtResource("9_a1kfn")]
+position = Vector2(287, 193)
+random_flip = true
+
+[node name="Skull" type="Sprite2D" parent="." unique_id=249772324]
+position = Vector2(366, 136)
+texture = ExtResource("10_q51nt")
+
+[node name="Skull2" type="Sprite2D" parent="." unique_id=1026180327]
+position = Vector2(411, 159)
+texture = ExtResource("10_q51nt")
+flip_h = true
+
+[node name="Diamond" parent="." unique_id=1889815271 instance=ExtResource("10_ewbns")]
+position = Vector2(895, 168)
+type = 5
+
+[node name="Citrine" parent="." unique_id=1061348284 instance=ExtResource("10_ewbns")]
+position = Vector2(1090, 490)
+type = 2
+
+[node name="Onyx" parent="." unique_id=1900888691 instance=ExtResource("10_ewbns")]
+position = Vector2(319, 434)
+type = 6
+
+[node name="Emerald" parent="." unique_id=1579871259 instance=ExtResource("10_ewbns")]
+position = Vector2(880, 599)
+type = 4
+
+[node name="DiamondHolder" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_fgqx4")]
+position = Vector2(953, 172)
+type = 6
+starting_item = NodePath("../Diamond")
+
+[node name="CitrineHolder" parent="." unique_id=359851750 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_fgqx4")]
+position = Vector2(1146, 498)
+type = 3
+starting_item = NodePath("../Citrine")
+
+[node name="CitrineHolder2" parent="." unique_id=1984294430 instance=ExtResource("9_fgqx4")]
+position = Vector2(534, 447)
+type = 3
+
+[node name="RubyHolder" parent="." unique_id=1596191326 instance=ExtResource("9_fgqx4")]
+position = Vector2(223, 578)
+type = 1
+
+[node name="OnyxHolder" parent="." unique_id=313509920 instance=ExtResource("9_fgqx4")]
+position = Vector2(1144, 276)
+type = 7
+
+[node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("11_0y7fv")]
+position = Vector2(703, 877)
+
+[node name="JustBarrier" parent="." unique_id=1407666815 node_paths=PackedStringArray("gem_holders") instance=ExtResource("14_5m5ey")]
+position = Vector2(315, 499)
+gem_holders = [NodePath("../CitrineHolder2"), NodePath("../RubyHolder")]

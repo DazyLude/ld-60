@@ -83,6 +83,7 @@ func turn_right() -> void:
 
 
 func start_movement() -> void:
+	moving = true;
 	if movement_tween:
 		movement_tween.kill();
 	
@@ -103,6 +104,7 @@ func start_movement() -> void:
 
 
 func stop_movement() -> void:
+	moving = false;
 	if movement_tween:
 		movement_tween.kill();
 
@@ -144,9 +146,9 @@ func start_plushing() -> void:
 	
 	if not tied:
 		plush_tween = create_tween();
-		plush_tween.tween_property(sprite, ^"scale", Vector2(0.9, 1.1), 0.1)
-		plush_tween.tween_property(sprite, ^"scale", Vector2(1.1, 0.9), 0.1)
-		plush_tween.tween_property(sprite, ^"scale", Vector2(1.0, 1.0), 0.1)
+		plush_tween.tween_property(sprite, ^"scale", Vector2(0.9, 1.1), 0.3)
+		plush_tween.tween_property(sprite, ^"scale", Vector2(1.1, 0.9), 0.3)
+		plush_tween.tween_property(sprite, ^"scale", Vector2(1.0, 1.0), 0.3)
 		plush_tween.tween_callback(func() -> void: plush_tween.kill(); plush_tween = null)
 
 

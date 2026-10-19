@@ -60,6 +60,7 @@ texture = ExtResource("6_oehwr")
 
 [node name="Cloud2" type="Sprite2D" parent="." unique_id=522594877]
 visible = false
+modulate = Color(1, 0.43137255, 0.4509804, 1)
 position = Vector2(0, -23)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_oehwr")

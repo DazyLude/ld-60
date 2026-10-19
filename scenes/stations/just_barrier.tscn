@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cjh81qtisp6la"]
+
+[ext_resource type="Script" uid="uid://cg07qad33cdmb" path="res://scenes/stations/just_barrier.gd" id="1_tl3bn"]
+[ext_resource type="Texture2D" uid="uid://o8pvqi08dmv0" path="res://assets/visuals/stations/circle.png" id="2_kjbkn"]
+[ext_resource type="Texture2D" uid="uid://im0on1mk6k5d" path="res://assets/visuals/stations/dome.png" id="5_5d8dg"]
+
+[node name="JustBarrier" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("barrier_hitbox", "barrier_display")]
+script = ExtResource("1_tl3bn")
+barrier_hitbox = NodePath("PHB")
+barrier_display = NodePath("Dome")
+metadata/_custom_type_script = "uid://db5f5adk7kmgr"
+
+[node name="PHB" type="StaticBody2D" parent="." unique_id=47777956]
+position = Vector2(3, -68)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHB" unique_id=1326440944]
+position = Vector2(-1, 58)
+polygon = PackedVector2Array(-161, 6, -179, -40, -118, -115, -35, -174, 40, -174, 120, -120, 185, -38, 163, 7, 116, 39, 66, 55, 1, 61, -69, 55, -128, 33)
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=479752479]
+z_index = -1
+position = Vector2(3, -130)
+texture = ExtResource("2_kjbkn")
+
+[node name="Dome" type="Sprite2D" parent="." unique_id=1740550862]
+position = Vector2(3, -130)
+texture = ExtResource("5_5d8dg")
