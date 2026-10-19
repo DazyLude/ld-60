@@ -21,13 +21,16 @@ func _ready() -> void:
 	HUD.hide();
 	HUD.in_menu = true;
 	
-	BGMPlayer.change_track(BGMPlayer.MusicID.Jazz)
-	
 	level_select_root.hide();
 	Settings.load_state();
 	
 	bonus_levels_label.visible = Settings.game_finished;
 	volume_slider.value = Settings.volume;
+	
+	if Settings.game_finished:
+		BGMPlayer.change_track(BGMPlayer.MusicID.UnwelcomeJazz)
+	else:
+		BGMPlayer.change_track(BGMPlayer.MusicID.Jazz)
 	
 	start_game.pressed.connect(Gamestate.load_game_sequence);
 	continue_game.pressed.connect(Gamestate.resume_game_sequence);

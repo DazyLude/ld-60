@@ -109,7 +109,7 @@ actor = 7
 emote = 0
 reaction = 5
 character_line = "ending_zoomer_1"
-track = 3
+track = 6
 sfx = 21
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
