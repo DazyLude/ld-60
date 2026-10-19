@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="5_mb5d8"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="7_lakh4"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_5utlp"]
-[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="9_re1m4"]
+[ext_resource type="Theme" uid="uid://0rpcij8qnyeu" path="res://assets/themes/tip.tres" id="9_v16jc"]
 [ext_resource type="Texture2D" uid="uid://cm3mbjy0rjx8n" path="res://assets/visuals/drop_tip.png" id="10_m10yr"]
 [ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="11_v16jc"]
 [ext_resource type="PackedScene" uid="uid://bn72cmb7gyjop" path="res://scenes/obstacles/wizard/pots.tscn" id="12_630k7"]
@@ -82,8 +82,7 @@ offset_left = 524.0
 offset_top = 543.0
 offset_right = 575.0
 offset_bottom = 588.0
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("9_re1m4")
+theme = ExtResource("9_v16jc")
 text = "drop"
 
 [node name="DropTip" type="Sprite2D" parent="." unique_id=1754927215]

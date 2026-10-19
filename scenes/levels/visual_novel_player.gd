@@ -217,10 +217,10 @@ func unblackout() -> void:
 
 
 func play_dialogue_node(node: DialogueNode) -> void:
-	clear_text();
 	var line := node.character_line;
 	
 	if line != "":
+		clear_text();
 		if node.reaction == Reaction.None:
 			node.reaction = Reaction.Nudge;
 		

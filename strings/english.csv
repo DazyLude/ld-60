@@ -21,7 +21,7 @@ quest_wizard_3,Grab the Forbidden Grimoire,Забери Запретный Гр�
 quest_vampire,Summon the Ancient One,Призови Древнего
 quest_neanderthal,bonk,боньк
 ,,
-intro_narrator_1,Once upon a tim,"Однажды, давным дав"
+intro_narrator_1,Once upon a time… huh?,"Однажды, давным давно… А?"
 intro_narrator_2,"Not interested? Rather hear something funny, I see.","Неинтересно? Хотите что-нибудь смешное, понял."
 intro_narrator_3,"Jokes? Yeah, I know jokes.","А-анекдот? Анекдот могу рассказать, да."
 intro_narrator_4,"A millennial, a wizard, a vampire and a ghost walked into a bar.","Заходят как-то в бар миллениал, волшебник, вампир и привидение."
@@ -29,7 +29,7 @@ intro_millenial_1,... said so!,… так сказала!
 intro_wizard_laugh,Hahaha!,Хахаха!
 intro_vampire_laugh,Hahaha!,Хахаха!
 intro_ghost_laugh,HooHooHoo!,Уухуухуу!
-intro_millenial_2,"By the way, I was looking something up yesterday. And when I googled it","Кстати, я вот вчера загуглить ре"
+intro_millenial_2,"By the way, I was looking something up yesterday. And when I googled…","Кстати, я вот вчера загуглить…"
 intro_wizard_1,Googled?!,Загуглить?!
 intro_wizard_2,Back in my days...,Вот в мое время…
 ,,
@@ -52,24 +52,24 @@ p2_vampire_5,"Ghost, you’re awfully quiet.","Привидение, а ты ч�
 p2_vampire_6,What was it that you did in the past?,Что ты делал во времена своей молодости?
 p2_ghost_1,ooo…,ууу…
 ,,
-omake_1_q,how long cook rice for,сколько варить рис 
-omake_1_a,15 minutes,минут 15 
-omake_2_q,how long boil eggs for,сколько варить яйца 
-omake_2_a,5 minutes,минут 5 
-omake_3_q,I have sore throat,болит горло 
-omake_3_a,get well,поправляйся 
-omake_4_q,how many seconds in 8 hours,сколько секунд в 8 часах 
+omake_1_q,how long to cook rice ,сколько варить рис 
+omake_1_a,15 minutes.,Минут 15.
+omake_2_q,how long to boil eggs ,сколько варить яйца 
+omake_2_a,5 minutes.,Минут 5.
+omake_3_q,I have a sore throat,болит горло 
+omake_3_a,Get well.,Поправляйся.
+omake_4_q,How many seconds in 8 hours?,Cколько секунд в 8 часах?
 omake_4_a,...28800,...28800 
-omake_5_q,how many hours in 8 seconds,сколько часов в 8 секундах 
-omake_5_a,I am not a calculator,я не калькулятор 
-omake_6_q,what holiday is it today,какой сегодня праздник 
-omake_6_a,International Chefs Day ,международный день повара
-omake_7_q,what zodiac sign is october,какой знак зодиака в октябре 
-omake_7_a,Libra and Scorpio,весы и скорпион 
+omake_5_q,How many hours in 8 seconds?,Cколько часов в 8 секундах?
+omake_5_a,I am not a calculator.,Я не калькулятор.
+omake_6_q,What holiday is it today?,Какой сегодня праздник?
+omake_6_a,International Chefs Day.,Международный день повара.
+omake_7_q,What zodiac sign is october,какой знак зодиака в октябре 
+omake_7_a,Libra and Scorpio.,Весы и Скорпион.
 omake_8_q,what does the mog mean,что такое могну 
-omake_8_a,"to outclass, outshine, or dominate someone else ","могать означает заметно превосходить кого-то внешне: лицом, фигурой, ростом. "
+omake_8_a,"To mog means to outclass, outshine, or dominate someone else. ","Могать означает заметно превосходить кого-то внешне: лицом, фигурой, ростом. "
 omake_9_q,what can you name a cat,как можно назвать кота 
-omake_9_a,"Meowy, Snickers, Jasper, Donut, Raisin, Yolkie","Барсик, Рыжик, Паштет, Пончик, Изюм, Желточек. "
+omake_9_a,"Meowy, Snickers, Jasper, Donut, Raisin, Yolkie.","Барсик, Рыжик, Паштет, Пончик, Изюм, Желточек. "
 ,,
 d_intro,Intro,Вступление
 d_part_1,Grimoires,Гримуары

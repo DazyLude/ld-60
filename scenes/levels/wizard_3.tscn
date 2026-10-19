@@ -6,10 +6,10 @@
 [ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_g810s"]
 [ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="5_a2ifj"]
 [ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="5_vqc7k"]
+[ext_resource type="Theme" uid="uid://0rpcij8qnyeu" path="res://assets/themes/tip.tres" id="6_2smof"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="7_2smof"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_421ra"]
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="9_5p4tt"]
-[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="9_fiwvr"]
 [ext_resource type="Texture2D" uid="uid://nx6j6jubqxgl" path="res://assets/visuals/export_tip.png" id="10_q8y5x"]
 [ext_resource type="PackedScene" uid="uid://ssf5axchxfts" path="res://scenes/obstacles/wizard/carpet_large.tscn" id="12_2smof"]
 [ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="13_421ra"]
@@ -55,8 +55,7 @@ offset_left = 246.0
 offset_top = 349.0
 offset_right = 414.0
 offset_bottom = 394.0
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("9_fiwvr")
+theme = ExtResource("6_2smof")
 text = "transmutation"
 
 [node name="ExportTip" type="Sprite2D" parent="." unique_id=1405952371]

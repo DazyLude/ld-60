@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5xhpnk6wsjlb" path="res://scenes/obstacles/wizard/carpet.tscn" id="11_gb1ja"]
 [ext_resource type="PackedScene" uid="uid://dkx2ldeqmg846" path="res://scenes/obstacles/wizard/books.tscn" id="12_rnpi2"]
 [ext_resource type="Texture2D" uid="uid://bpmogqtff0xk0" path="res://assets/visuals/movement_tip.png" id="13_t4uli"]
-[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="14_bfwwa"]
+[ext_resource type="Theme" uid="uid://0rpcij8qnyeu" path="res://assets/themes/tip.tres" id="14_t4uli"]
 [ext_resource type="Texture2D" uid="uid://hnox1s2mhxu" path="res://assets/visuals/action_tip.png" id="15_hspqr"]
 [ext_resource type="Texture2D" uid="uid://nx6j6jubqxgl" path="res://assets/visuals/export_tip.png" id="16_jtiin"]
 
@@ -107,8 +107,7 @@ offset_left = 388.0
 offset_top = 556.0
 offset_right = 499.0
 offset_bottom = 601.0
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("14_bfwwa")
+theme = ExtResource("14_t4uli")
 text = "movement"
 
 [node name="Label2" type="Label" parent="." unique_id=1034551694]
@@ -117,8 +116,7 @@ offset_left = 791.0
 offset_top = 255.0
 offset_right = 902.0
 offset_bottom = 300.0
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("14_bfwwa")
+theme = ExtResource("14_t4uli")
 text = "action"
 
 [node name="ActionTip" type="Sprite2D" parent="." unique_id=2010004763]

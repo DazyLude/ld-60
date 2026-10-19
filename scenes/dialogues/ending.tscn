@@ -160,7 +160,6 @@ metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="MillenialReaction4" type="Node" parent="." unique_id=1669988867]
 script = ExtResource("1_irw1y")
-autoplay = true
 actor = 0
 emote = 1
 reaction = 2

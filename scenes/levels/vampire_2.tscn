@@ -65,8 +65,9 @@ limit_top = 14
 limit_right = 1389
 limit_bottom = 1135
 
-[node name="SacrificialStone" parent="." unique_id=1301439559 node_paths=PackedStringArray("talking_position") instance=ExtResource("4_l41x4")]
+[node name="SacrificialStone" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders", "talking_position") instance=ExtResource("4_l41x4")]
 position = Vector2(954, 384)
+gem_holders = [NodePath("../CitrineHolder"), NodePath("../OnyxHolder"), NodePath("../DiamondHolder")]
 talking_position = NodePath("../TalkingPosition")
 
 [node name="Cultist" parent="." unique_id=323613442 node_paths=PackedStringArray("respawn_point") instance=ExtResource("5_2ahur")]

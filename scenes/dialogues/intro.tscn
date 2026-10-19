@@ -10,8 +10,6 @@ metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="NarratorIntro1" type="Node" parent="." unique_id=1055277449]
 script = ExtResource("1_01dp3")
-autoplay = true
-autoplay_time = -1.0
 actor = 4
 character_line = "intro_narrator_1"
 track = 3
@@ -78,6 +76,14 @@ autoplay = true
 actor = 2
 emote = 2
 reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
+[node name="WizardAngry" type="Node" parent="." unique_id=726839048]
+script = ExtResource("1_01dp3")
+actor = 1
+emote = 2
+reaction = 2
+text_effect = 1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Wizard1" type="Node" parent="." unique_id=272602035]

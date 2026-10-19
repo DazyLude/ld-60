@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="5_4qcrc"]
 [ext_resource type="PackedScene" uid="uid://ctufa0gxxpknl" path="res://scenes/items/knife.tscn" id="6_bssjt"]
 [ext_resource type="Script" uid="uid://cbrw43b7f6vmt" path="res://scripts/types/waypoint.gd" id="6_egq3m"]
-[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="6_sauav"]
 [ext_resource type="Texture2D" uid="uid://nx6j6jubqxgl" path="res://assets/visuals/export_tip.png" id="7_gwumo"]
 [ext_resource type="PackedScene" uid="uid://grsihvc11ju8" path="res://scenes/obstacles/vampire/bookshelf_v.tscn" id="7_vqd4j"]
 [ext_resource type="PackedScene" uid="uid://batvvyytpkc4k" path="res://scenes/obstacles/vampire/skulls_big.tscn" id="8_egq3m"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="9_2ofwf"]
 [ext_resource type="Texture2D" uid="uid://1ow15350mwp2" path="res://assets/visuals/vampyr/skull.png" id="9_twopi"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="10_dwqwm"]
+[ext_resource type="Theme" uid="uid://0rpcij8qnyeu" path="res://assets/themes/tip.tres" id="12_j6ma1"]
 [ext_resource type="Texture2D" uid="uid://hnox1s2mhxu" path="res://assets/visuals/action_tip.png" id="13_j6ma1"]
 
 [sub_resource type="Resource" id="Resource_qb374"]
@@ -107,8 +107,7 @@ offset_left = -106.0
 offset_top = -27.0
 offset_right = 5.0
 offset_bottom = 18.0
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("6_sauav")
+theme = ExtResource("12_j6ma1")
 text = "offering"
 horizontal_alignment = 1
 
@@ -125,8 +124,7 @@ offset_top = 16.0122
 offset_right = -58.733932
 offset_bottom = 61.0122
 rotation = -0.5235988
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("6_sauav")
+theme = ExtResource("12_j6ma1")
 text = "tool"
 horizontal_alignment = 2
 
@@ -143,8 +141,7 @@ offset_top = -85.07324
 offset_right = 40.661293
 offset_bottom = -40.073242
 rotation = 1.2217305
-theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
-theme_override_fonts/font = ExtResource("6_sauav")
+theme = ExtResource("12_j6ma1")
 text = "sacrifice"
 horizontal_alignment = 1
 

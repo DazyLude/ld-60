@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://0rpcij8qnyeu"]
+
+[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="1_nfv6t"]
+[ext_resource type="FontFile" uid="uid://dawowq6vj1vga" path="res://assets/fonts/cyrillic/Pangolin-Regular.ttf" id="2_rsd00"]
+
+[sub_resource type="FontVariation" id="FontVariation_e6w6f"]
+fallbacks = Array[Font]([ExtResource("2_rsd00")])
+base_font = ExtResource("1_nfv6t")
+
+[resource]
+Label/colors/font_color = Color(0.21960784, 0.21960784, 0.21960784, 1)
+Label/fonts/font = SubResource("FontVariation_e6w6f")

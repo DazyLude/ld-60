@@ -57,7 +57,7 @@ func switch_language() -> void:
 	match current_locale:
 		"en_US":
 			Settings.locale = "ru";
-		"ru":
+		_, "ru":
 			Settings.locale = "en_US";
 	
 	update_title_label();

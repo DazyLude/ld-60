@@ -39,6 +39,13 @@ emote = 0
 character_line = "p1_wizard_3"
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
+[node name="VampireAngry" type="Node" parent="." unique_id=2028247989]
+script = ExtResource("1_mtkbs")
+actor = 2
+emote = 2
+reaction = 2
+metadata/_custom_type_script = "uid://2uh2hvfckvfl"
+
 [node name="Vampire1" type="Node" parent="." unique_id=1859954727]
 script = ExtResource("1_mtkbs")
 actor = 2

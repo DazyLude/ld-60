@@ -134,6 +134,7 @@ size_flags_horizontal = 4
 text = "level_select"
 
 [node name="BGLevelSelect" type="TextureRect" parent="." unique_id=952210019 node_paths=PackedStringArray("button_to_levels", "bonus_root")]
+visible = false
 self_modulate = Color(0.641934, 0.641934, 0.641934, 1)
 layout_mode = 0
 offset_right = 40.0
