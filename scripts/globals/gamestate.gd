@@ -88,12 +88,12 @@ func next_scene() -> void:
 	if instance is DialogueNode:
 		var vnplayer_instance : VNPlayer = vnplayer.instantiate();
 		vnplayer_instance.play_dialogue(instance as DialogueNode);
-		vnplayer_instance.finished.connect(_on_dialogue_end.bind(vnplayer_instance));
+		vnplayer_instance.finished.connect(_on_dialogue_end.bind(vnplayer_instance), CONNECT_ONE_SHOT);
 		get_tree().change_scene_to_node(vnplayer_instance);
 		return;
 	
 	if instance is Level:
-		(instance as Level).finished.connect(_on_level_end.bind(instance));
+		(instance as Level).finished.connect(_on_level_end.bind(instance), CONNECT_ONE_SHOT);
 		get_tree().change_scene_to_node(instance);
 		return;
 

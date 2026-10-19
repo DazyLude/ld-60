@@ -70,4 +70,4 @@ func play_omake() -> void:
 	
 	play_dialogue(omake);
 	vnplayer.play_next();
-	vnplayer.finished.connect(finished.emit);
+	vnplayer.finished.connect(finished.emit, CONNECT_ONE_SHOT);
