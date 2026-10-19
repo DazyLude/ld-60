@@ -60,6 +60,7 @@ func spawn_takodachi() -> void:
 	
 	const sprite_height := 405.0;
 	
+	BGMPlayer.play_one_off(BGMPlayer.EffectID.Ritual);
 	var takodachi_texture := takodachi_sprite.texture as AtlasTexture;
 	var starting_y := takodachi_sprite.position.y;
 	

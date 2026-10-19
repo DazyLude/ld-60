@@ -23,6 +23,8 @@ enum EffectID {
 	GemTake,
 	
 	BookTake,
+	
+	Ritual,
 }
 
 
@@ -43,6 +45,8 @@ const uid_per_sfx_id : Dictionary[EffectID, String] = {
 	EffectID.GemInsert: "res://assets/sfx/gem_insert.ogg",
 	EffectID.GemTake: "res://assets/sfx/gem_take.ogg",
 	EffectID.BookTake: "res://assets/sfx/book.ogg",
+	
+	EffectID.Ritual: "res://assets/sfx/ritual.ogg",
 }
 
 
