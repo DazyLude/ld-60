@@ -35,6 +35,7 @@ script = ExtResource("1_xgvad")
 actor = 2
 emote = 1
 character_line = "p2_vampire_1"
+sfx = 11
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire2" type="Node" parent="." unique_id=1127468369]
@@ -42,6 +43,7 @@ script = ExtResource("1_xgvad")
 actor = 2
 emote = 1
 character_line = "p2_vampire_2"
+sfx = 13
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire3" type="Node" parent="." unique_id=774699823]
@@ -49,6 +51,7 @@ script = ExtResource("1_xgvad")
 actor = 2
 emote = 1
 character_line = "p2_vampire_3"
+sfx = 12
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="GhostReaction2" type="Node" parent="." unique_id=2094861434]
@@ -72,6 +75,7 @@ actor = 2
 emote = 1
 reaction = 4
 character_line = "p2_vampire_5"
+sfx = 13
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire6" type="Node" parent="." unique_id=1381000081]
@@ -79,6 +83,7 @@ script = ExtResource("1_xgvad")
 actor = 2
 emote = 1
 character_line = "p2_vampire_6"
+sfx = 14
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="VampireReaction" type="Node" parent="." unique_id=905411589]
@@ -94,4 +99,5 @@ actor = 3
 emote = 4
 character_line = "p2_ghost_1"
 text_effect = 2
+sfx = 18
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"

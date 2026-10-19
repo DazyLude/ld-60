@@ -20,6 +20,7 @@ script = ExtResource("1_mtkbs")
 actor = 1
 emote = 3
 character_line = "p1_wizard_1"
+sfx = 10
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Wizard2" type="Node" parent="." unique_id=364917868]
@@ -28,6 +29,7 @@ actor = 1
 emote = 1
 character_line = "p1_wizard_2"
 text_effect = 1
+sfx = 9
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Wizard3" type="Node" parent="." unique_id=480090719]
@@ -37,6 +39,7 @@ autoplay_time = -1.0
 actor = 1
 emote = 0
 character_line = "p1_wizard_3"
+sfx = 10
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="VampireAngry" type="Node" parent="." unique_id=2028247989]
@@ -53,6 +56,7 @@ emote = 2
 reaction = 2
 character_line = "p1_vampire_1"
 text_effect = 1
+sfx = 11
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Vampire2" type="Node" parent="." unique_id=990594424]
@@ -60,4 +64,5 @@ script = ExtResource("1_mtkbs")
 actor = 2
 emote = 1
 character_line = "p1_vampire_2"
+sfx = 12
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"

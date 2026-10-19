@@ -83,7 +83,6 @@ const uid_per_sfx_id : Dictionary[EffectID, String] = {
 	EffectID.Voice15: "res://assets/voice/voice15.wav",
 	EffectID.Voice16: "res://assets/voice/voice16.wav",
 	EffectID.VoiceSlurp: "res://assets/voice/slurp.wav",
-	
 }
 
 

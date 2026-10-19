@@ -38,6 +38,7 @@ script = ExtResource("1_01dp3")
 actor = 0
 character_line = "intro_millenial_1"
 effect = 2
+sfx = 7
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="WizardLaugh" type="Node" parent="." unique_id=300657561]
@@ -45,6 +46,7 @@ script = ExtResource("1_01dp3")
 actor = 1
 reaction = 3
 character_line = "intro_wizard_laugh"
+sfx = 15
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="VampireLaugh" type="Node" parent="." unique_id=1472378772]
@@ -52,6 +54,7 @@ script = ExtResource("1_01dp3")
 actor = 2
 reaction = 3
 character_line = "intro_vampire_laugh"
+sfx = 16
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="GhostLaugh" type="Node" parent="." unique_id=1533712964]
@@ -59,6 +62,7 @@ script = ExtResource("1_01dp3")
 actor = 3
 reaction = 3
 character_line = "intro_ghost_laugh"
+sfx = 17
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Millenial2" type="Node" parent="." unique_id=434061585]
@@ -68,6 +72,7 @@ autoplay_time = -1.0
 actor = 0
 character_line = "intro_millenial_2"
 effect = 2
+sfx = 8
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="VampireAngry" type="Node" parent="." unique_id=649030849]
@@ -100,4 +105,5 @@ script = ExtResource("1_01dp3")
 actor = 1
 emote = 1
 character_line = "intro_wizard_2"
+sfx = 9
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
