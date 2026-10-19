@@ -106,6 +106,7 @@ actor = 7
 emote = 0
 reaction = 5
 character_line = "ending_zoomer_1"
+track = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="WizardReaction3" type="Node" parent="." unique_id=421555398]
@@ -171,7 +172,6 @@ autoplay = true
 autoplay_time = 0.5
 actor = 4
 effect = 1
-track = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="FIN" type="Node" parent="." unique_id=1552464790]
