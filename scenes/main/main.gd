@@ -20,7 +20,7 @@ func _ready() -> void:
 	HUD.hide();
 	HUD.in_menu = true;
 	
-	BGMPlayer.change_track(BGMPlayer.MusicID.None)
+	BGMPlayer.change_track(BGMPlayer.MusicID.Jazz)
 	
 	level_select_root.hide();
 	Settings.load_state();
@@ -32,7 +32,9 @@ func _ready() -> void:
 	volume_slider.value_changed.connect(_on_volume_slider_change)
 	next_lang.pressed.connect(switch_language);
 	prev_lang.pressed.connect(switch_language);
+	
 	level_select.pressed.connect(_on_level_select_pressed);
+	from_level_select.pressed.connect(_on_back_from_level_select_pressed);
 	
 	update_title_label();
 	
@@ -69,6 +71,7 @@ func _on_volume_slider_change(v: float) -> void:
 
 func _on_level_select_pressed() -> void:
 	level_select_root.show();
+	level_select_root.update();
 
 
 func _on_back_from_level_select_pressed() -> void:

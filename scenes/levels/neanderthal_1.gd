@@ -23,6 +23,7 @@ const segment_length : float = 1.5;
 
 func _ready() -> void:
 	super();
+	BGMPlayer.change_track(BGMPlayer.MusicID.Nature);
 	HUD.quest_label.text = "quest_neanderthal";
 	stone.item_received.connect(start_cutscene);
 	doll1.assume_direct_control = true;

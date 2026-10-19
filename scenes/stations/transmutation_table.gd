@@ -46,8 +46,8 @@ var reactions_table : Dictionary[GemPair, GemPair] = {
 		GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.RUBY]), # 1 + 5
 	GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.EMERALD]): # 2 + 5
 		GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.AMETHYST]), # 4 + 5
-	GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.EMERALD]): # 2 + 5
-		GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.AMETHYST]), # 4 + 5
+	GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.AMETHYST]): # 2 + 5
+		GemPair.from_arr([ColoredGem.Type.CITRINE, ColoredGem.Type.EMERALD]), # 4 + 5
 	# 11
 	
 	# diamond-base reactions

@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://8ssqaj81p4e5" path="res://scenes/levels/vampire_3.tscn" id="15_37hlw"]
 [ext_resource type="PackedScene" uid="uid://c2ves4rhuy3ex" path="res://scenes/levels/vampire_2.tscn" id="16_6llfj"]
 [ext_resource type="PackedScene" uid="uid://ychjnleqavy3" path="res://scenes/levels/neanderthal_1.tscn" id="17_ou6is"]
+[ext_resource type="PackedScene" uid="uid://dchbcre2ua6ae" path="res://scenes/levels/bonus/alchemy_playground.tscn" id="18_necax"]
 
 [node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "from_level_select", "volume_slider", "next_lang", "prev_lang", "label", "level_select_root")]
 layout_mode = 3
@@ -148,7 +149,8 @@ NodePath("VBoxContainer/HBoxContainer/Dialogues/w3"): ExtResource("13_p8abn"),
 NodePath("VBoxContainer/HBoxContainer/Dialogues/v1"): ExtResource("14_s17dp"),
 NodePath("VBoxContainer/HBoxContainer/Levels/v2"): ExtResource("15_37hlw"),
 NodePath("VBoxContainer/HBoxContainer/Levels/v3"): ExtResource("16_6llfj"),
-NodePath("VBoxContainer/HBoxContainer/Levels/n1"): ExtResource("17_ou6is")
+NodePath("VBoxContainer/HBoxContainer/Levels/n1"): ExtResource("17_ou6is"),
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/alchemy"): ExtResource("18_necax")
 }
 bonus_root = NodePath("VBoxContainer/HBoxContainer/BonusLevels")
 
@@ -227,6 +229,18 @@ text = "d_outro"
 
 [node name="BonusLevels" type="VBoxContainer" parent="BGLevelSelect/VBoxContainer/HBoxContainer" unique_id=134429998]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="BGLevelSelect/VBoxContainer/HBoxContainer/BonusLevels" unique_id=2127217894]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
+theme_override_fonts/font = ExtResource("7_yyfjg")
+theme_override_font_sizes/font_size = 48
+text = "bonus"
+horizontal_alignment = 1
+
+[node name="alchemy" type="Button" parent="BGLevelSelect/VBoxContainer/HBoxContainer/BonusLevels" unique_id=1110868722]
+layout_mode = 2
+text = "l_bonus_alchemy"
 
 [node name="Back" type="Button" parent="BGLevelSelect/VBoxContainer" unique_id=436187553]
 layout_mode = 2

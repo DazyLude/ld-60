@@ -32,6 +32,9 @@ func load_state() -> void:
 		var file := FileAccess.open("user://settings.dat", FileAccess.READ);
 		var string := file.get_as_text();
 		var state : Array = str_to_var(string);
+		
+		print(state);
+		
 		volume = state[0];
 		game_finished = state[1];
 		locale = state[2];

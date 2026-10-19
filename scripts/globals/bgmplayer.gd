@@ -8,7 +8,8 @@ extends Node
 enum MusicID {
 	None = 0,
 	PaleorockClassic,
-	
+	Nature,
+	Jazz,
 }
 
 enum EffectID {
@@ -20,6 +21,8 @@ enum EffectID {
 const uid_per_music_id : Dictionary[MusicID, String] = {
 	MusicID.None: "",
 	MusicID.PaleorockClassic: "res://assets/music/finale_music.wav",
+	MusicID.Nature: "res://assets/music/nature.wav",
+	MusicID.Jazz: "res://assets/music/jazz.wav",
 }
 
 
