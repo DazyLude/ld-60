@@ -27,7 +27,8 @@ func _ready() -> void:
 func bind_cultist(item: Item) -> void:
 	if item is NonPlayerCharacter and item.item_name == "cultist":
 		_bound_cultist = item;
-		_bound_cultist.sacrificed.connect(check_all.bind(_bound_cultist));
+		if not _bound_cultist.sacrificed.is_connected(check_all):
+			_bound_cultist.sacrificed.connect(check_all.bind(_bound_cultist));
 
 
 func check_all(cultist : Item) -> void:
