@@ -53,4 +53,5 @@ script = ExtResource("1_mtkbs")
 actor = 2
 emote = 1
 character_line = "p1_vampire_2"
+track = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"

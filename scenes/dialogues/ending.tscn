@@ -171,6 +171,7 @@ autoplay = true
 autoplay_time = 0.5
 actor = 4
 effect = 1
+track = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="FIN" type="Node" parent="." unique_id=1552464790]

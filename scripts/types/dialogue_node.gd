@@ -12,3 +12,5 @@ class_name DialogueNode
 @export var text_effect := VNPlayer.TextEffect.None;
 
 @export var effect := VNPlayer.Effect.None;
+@export var track := BGMPlayer.MusicID.None;
+@export var sfx := BGMPlayer.EffectID.None;

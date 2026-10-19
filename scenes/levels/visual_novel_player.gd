@@ -260,6 +260,12 @@ func play_dialogue_node(node: DialogueNode) -> void:
 		Effect.InstantToBlack:
 			instant_blackout();
 	
+	if node.track != BGMPlayer.MusicID.None:
+		BGMPlayer.change_track(node.track);
+	
+	if node.sfx != BGMPlayer.EffectID.None:
+		BGMPlayer.play_one_off(node.sfx);
+	
 	if node.autoplay:
 		skippable = false;
 		if node.autoplay_time == -1.0 and text_tweener and text_tweener.is_running():
