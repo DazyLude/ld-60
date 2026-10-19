@@ -98,6 +98,7 @@ emote = 3
 reaction = 2
 character_line = "intro_wizard_1"
 text_effect = 1
+sfx = 9
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="Wizard2" type="Node" parent="." unique_id=364917868]
@@ -105,5 +106,5 @@ script = ExtResource("1_01dp3")
 actor = 1
 emote = 1
 character_line = "intro_wizard_2"
-sfx = 9
+sfx = 10
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
