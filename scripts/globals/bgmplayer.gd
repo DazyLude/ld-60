@@ -67,8 +67,8 @@ const uid_per_sfx_id : Dictionary[EffectID, String] = {
 	EffectID.Bonk: "res://assets/sfx/stone_hit.wav",
 	EffectID.GemDrop: "res://assets/sfx/gem_drop.ogg",
 	EffectID.GemInsert: "res://assets/sfx/gem_insert.ogg",
-	EffectID.GemTake: "res://assets/sfx/gem_take.ogg",
-	EffectID.BookTake: "res://assets/sfx/book.ogg",
+	EffectID.GemTake: "res://assets/sfx/gem_take.wav",
+	EffectID.BookTake: "res://assets/sfx/book.wav",
 	
 	EffectID.Ritual: "res://assets/sfx/ritual.ogg",
 	
