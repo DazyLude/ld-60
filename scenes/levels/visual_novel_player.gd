@@ -62,8 +62,6 @@ const te_postfixes : Dictionary[TextEffect, String] = {
 }
 
 
-
-
 @export var sprites : Dictionary[Actor, TextureRect] = {};
 @export var character_emotes : Dictionary[Actor, EmoteTable] = {};
 @export var box_textures : Dictionary[Actor, Texture2D] = {};

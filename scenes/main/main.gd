@@ -4,7 +4,6 @@ extends Control
 @export var start_game : BaseButton;
 @export var continue_game : BaseButton;
 @export var level_select : BaseButton;
-@export var from_level_select : BaseButton;
 @export var volume_slider : HSlider;
 
 @export var next_lang : BaseButton;
@@ -12,7 +11,7 @@ extends Control
 
 @export var label : Label;
 
-@export var level_select_root : Control;
+@export var level_select_root : LevelSelect;
 @export var bonus_levels_label : Label;
 
 
@@ -40,11 +39,15 @@ func _ready() -> void:
 	prev_lang.pressed.connect(switch_language);
 	
 	level_select.pressed.connect(_on_level_select_pressed);
-	from_level_select.pressed.connect(_on_back_from_level_select_pressed);
+	level_select_root.exit.connect(_on_back_from_level_select_pressed);
 	
 	update_title_label();
 	
 	continue_game.visible = Gamestate.continue_available();
+	
+	if Gamestate.skip_to_level_select:
+		Gamestate.skip_to_level_select = false;
+		_on_level_select_pressed();
 
 
 func update_title_label() -> void:

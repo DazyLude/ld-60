@@ -38,6 +38,9 @@ var omake_keys : Array[String] = [
 var omake_cache : Array[String] = omake_keys.duplicate();
 
 
+var skip_to_level_select : bool = false;
+
+
 func get_unseen_omake(q_actor: VNPlayer.Actor, a_actor: VNPlayer.Actor) -> DialogueNode:
 	var key : String;
 	if omake_cache.size() > 0:
