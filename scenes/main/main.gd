@@ -51,7 +51,7 @@ func update_title_label() -> void:
 	var current_locale := TranslationServer.get_locale();
 	
 	match current_locale:
-		"en_US":
+		"en", "en_US":
 			label.hide()
 		_:
 			label.show()
@@ -61,10 +61,10 @@ func switch_language() -> void:
 	var current_locale := TranslationServer.get_locale();
 	
 	match current_locale:
-		"en_US":
+		"en", "en_US":
 			Settings.locale = "ru";
 		_, "ru":
-			Settings.locale = "en_US";
+			Settings.locale = "en";
 	
 	update_title_label();
 	Settings.save_state();

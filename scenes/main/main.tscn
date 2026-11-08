@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dchbcre2ua6ae" path="res://scenes/levels/bonus/alchemy_playground.tscn" id="18_necax"]
 [ext_resource type="PackedScene" uid="uid://b0wlqwj8vnc1r" path="res://scenes/levels/bonus/the_vault.tscn" id="19_r4lks"]
 [ext_resource type="PackedScene" uid="uid://2oijnvhyya30" path="res://scenes/levels/bonus/the_test.tscn" id="20_pg34l"]
-[ext_resource type="PackedScene" uid="uid://d1b7kiqgxo0k0" path="res://scenes/levels/bonus/vampire_4.tscn" id="21_m4h2d"]
+[ext_resource type="PackedScene" uid="uid://d1b7kiqgxo0k0" path="res://scenes/levels/bonus/trapped.tscn" id="21_m4h2d"]
 
 [node name="Main" type="Control" unique_id=557696987 node_paths=PackedStringArray("start_game", "continue_game", "level_select", "from_level_select", "volume_slider", "next_lang", "prev_lang", "label", "level_select_root", "bonus_levels_label")]
 layout_mode = 3
