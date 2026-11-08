@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://mvkknwrcfyd3"]
+
+[ext_resource type="FontFile" uid="uid://uutmc5e0a5cb" path="res://assets/fonts/NewRocker-Regular.ttf" id="1_36uyn"]
+[ext_resource type="FontFile" uid="uid://xy4f4stsgeso" path="res://assets/fonts/cyrillic/IntrospectC.ttf" id="2_ocen1"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_ocen1")])
+base_font = ExtResource("1_36uyn")

@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://5muxf1k122lo"]
+
+[ext_resource type="FontFile" uid="uid://cy3ymeorb2fsa" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="1_o3u32"]
+[ext_resource type="FontFile" uid="uid://dawowq6vj1vga" path="res://assets/fonts/cyrillic/Pangolin-Regular.ttf" id="2_6t6cl"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_6t6cl")])
+base_font = ExtResource("1_o3u32")

@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bji2isdp6aygu"]
 
-[ext_resource type="FontFile" uid="uid://cygtowexbyv8q" path="res://assets/fonts/Fondamento-Regular.ttf" id="1_12x73"]
+[ext_resource type="FontVariation" uid="uid://dm4g6s4xb1qti" path="res://assets/themes/font variations/wizard.tres" id="1_12x73"]
 
 [resource]
+default_font = ExtResource("1_12x73")
 RichTextLabel/font_sizes/normal_font_size = 36
-RichTextLabel/fonts/normal_font = ExtResource("1_12x73")

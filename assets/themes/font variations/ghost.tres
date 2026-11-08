@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://ctohknqefk41p"]
+
+[ext_resource type="FontFile" uid="uid://b0qcrhbgwaop2" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="1_omarj"]
+[ext_resource type="FontFile" uid="uid://ce7yrvw8mordb" path="res://assets/fonts/cyrillic/OldNewspaperTypes-Regular.ttf" id="2_r0d12"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_r0d12")])
+base_font = ExtResource("1_omarj")

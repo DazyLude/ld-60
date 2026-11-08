@@ -78,16 +78,6 @@ var actor_themes : Dictionary[Actor, Theme] = {
 	Actor.Zoomer: preload("res://assets/themes/zoomer.tres"),
 }
 
-var actor_themes_cy : Dictionary[Actor, Theme] = {
-	Actor.Ghost: preload("res://assets/themes/cyrillic/ghost.tres"),
-	Actor.Millenial: preload("res://assets/themes/cyrillic/millenial.tres"),
-	Actor.Vampire: preload("res://assets/themes/cyrillic/vampire.tres"),
-	Actor.Takodachi: preload("res://assets/themes/cyrillic/vampire.tres"),
-	Actor.Wizard: preload("res://assets/themes/cyrillic/wizard.tres"),
-	Actor.Grimoire: preload("res://assets/themes/cyrillic/wizard.tres"),
-}
-
-
 @export var text_box : TextureRect;
 @export var label : RichTextLabel;
 @export var narrator_label : Label;
@@ -321,17 +311,8 @@ func setup_actor_emote(actor: Actor, emote: Emotes) -> void:
 
 
 func setup_actor_theme(actor: Actor) -> void:
-	var current_locale := TranslationServer.get_locale();
-	var ltheme : Theme = null;
-	
-	if current_locale == "ru":
-		ltheme = actor_themes_cy.get(actor, null);
-		if ltheme != null:
-			label.theme = ltheme;
-			return;
-	
-	ltheme = actor_themes.get(actor, actor_themes[Actor.Narrator]);
-	label.theme = ltheme;
+	var label_theme : Theme = actor_themes.get(actor, actor_themes[Actor.Narrator]);
+	label.theme = label_theme;
 
 
 func play_actor_text(actor: Actor, text: String) -> void:
