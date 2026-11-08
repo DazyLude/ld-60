@@ -3,23 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="1_e2dyx"]
 [ext_resource type="Script" uid="uid://bl8hwp0pbojb1" path="res://scenes/main/level_select.gd" id="2_k8sqw"]
 [ext_resource type="PackedScene" uid="uid://d1b7kiqgxo0k0" path="res://scenes/levels/bonus/trapped.tscn" id="3_4ryay"]
-[ext_resource type="PackedScene" uid="uid://tg2fulbo5ic2" path="res://scenes/dialogues/intro.tscn" id="3_ijkwe"]
 [ext_resource type="FontFile" uid="uid://cygtowexbyv8q" path="res://assets/fonts/Fondamento-Regular.ttf" id="4_0cfmq"]
-[ext_resource type="PackedScene" uid="uid://dvausutcstp77" path="res://scenes/levels/wizard_1.tscn" id="4_7k8em"]
-[ext_resource type="PackedScene" uid="uid://dpemk2wtd8qh8" path="res://scenes/levels/wizard_2.tscn" id="5_vu1ri"]
-[ext_resource type="PackedScene" uid="uid://clta41jnh5lqa" path="res://scenes/levels/wizard_3.tscn" id="6_d86mo"]
-[ext_resource type="PackedScene" uid="uid://cd3l5wkei6vyu" path="res://scenes/dialogues/part1.tscn" id="7_byyid"]
-[ext_resource type="PackedScene" uid="uid://bm0sx38terirh" path="res://scenes/levels/vampire_1.tscn" id="8_bmh7r"]
-[ext_resource type="PackedScene" uid="uid://8ssqaj81p4e5" path="res://scenes/levels/vampire_3.tscn" id="9_iqmup"]
-[ext_resource type="PackedScene" uid="uid://c2ves4rhuy3ex" path="res://scenes/levels/vampire_2.tscn" id="10_5uo6t"]
-[ext_resource type="PackedScene" uid="uid://lc82qs82lp82" path="res://scenes/dialogues/part2.tscn" id="11_4qpet"]
-[ext_resource type="PackedScene" uid="uid://ychjnleqavy3" path="res://scenes/levels/neanderthal_1.tscn" id="12_2j3ko"]
-[ext_resource type="PackedScene" uid="uid://m5c6gkxwwuyl" path="res://scenes/dialogues/ending.tscn" id="13_eybck"]
 [ext_resource type="PackedScene" uid="uid://dchbcre2ua6ae" path="res://scenes/levels/bonus/alchemy_playground.tscn" id="14_kv151"]
 [ext_resource type="PackedScene" uid="uid://2oijnvhyya30" path="res://scenes/levels/bonus/the_test.tscn" id="15_3nsie"]
 [ext_resource type="PackedScene" uid="uid://b0wlqwj8vnc1r" path="res://scenes/levels/bonus/the_vault.tscn" id="16_psfke"]
 
-[node name="BGLevelSelect" type="TextureRect" unique_id=1500405184 node_paths=PackedStringArray("button_to_levels", "bonus_root", "quit_button")]
+[node name="BGLevelSelect" type="TextureRect" unique_id=1500405184 node_paths=PackedStringArray("button_to_levels", "button_to_main_sequence_levels", "bonus_root", "quit_button")]
 visible = false
 self_modulate = Color(0.641934, 0.641934, 0.641934, 1)
 offset_right = 40.0
@@ -27,21 +16,23 @@ offset_bottom = 40.0
 texture = ExtResource("1_e2dyx")
 script = ExtResource("2_k8sqw")
 button_to_levels = {
-NodePath("VBoxContainer/HBoxContainer/Dialogues/intro"): ExtResource("3_ijkwe"),
-NodePath("VBoxContainer/HBoxContainer/Dialogues/w1"): ExtResource("4_7k8em"),
-NodePath("VBoxContainer/HBoxContainer/Dialogues/w2"): ExtResource("5_vu1ri"),
-NodePath("VBoxContainer/HBoxContainer/Dialogues/w3"): ExtResource("6_d86mo"),
-NodePath("VBoxContainer/HBoxContainer/Dialogues/part1"): ExtResource("7_byyid"),
-NodePath("VBoxContainer/HBoxContainer/Dialogues/v1"): ExtResource("8_bmh7r"),
-NodePath("VBoxContainer/HBoxContainer/Levels/v2"): ExtResource("9_iqmup"),
-NodePath("VBoxContainer/HBoxContainer/Levels/v3"): ExtResource("10_5uo6t"),
-NodePath("VBoxContainer/HBoxContainer/Levels/part2"): ExtResource("11_4qpet"),
-NodePath("VBoxContainer/HBoxContainer/Levels/n1"): ExtResource("12_2j3ko"),
-NodePath("VBoxContainer/HBoxContainer/Levels/outro"): ExtResource("13_eybck"),
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/alchemy"): ExtResource("14_kv151"),
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/test"): ExtResource("15_3nsie"),
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/heist"): ExtResource("16_psfke"),
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/trapped"): ExtResource("3_4ryay")
+}
+button_to_main_sequence_levels = {
+NodePath("VBoxContainer/HBoxContainer/Dialogues/intro"): -1,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/w1"): 0,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/w2"): 1,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/w3"): 2,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/part1"): 3,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/v1"): 4,
+NodePath("VBoxContainer/HBoxContainer/Levels/v2"): 5,
+NodePath("VBoxContainer/HBoxContainer/Levels/v3"): 6,
+NodePath("VBoxContainer/HBoxContainer/Levels/part2"): 7,
+NodePath("VBoxContainer/HBoxContainer/Levels/n1"): 8,
+NodePath("VBoxContainer/HBoxContainer/Levels/outro"): 9
 }
 bonus_root = NodePath("VBoxContainer/HBoxContainer/BonusLevels")
 quit_button = NodePath("VBoxContainer/Back")

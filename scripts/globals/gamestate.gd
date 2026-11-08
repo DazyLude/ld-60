@@ -62,10 +62,11 @@ func get_unseen_omake(q_actor: VNPlayer.Actor, a_actor: VNPlayer.Actor) -> Dialo
 	return q;
 
 
-func load_game_sequence() -> void:
+func load_game_sequence(idx: int = -1) -> void:
 	HUD.in_menu = false;
 	current_game_sequence = main_game_sequence.duplicate();
-	current_scene_idx = -1;
+	current_scene_idx = clampi(idx, -1, current_game_sequence.size() - 2);
+	
 	next_scene()
 
 
