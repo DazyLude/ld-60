@@ -5,6 +5,7 @@
 [node name="Part2" type="Node" unique_id=1478509140]
 script = ExtResource("1_xgvad")
 autoplay = true
+track = 5
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="MillenialReaction" type="Node" parent="." unique_id=201656295]

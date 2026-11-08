@@ -6,13 +6,13 @@
 script = ExtResource("1_01dp3")
 autoplay = true
 effect = 3
+track = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="NarratorIntro1" type="Node" parent="." unique_id=1055277449]
 script = ExtResource("1_01dp3")
 actor = 4
 character_line = "intro_narrator_1"
-track = 3
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="NarratorIntro2" type="Node" parent="." unique_id=1418782469]

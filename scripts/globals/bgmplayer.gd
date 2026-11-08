@@ -6,6 +6,7 @@ extends Node
 ## FX - sound effects
 ## UX - mouse and UI feedback sounds
 enum MusicID {
+	TurnOff = -1,
 	None = 0,
 	PaleorockClassic,
 	Nature,
@@ -134,6 +135,9 @@ func remove_player(player: AudioStreamPlayer) -> void:
 
 
 func change_track(new_track: MusicID) -> void:
+	if new_track == MusicID.TurnOff:
+		new_track = MusicID.None;
+	
 	if new_track == current_track:
 		return;
 	

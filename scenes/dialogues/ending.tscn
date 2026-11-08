@@ -5,6 +5,7 @@
 [node name="Ending" type="Node" unique_id=1478509140]
 script = ExtResource("1_irw1y")
 autoplay = true
+track = -1
 metadata/_custom_type_script = "uid://2uh2hvfckvfl"
 
 [node name="WizardInitialReaction" type="Node" parent="." unique_id=647309634]
