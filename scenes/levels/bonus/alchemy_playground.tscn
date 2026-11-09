@@ -1,21 +1,21 @@
 [gd_scene format=4 uid="uid://dchbcre2ua6ae"]
 
-[ext_resource type="Script" uid="uid://c1j06w08j3eks" path="res://scenes/levels/wizard_3.gd" id="1_bgc4g"]
+[ext_resource type="Script" uid="uid://5aalrm35k2bl" path="res://scenes/levels/bonus/alchemy_playground.gd" id="1_y73qe"]
 [ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_qdipb"]
 [ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_efq24"]
 [ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_vm70f"]
 [ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="5_0q4pp"]
 [ext_resource type="Texture2D" uid="uid://nx6j6jubqxgl" path="res://assets/visuals/export_tip.png" id="7_lo8e2"]
-[ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="8_ltrr3"]
-[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="9_8c6ki"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="10_8dkts"]
+[ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="10_y73qe"]
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="11_5excn"]
+[ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="11_kn0mj"]
 [ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="13_mrecx"]
 
-[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier", "camera")]
+[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand", "camera")]
 y_sort_enabled = true
-script = ExtResource("1_bgc4g")
-barrier = NodePath("Barrier")
+script = ExtResource("1_y73qe")
+grimoire_stand = NodePath("Station")
 camera = NodePath("Wizard/Camera2D2")
 player_character = 1
 searching_engine = 5
@@ -50,19 +50,6 @@ z_index = -2
 position = Vector2(413, 342)
 rotation = -0.18949437
 texture = ExtResource("7_lo8e2")
-
-[node name="Barrier" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders") instance=ExtResource("8_ltrr3")]
-position = Vector2(1082, 691)
-gem_holders = [NodePath("../RedHolder"), NodePath("../YellowHolder"), NodePath("../GreenHolder")]
-
-[node name="RedHolder" parent="." unique_id=598054325 instance=ExtResource("9_8c6ki")]
-position = Vector2(900, 840)
-
-[node name="YellowHolder" parent="." unique_id=1933131375 instance=ExtResource("9_8c6ki")]
-position = Vector2(922, 591)
-
-[node name="GreenHolder" parent="." unique_id=1400855312 instance=ExtResource("9_8c6ki")]
-position = Vector2(1213, 569)
 
 [node name="Amethyst" parent="." unique_id=431509241 instance=ExtResource("10_8dkts")]
 position = Vector2(202, 761)
@@ -102,3 +89,10 @@ position = Vector2(315, 433)
 
 [node name="Bookshelf3" parent="." unique_id=972023915 instance=ExtResource("13_mrecx")]
 position = Vector2(584, 433)
+
+[node name="Station" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("10_y73qe")]
+position = Vector2(1075, 729)
+starting_item = NodePath("../Grimoire")
+
+[node name="Grimoire" parent="." unique_id=1098946944 instance=ExtResource("11_kn0mj")]
+position = Vector2(918, 744)

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://2oijnvhyya30"]
 
-[ext_resource type="Script" uid="uid://c1j06w08j3eks" path="res://scenes/levels/wizard_3.gd" id="1_3d0go"]
+[ext_resource type="Script" uid="uid://c4gpxx8sfoh6q" path="res://scenes/levels/bonus/the_test.gd" id="1_awfuw"]
 [ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_uhp6e"]
 [ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_gqg8m"]
 [ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_a8hk3"]
@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="10_lb2jm"]
 [ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="11_kn03x"]
 
-[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier", "camera")]
+[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("stand", "camera")]
 y_sort_enabled = true
-script = ExtResource("1_3d0go")
-barrier = NodePath("Barrier")
+script = ExtResource("1_awfuw")
+stand = NodePath("Barrier")
 camera = NodePath("Wizard/Camera2D2")
 player_character = 1
 searching_engine = 5

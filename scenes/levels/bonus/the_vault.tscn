@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://n6mnln0n85o0" path="res://assets/visuals/wizard/carpet1.png" id="14_phe4d"]
 [ext_resource type="Texture2D" uid="uid://bgk3d3ict48dj" path="res://assets/visuals/wizard/carpet2.png" id="15_y4qu0"]
 
-[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("barrier", "camera")]
+[node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("stand", "camera")]
 y_sort_enabled = true
 script = ExtResource("1_h5j48")
-barrier = NodePath("Barrier")
+stand = NodePath("Barrier")
 camera = NodePath("Wizard/Camera2D2")
 player_character = 1
 searching_engine = 5
