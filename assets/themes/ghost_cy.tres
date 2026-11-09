@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://ccr1vkmmdtdd6"]
+
+[ext_resource type="FontVariation" uid="uid://bqgcn2dqf8jm0" path="res://assets/themes/font variations/ghost_cy.tres" id="1_jw5aa"]
+
+[resource]
+default_font = ExtResource("1_jw5aa")
+RichTextLabel/font_sizes/normal_font_size = 36

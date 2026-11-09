@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b0wlqwj8vnc1r" path="res://scenes/levels/bonus/the_vault.tscn" id="16_psfke"]
 
 [node name="BGLevelSelect" type="TextureRect" unique_id=1500405184 node_paths=PackedStringArray("button_to_levels", "button_to_main_sequence_levels", "bonus_root", "quit_button")]
-visible = false
 self_modulate = Color(0.641934, 0.641934, 0.641934, 1)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -28,11 +27,11 @@ NodePath("VBoxContainer/HBoxContainer/Dialogues/w2"): 1,
 NodePath("VBoxContainer/HBoxContainer/Dialogues/w3"): 2,
 NodePath("VBoxContainer/HBoxContainer/Dialogues/part1"): 3,
 NodePath("VBoxContainer/HBoxContainer/Dialogues/v1"): 4,
-NodePath("VBoxContainer/HBoxContainer/Levels/v2"): 5,
-NodePath("VBoxContainer/HBoxContainer/Levels/v3"): 6,
-NodePath("VBoxContainer/HBoxContainer/Levels/part2"): 7,
-NodePath("VBoxContainer/HBoxContainer/Levels/n1"): 8,
-NodePath("VBoxContainer/HBoxContainer/Levels/outro"): 9
+NodePath("VBoxContainer/HBoxContainer/Dialogues/v2"): 5,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/v3"): 6,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/part2"): 7,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/n1"): 8,
+NodePath("VBoxContainer/HBoxContainer/Dialogues/outro"): 9
 }
 bonus_root = NodePath("VBoxContainer/HBoxContainer/BonusLevels")
 quit_button = NodePath("VBoxContainer/Back")
@@ -54,13 +53,22 @@ theme_override_font_sizes/font_size = 64
 text = "Level Select"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=624566475]
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=913406020]
 layout_mode = 2
 alignment = 1
 
-[node name="Dialogues" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1542793924]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1004431154]
 layout_mode = 2
-alignment = 1
+theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
+theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_font_sizes/font_size = 48
+text = "story"
+horizontal_alignment = 1
+
+[node name="Dialogues" type="GridContainer" parent="VBoxContainer/HBoxContainer" unique_id=1145801385]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
 
 [node name="intro" type="Button" parent="VBoxContainer/HBoxContainer/Dialogues" unique_id=1187329971]
 layout_mode = 2
@@ -86,40 +94,38 @@ text = "d_part_1"
 layout_mode = 2
 text = "l_vampire1"
 
-[node name="Levels" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1643420815]
-layout_mode = 2
-alignment = 1
-
-[node name="v2" type="Button" parent="VBoxContainer/HBoxContainer/Levels" unique_id=1089230291]
+[node name="v2" type="Button" parent="VBoxContainer/HBoxContainer/Dialogues" unique_id=1089230291]
 layout_mode = 2
 text = "l_vampire2"
 
-[node name="v3" type="Button" parent="VBoxContainer/HBoxContainer/Levels" unique_id=1709707850]
+[node name="v3" type="Button" parent="VBoxContainer/HBoxContainer/Dialogues" unique_id=1709707850]
 layout_mode = 2
 text = "l_vampire3"
 
-[node name="part2" type="Button" parent="VBoxContainer/HBoxContainer/Levels" unique_id=1102767164]
+[node name="part2" type="Button" parent="VBoxContainer/HBoxContainer/Dialogues" unique_id=1102767164]
 layout_mode = 2
 text = "d_part_2"
 
-[node name="n1" type="Button" parent="VBoxContainer/HBoxContainer/Levels" unique_id=109249097]
+[node name="n1" type="Button" parent="VBoxContainer/HBoxContainer/Dialogues" unique_id=109249097]
 layout_mode = 2
 text = "l_neanderthal"
 
-[node name="outro" type="Button" parent="VBoxContainer/HBoxContainer/Levels" unique_id=514861317]
+[node name="outro" type="Button" parent="VBoxContainer/HBoxContainer/Dialogues" unique_id=514861317]
 layout_mode = 2
 text = "d_outro"
 
-[node name="BonusLevels" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=414284890]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1981556242]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1981556242]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
 theme_override_fonts/font = ExtResource("4_0cfmq")
 theme_override_font_sizes/font_size = 48
 text = "bonus"
 horizontal_alignment = 1
+
+[node name="BonusLevels" type="GridContainer" parent="VBoxContainer/HBoxContainer" unique_id=866547140]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
 
 [node name="alchemy" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=2020025222]
 layout_mode = 2

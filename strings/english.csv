@@ -2,11 +2,14 @@ key,en,ru
 title,An Old Joke,Бородатый Анекдот
 new_game,New Game,Новая Игра
 resume_game,Resume Game,Продолжить
-volume,volume,громкость
+volume,Volume,Громкость
 level_select,Level Select,Выбор Уровня
 language,English,Русский
+language_label,Язык,Language
 back_to_menu,Back to the Menu,Назад в Меню
 bonus_levels_available,Bonus levels available!,Доступны дополнительные уровни!
+bonus,Bonus,Бонусные
+story,Story,Сюжетные
 ,,
 movement,movement,передвижение
 action,action,действие
@@ -30,8 +33,8 @@ intro_millenial_1,... said so!,… так сказала!
 intro_wizard_laugh,Hahaha!,Хахаха!
 intro_vampire_laugh,Hahaha!,Хахаха!
 intro_ghost_laugh,HooHooHoo!,Уухуухуу!
-intro_millenial_2,"By the way, I was looking something up yesterday. And when I googled…","Кстати, я вот вчера загуглить…"
-intro_wizard_1,Googled?!,Загуглить?!
+intro_millenial_2,"By the way, I was looking something up yesterday. And when I googled…","Кстати, вчера вот хотел посмотреть кое-что. И когда загуглил…"
+intro_wizard_1,Googled?!,Загуглил?!
 intro_wizard_2,Back in my days...,Вот в мое время…
 ,,
 ending_ghost_1,ooo…,ууу…
@@ -39,37 +42,37 @@ ending_ghost_2,oooga boooga.,уууга буууга.
 ending_zoomer_1,Hey!,Привет!
 ending_zoomer_2,Have you heard? Yesterday I asked claude…,Вы слышали? Я вчера спросил у клода…
 ,,
-p1_wizard_1,"… and so, we looked for knowledge not in",Мы искали знания не в этих ваших
+p1_wizard_1,We looked for knowledge not in,Мы искали знания не в этих ваших
 p1_wizard_2,SeArCh EnGiNeS!,ПоИсКоВыХ СиСтЕмАх!
-p1_wizard_3,"But, rather, ancient grimoires!..","Но в древних и, преисполенных мудростью гримуарах!"
+p1_wizard_3,"But, rather, ancient, wisdom filled grimoires!..",Но в древних и преисполненных мудростью гримуарах!
 p1_vampire_1,Grimoires?!,Гримуарах?!
 p1_vampire_2,Back in my days…,Вот в мое время…
 ,,
 p2_vampire_1,… a bit of blood sacrifice there…,… немного крови там…
-p2_vampire_2,some summoning and human transmutation there…,… немного призыва и человеческого преобразования сям…
-p2_vampire_3,"And you summon the Old Wise One, easy and simple!","и ты призываешь Древнего Мудрейшего, просто и раз плюнуть!"
+p2_vampire_2,… some summoning and human transmutation there…,… немного призыва и человеческого преобразования сям…
+p2_vampire_3,"And you summon the Old Wise One, easy and simple!","И ты призываешь Древнего Мудрейшего, просто и раз плюнуть!"
 p2_vampire_4,…,…
-p2_vampire_5,"Ghost, you’re awfully quiet.","Привидение, а ты что молчишь?"
-p2_vampire_6,What was it that you did in the times of youth?,Что ты делал во времена своей молодости?
+p2_vampire_5,"Ghost, you’re awfully quiet.","Привидение, ты что-то притихло."
+p2_vampire_6,What was it that you did in the times of youth?,Что ты делало во времена своей молодости?
 p2_ghost_1,ooo…,ууу…
 ,,
-omake_1_q,how long to cook rice ,сколько варить рис 
+omake_1_q,How long to cook rice for?,Сколько варить рис?
 omake_1_a,15 minutes.,Минут 15.
-omake_2_q,how long to boil eggs ,сколько варить яйца 
+omake_2_q,How long to boil eggs for?,Сколько варить яйца?
 omake_2_a,5 minutes.,Минут 5.
-omake_3_q,I have a sore throat,болит горло 
+omake_3_q,I have a sore throat.,Болит горло.
 omake_3_a,Get well.,Поправляйся.
 omake_4_q,How many seconds in 8 hours?,Cколько секунд в 8 часах?
 omake_4_a,...28800,...28800 
 omake_5_q,How many hours in 8 seconds?,Cколько часов в 8 секундах?
 omake_5_a,I am not a calculator.,Я не калькулятор.
 omake_6_q,What holiday is it today?,Какой сегодня праздник?
-omake_6_a,International Chefs Day.,Международный день повара.
-omake_7_q,What zodiac sign is october,какой знак зодиака в октябре 
+omake_6_a,My birthday.,Мой День рождения.
+omake_7_q,What zodiac sign is october?,Какой знак зодиака в октябре?
 omake_7_a,Libra and Scorpio.,Весы и Скорпион.
-omake_8_q,what does the mog mean,что такое могну 
+omake_8_q,What does the mog mean?,Что такое могну?
 omake_8_a,"To mog means to outclass, outshine, or dominate someone else. ","Могать означает заметно превосходить кого-то внешне: лицом, фигурой, ростом. "
-omake_9_q,what can you name a cat,как можно назвать кота 
+omake_9_q,What can you name a cat?,Как можно назвать кота?
 omake_9_a,"Meowy, Snickers, Jasper, Donut, Raisin, Yolkie.","Барсик, Рыжик, Паштет, Пончик, Изюм, Желточек. "
 ,,
 d_intro,Intro,Вступление

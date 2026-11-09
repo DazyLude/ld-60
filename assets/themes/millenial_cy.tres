@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://beh6rvtwmtemx"]
+
+[ext_resource type="FontVariation" uid="uid://7w3v2lbyl760" path="res://assets/themes/font variations/millenial_cy.tres" id="1_rebkt"]
+
+[resource]
+default_font = ExtResource("1_rebkt")
+RichTextLabel/font_sizes/normal_font_size = 36

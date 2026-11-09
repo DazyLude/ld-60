@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://xg10gwhkm8qg"]
+
+[ext_resource type="FontFile" uid="uid://cygtowexbyv8q" path="res://assets/fonts/Fondamento-Regular.ttf" id="1_nojda"]
+[ext_resource type="FontFile" uid="uid://c4r88iyrwtbm3" path="res://assets/fonts/cyrillic/am_xix.otf" id="2_81rhq"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_nojda")])
+base_font = ExtResource("2_81rhq")

@@ -62,9 +62,10 @@ func update_title_label() -> void:
 
 func switch_language() -> void:
 	var current_locale := TranslationServer.get_locale();
+	var language := current_locale.split("_").get(0);
 	
-	match current_locale:
-		"en", "en_US":
+	match language:
+		"en":
 			Settings.locale = "ru";
 		_, "ru":
 			Settings.locale = "en";
