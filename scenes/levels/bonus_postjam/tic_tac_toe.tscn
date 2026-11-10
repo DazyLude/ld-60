@@ -1,0 +1,412 @@
+[gd_scene format=4 uid="uid://7n77fkkgp2yt"]
+
+[ext_resource type="Script" uid="uid://betg2nis5xdkr" path="res://scenes/levels/bonus_postjam/tic_tac_toe.gd" id="1_juycl"]
+[ext_resource type="TileSet" uid="uid://6i3vp0pos7hp" path="res://assets/visuals/tilesets/wizard_walls.tres" id="2_f8ues"]
+[ext_resource type="Script" uid="uid://bl3cejmfdgjae" path="res://scripts/types/movement_trigger_data.gd" id="2_n4kc4"]
+[ext_resource type="TileSet" uid="uid://dktgpu6xvubq6" path="res://assets/visuals/tilesets/wizard_floor.tres" id="3_ib1mu"]
+[ext_resource type="TileSet" uid="uid://d8go5x27soo" path="res://assets/visuals/tilesets/wizard_decor.tres" id="4_e32m8"]
+[ext_resource type="PackedScene" uid="uid://bfhuvcu4rm2vq" path="res://scenes/characters/wizard.tscn" id="5_yp1o1"]
+[ext_resource type="PackedScene" uid="uid://ct4ob0fyfo5gc" path="res://scenes/stations/barrier.tscn" id="6_n4kc4"]
+[ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="7_3s7tm"]
+[ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="8_30pfj"]
+[ext_resource type="Texture2D" uid="uid://c2vbocfv3k008" path="res://assets/visuals/smoke_cloud.png" id="9_juycl"]
+[ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="10_2uwun"]
+[ext_resource type="PackedScene" uid="uid://ctufa0gxxpknl" path="res://scenes/items/knife.tscn" id="10_f8ues"]
+[ext_resource type="PackedScene" uid="uid://bjq2wpgjdh1ui" path="res://scenes/stations/sacrificial_altar.tscn" id="11_e32m8"]
+[ext_resource type="PackedScene" uid="uid://ccp5l1jr6vxig" path="res://scenes/items/cultist.tscn" id="12_yp1o1"]
+[ext_resource type="Script" uid="uid://cbrw43b7f6vmt" path="res://scripts/types/waypoint.gd" id="13_n4kc4"]
+[ext_resource type="Texture2D" uid="uid://d2smvvqn13bxc" path="res://assets/visuals/vampyr/big squid.png" id="16_30pfj"]
+[ext_resource type="PackedScene" uid="uid://batvvyytpkc4k" path="res://scenes/obstacles/vampire/skulls_big.tscn" id="17_3nnke"]
+[ext_resource type="Texture2D" uid="uid://1ow15350mwp2" path="res://assets/visuals/vampyr/skull.png" id="17_gkuo3"]
+[ext_resource type="PackedScene" uid="uid://bhkwahi7gdwmu" path="res://scenes/obstacles/vampire/carpet_large_v.tscn" id="19_m3bvp"]
+[ext_resource type="PackedScene" uid="uid://b5xhpnk6wsjlb" path="res://scenes/obstacles/wizard/carpet.tscn" id="20_j8gu4"]
+[ext_resource type="PackedScene" uid="uid://bn72cmb7gyjop" path="res://scenes/obstacles/wizard/pots.tscn" id="21_ehuy1"]
+[ext_resource type="PackedScene" uid="uid://lioexx3qagno" path="res://scenes/stations/lectern.tscn" id="22_d1yic"]
+
+[sub_resource type="Resource" id="Resource_gkuo3"]
+script = ExtResource("2_n4kc4")
+movement_delta = Vector2(324, 722)
+movement_time = 0.5
+metadata/_custom_type_script = "uid://bl3cejmfdgjae"
+
+[sub_resource type="Resource" id="Resource_m3bvp"]
+script = ExtResource("2_n4kc4")
+movement_delta = Vector2(1097, 722)
+movement_time = 0.5
+metadata/_custom_type_script = "uid://bl3cejmfdgjae"
+
+[sub_resource type="Resource" id="Resource_n4kc4"]
+script = ExtResource("2_n4kc4")
+movement_delta = Vector2(1730, 722)
+movement_time = 0.5
+metadata/_custom_type_script = "uid://bl3cejmfdgjae"
+
+[sub_resource type="Resource" id="Resource_3s7tm"]
+script = ExtResource("13_n4kc4")
+marker = Vector2(-50, -25)
+time = 1.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_30pfj"]
+script = ExtResource("13_n4kc4")
+marker = Vector2(-100, 0)
+time = 1.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_3nnke"]
+script = ExtResource("13_n4kc4")
+marker = Vector2(-100, 75)
+time = 1.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_2uwun"]
+script = ExtResource("13_n4kc4")
+marker = Vector2(-50, 100)
+time = 1.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_ld0n8"]
+script = ExtResource("13_n4kc4")
+marker = Vector2(0, 75)
+time = 1.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[sub_resource type="Resource" id="Resource_j63km"]
+script = ExtResource("13_n4kc4")
+time = 1.0
+metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
+
+[node name="TicTacToe" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("cross_gem", "circle_gem", "gem_spawn_location", "board", "stand", "movement_triggers", "reset_chamber_door", "key_chamber_door", "victory_chamber_door", "knife", "knife_respawn_position", "smoke1", "smoke2", "reset_altar", "banter_box", "banter_text", "camera")]
+y_sort_enabled = true
+script = ExtResource("1_juycl")
+cross_gem = [NodePath("Diamond"), NodePath("Diamond2"), NodePath("Diamond3"), NodePath("Diamond4"), NodePath("Diamond5")]
+circle_gem = [NodePath("Onyx"), NodePath("Onyx2"), NodePath("Onyx3"), NodePath("Onyx4")]
+gem_spawn_location = NodePath("DiamondSpawner")
+board = [NodePath("TicTacField"), NodePath("TicTacField2"), NodePath("TicTacField3"), NodePath("TicTacField4"), NodePath("TicTacField5"), NodePath("TicTacField6"), NodePath("TicTacField7"), NodePath("TicTacField8"), NodePath("TicTacField9")]
+stand = NodePath("Barrier")
+movement_triggers = {
+NodePath("DoorReset"): SubResource("Resource_gkuo3"),
+NodePath("DoorReset2"): SubResource("Resource_m3bvp"),
+NodePath("DoorReset3"): SubResource("Resource_n4kc4")
+}
+reset_chamber_door = NodePath("DoorReset")
+key_chamber_door = NodePath("DoorReset2")
+victory_chamber_door = NodePath("DoorReset3")
+knife = NodePath("Knife")
+knife_respawn_position = NodePath("KnifeRespawn")
+smoke1 = NodePath("Smoke")
+smoke2 = NodePath("Smoke2")
+reset_altar = NodePath("SacrificialStone")
+banter_box = NodePath("Lectern")
+banter_text = NodePath("Lectern/PanelContainer/RichTextLabel")
+camera = NodePath("Wizard/Camera2D2")
+player_character = 1
+searching_engine = 5
+metadata/_custom_type_script = "uid://bioviasxjhvur"
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=2022304447]
+tile_map_data = PackedByteArray("AAAEAAEAAAAAAAEAAAAEAAIAAAAAAAEAAAAEAAMAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAABAAAAAAAFAAMAAAABAAAAAAAFAAIAAAABAAAAAAAFAAEAAAADAAAAAAAEAAAAAAACAAEAAAADAAAAAAADAAEAAAACAAAAAAADAAEAAAABAAAAAAADAAEAAAAAAAAAAAADAAEAAAD+/wQAAAABAAAAAAD+/wMAAAABAAAAAAD+/wIAAAABAAAAAAD+/wEAAAABAAAAAAD+/wAAAAADAAAAAAD//wAAAAADAAEAAAD+/wUAAAABAAAAAAD+/wYAAAABAAAAAAD+/wcAAAABAAAAAAD+/wgAAAABAAAAAAD+/wkAAAABAAAAAAD+/woAAAABAAAAAAD+/wsAAAACAAAAAAD//wsAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAJAAQAAAAAAAEAAAAJAAMAAAAAAAEAAAAJAAIAAAAAAAEAAAAJAAEAAAACAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAOAAAAAAACAAEAAAAKAAAAAAADAAAAAAAKAAEAAAABAAAAAAAKAAIAAAABAAAAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAAOAAEAAAAAAAEAAAAOAAIAAAAAAAEAAAAOAAMAAAAAAAEAAAAOAAQAAAAAAAEAAAAOAAoAAAAAAAEAAAAOAAkAAAAAAAEAAAAOAAgAAAAAAAEAAAAOAAcAAAAAAAEAAAAOAAYAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAsAAAABAAEAAAA=")
+tile_set = ExtResource("2_f8ues")
+navigation_enabled = false
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1031338355]
+z_index = -2
+tile_map_data = PackedByteArray("AAD//wEACgABAAAAAAD//wIACgACAAAAAAD//wMACgAFAAAAAAD//wQACgAHAAAAAAD//wUACgAIAAAAAAD//wYACgAGAAAAAAD//wcACgAEAAAAAAAAAAEACgABAAAAAAAAAAIACgAEAAAAAAAAAAMACgADAAAAAAAAAAQACgAEAAAAAAAAAAUACgAHAAAAAAAAAAYACgACAAAAAAAAAAcACgAHAAAAAAABAAEACgABAAAAAAABAAIACgAAAAAAAAABAAMACgAGAAAAAAABAAQACgAIAAAAAAABAAUACgACAAAAAAABAAYACgAFAAAAAAABAAcACgAFAAAAAAACAAEACgABAAAAAAACAAIACgABAAAAAAACAAMACgAFAAAAAAACAAQACgAHAAAAAAACAAUACgAAAAAAAAACAAYACgAFAAAAAAACAAcACgAJAAAAAAADAAEACgAAAAAAAAADAAIACgAGAAAAAAADAAMACgACAAAAAAADAAQACgAJAAAAAAADAAUACgABAAAAAAADAAYACgACAAAAAAADAAcACgAGAAAAAAD//wgACgAAAAAAAAD//wkACgAHAAAAAAD//woACgAFAAAAAAAAAAgACgAHAAAAAAAAAAkACgAHAAAAAAAAAAoACgAEAAAAAAABAAgACgAIAAAAAAABAAkACgADAAAAAAABAAoACgACAAAAAAACAAgACgAFAAAAAAACAAkACgAGAAAAAAACAAoACgAJAAAAAAADAAgACgAJAAAAAAADAAkACgAHAAAAAAADAAoACgAAAAAAAAAEAAgACgAEAAAAAAAEAAkACgAGAAAAAAAEAAoACgADAAAAAAAFAAgACgACAAAAAAAFAAkACgAIAAAAAAAFAAoACgAIAAAAAAAGAAgACgAEAAAAAAAGAAkACgADAAAAAAAGAAoACgAIAAAAAAAHAAgACgABAAAAAAAHAAkACgABAAAAAAAHAAoACgAEAAAAAAAIAAgACgABAAAAAAAIAAkACgABAAAAAAAIAAoACgAIAAAAAAAJAAgACgABAAAAAAAJAAkACgABAAAAAAAJAAoACgAFAAAAAAAKAAgACgACAAAAAAAKAAkACgAIAAAAAAAKAAoACgAEAAAAAAALAAgACgABAAAAAAALAAkACgADAAAAAAALAAoACgACAAAAAAAMAAgACgABAAAAAAAMAAkACgAFAAAAAAAMAAoACgABAAAAAAANAAgACgACAAAAAAANAAkACgACAAAAAAANAAoACgAJAAAAAAALAAEACgABAAAAAAALAAIACgAJAAAAAAALAAMACgACAAAAAAALAAQACgAEAAAAAAALAAUACgAHAAAAAAALAAYACgAAAAAAAAALAAcACgAJAAAAAAAMAAEACgABAAAAAAAMAAIACgACAAAAAAAMAAMACgAEAAAAAAAMAAQACgAHAAAAAAAMAAUACgAGAAAAAAAMAAYACgAIAAAAAAAMAAcACgAGAAAAAAANAAEACgADAAAAAAANAAIACgAEAAAAAAANAAMACgAFAAAAAAANAAQACgAHAAAAAAANAAUACgABAAAAAAANAAYACgAIAAAAAAANAAcACgAHAAAAAAAEAAUACgADAAAAAAAEAAYACgABAAAAAAAEAAcACgAFAAAAAAAFAAUACgAIAAAAAAAFAAYACgACAAAAAAAFAAcACgAAAAAAAAAGAAUACgAAAAAAAAAGAAYACgAFAAAAAAAGAAcACgAHAAAAAAAHAAUACgAHAAAAAAAHAAYACgAGAAAAAAAHAAcACgAGAAAAAAAIAAUACgAGAAAAAAAIAAYACgAHAAAAAAAIAAcACgAIAAAAAAAJAAUACgAFAAAAAAAJAAYACgAAAAAAAAAJAAcACgACAAAAAAAKAAUACgAFAAAAAAAKAAYACgAIAAAAAAAKAAcACgAAAAAAAAAGAAIACgAEAAAAAAAGAAMACgADAAAAAAAGAAQACgACAAAAAAAHAAIACgACAAAAAAAHAAMACgAFAAAAAAAHAAQACgACAAAAAAAIAAIACgAJAAAAAAAIAAMACgAFAAAAAAAIAAQACgACAAAAAAA=")
+tile_set = ExtResource("3_ib1mu")
+
+[node name="Decor" type="TileMapLayer" parent="." unique_id=1749607590]
+tile_map_data = PackedByteArray("AAAGAAEACgAAAAAAAAAIAAEACgAAAAAAAAAMAAAACgAAAAAAAAACAAAACgAAAAAAAAD//wAACgAAAAAAAAD+/wcACAAAAAAAAGD+/wkACAAAAAAAAGAOAAcABwAAAAAAAFAGAAsABwAAAAAAADACAAsABwAAAAAAADA=")
+tile_set = ExtResource("4_e32m8")
+navigation_enabled = false
+
+[node name="Wizard" parent="." unique_id=42250212 instance=ExtResource("5_yp1o1")]
+position = Vector2(281, 949)
+
+[node name="Camera2D2" type="Camera2D" parent="Wizard" unique_id=187168059]
+zoom = Vector2(0.75, 0.75)
+limit_left = -207
+limit_top = 45
+limit_right = 1888
+limit_bottom = 1495
+
+[node name="Barrier" parent="." unique_id=1301439559 node_paths=PackedStringArray("gem_holders") instance=ExtResource("6_n4kc4")]
+position = Vector2(173, 1264)
+gem_holders = [NodePath("../YellowHolder")]
+
+[node name="YellowHolder" parent="." unique_id=1400855312 instance=ExtResource("7_3s7tm")]
+position = Vector2(-10, 1159)
+type = 3
+
+[node name="TicTacField" parent="." unique_id=1972157419 instance=ExtResource("7_3s7tm")]
+position = Vector2(527, 912)
+type = 2
+
+[node name="TicTacField2" parent="." unique_id=1089440690 instance=ExtResource("7_3s7tm")]
+position = Vector2(743, 912)
+type = 2
+
+[node name="TicTacField3" parent="." unique_id=438041654 instance=ExtResource("7_3s7tm")]
+position = Vector2(967, 912)
+type = 2
+
+[node name="TicTacField4" parent="." unique_id=333051571 instance=ExtResource("7_3s7tm")]
+position = Vector2(527, 1128)
+type = 2
+
+[node name="TicTacField5" parent="." unique_id=918306517 instance=ExtResource("7_3s7tm")]
+position = Vector2(743, 1128)
+type = 2
+
+[node name="TicTacField6" parent="." unique_id=1332938685 instance=ExtResource("7_3s7tm")]
+position = Vector2(967, 1128)
+type = 2
+
+[node name="TicTacField7" parent="." unique_id=1149444855 instance=ExtResource("7_3s7tm")]
+position = Vector2(527, 1352)
+type = 2
+
+[node name="TicTacField8" parent="." unique_id=1712062103 instance=ExtResource("7_3s7tm")]
+position = Vector2(743, 1352)
+type = 2
+
+[node name="TicTacField9" parent="." unique_id=1526609703 instance=ExtResource("7_3s7tm")]
+position = Vector2(967, 1352)
+type = 2
+
+[node name="DiamondSpawner" type="Marker2D" parent="." unique_id=1095630760]
+position = Vector2(283, 1068)
+
+[node name="Diamond" parent="." unique_id=1737541831 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(292, 216)
+type = 5
+
+[node name="Diamond2" parent="." unique_id=1145627508 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(292, 216)
+type = 5
+
+[node name="Diamond3" parent="." unique_id=1385636714 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(292, 216)
+type = 5
+
+[node name="Diamond4" parent="." unique_id=1844040388 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(292, 216)
+type = 5
+
+[node name="Diamond5" parent="." unique_id=1405258042 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(292, 216)
+type = 5
+
+[node name="Onyx" parent="." unique_id=1834823923 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(46, 210)
+type = 6
+
+[node name="Onyx2" parent="." unique_id=647676615 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(46, 210)
+type = 6
+
+[node name="Onyx3" parent="." unique_id=717014147 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(46, 210)
+type = 6
+
+[node name="Onyx4" parent="." unique_id=1701950352 instance=ExtResource("8_30pfj")]
+visible = false
+position = Vector2(46, 210)
+type = 6
+
+[node name="KnifeRespawn" type="Marker2D" parent="." unique_id=208498431]
+position = Vector2(307, 498)
+
+[node name="Smoke" type="Sprite2D" parent="." unique_id=1391666941]
+visible = false
+position = Vector2(362, 464)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_juycl")
+
+[node name="Smoke2" type="Sprite2D" parent="." unique_id=481959682]
+visible = false
+position = Vector2(362, 464)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_juycl")
+
+[node name="Knife" parent="." unique_id=904800425 instance=ExtResource("10_f8ues")]
+position = Vector2(37, 483)
+
+[node name="SacrificialStone" parent="." unique_id=846534857 instance=ExtResource("11_e32m8")]
+position = Vector2(208, 380)
+spawn_takodachi_on_sacrifice = false
+
+[node name="Cultist" parent="." unique_id=323613442 node_paths=PackedStringArray("respawn_point") instance=ExtResource("12_yp1o1")]
+position = Vector2(371, 452)
+route = Array[ExtResource("13_n4kc4")]([SubResource("Resource_3s7tm"), SubResource("Resource_30pfj"), SubResource("Resource_3nnke"), SubResource("Resource_2uwun"), SubResource("Resource_ld0n8"), SubResource("Resource_j63km")])
+reverse_loop = false
+respawn_point = NodePath("../CultistRespawn")
+
+[node name="CultistRespawn" type="Marker2D" parent="." unique_id=582167521]
+position = Vector2(371, 453)
+
+[node name="DoorReset" parent="." unique_id=415810828 instance=ExtResource("10_2uwun")]
+position = Vector2(194, 722)
+
+[node name="Bookshelf2" parent="." unique_id=1148093246 instance=ExtResource("10_2uwun")]
+position = Vector2(324, 722)
+
+[node name="Bookshelf3" parent="." unique_id=163432491 instance=ExtResource("10_2uwun")]
+position = Vector2(65, 722)
+
+[node name="Bookshelf4" parent="." unique_id=1769812524 instance=ExtResource("10_2uwun")]
+position = Vector2(-64, 722)
+
+[node name="Bookshelf5" parent="." unique_id=83545317 instance=ExtResource("10_2uwun")]
+position = Vector2(453, 722)
+
+[node name="Bookshelf10" parent="." unique_id=945586668 instance=ExtResource("10_2uwun")]
+position = Vector2(580, 722)
+
+[node name="DoorReset2" parent="." unique_id=900884829 instance=ExtResource("10_2uwun")]
+position = Vector2(967, 722)
+
+[node name="Bookshelf6" parent="." unique_id=1618781173 instance=ExtResource("10_2uwun")]
+position = Vector2(1095, 722)
+
+[node name="Bookshelf7" parent="." unique_id=1674094541 instance=ExtResource("10_2uwun")]
+position = Vector2(840, 722)
+
+[node name="Bookshelf8" parent="." unique_id=1437779409 instance=ExtResource("10_2uwun")]
+position = Vector2(709, 722)
+
+[node name="Bookshelf9" parent="." unique_id=834595954 instance=ExtResource("10_2uwun")]
+position = Vector2(1222, 722)
+
+[node name="DoorReset3" parent="." unique_id=1623052567 instance=ExtResource("10_2uwun")]
+position = Vector2(1600, 722)
+
+[node name="Bookshelf11" parent="." unique_id=1264642027 instance=ExtResource("10_2uwun")]
+position = Vector2(1728, 722)
+
+[node name="Bookshelf12" parent="." unique_id=1706396972 instance=ExtResource("10_2uwun")]
+position = Vector2(1472, 722)
+
+[node name="Bookshelf13" parent="." unique_id=1957301278 instance=ExtResource("10_2uwun")]
+position = Vector2(1345, 722)
+
+[node name="Citrine" parent="." unique_id=2103797691 instance=ExtResource("8_30pfj")]
+position = Vector2(953, 442)
+type = 2
+
+[node name="Citrine2" parent="." unique_id=437116934 instance=ExtResource("8_30pfj")]
+position = Vector2(1547, 424)
+type = 2
+
+[node name="Citrine3" parent="." unique_id=1706573361 instance=ExtResource("8_30pfj")]
+position = Vector2(1601, 465)
+type = 2
+
+[node name="Citrine4" parent="." unique_id=554786071 instance=ExtResource("8_30pfj")]
+position = Vector2(1619, 377)
+type = 2
+
+[node name="Citrine5" parent="." unique_id=610815037 instance=ExtResource("8_30pfj")]
+position = Vector2(1536, 369)
+type = 2
+
+[node name="Citrine6" parent="." unique_id=1705114716 instance=ExtResource("8_30pfj")]
+position = Vector2(1590, 312)
+type = 2
+
+[node name="Citrine7" parent="." unique_id=714142115 instance=ExtResource("8_30pfj")]
+position = Vector2(1673, 431)
+type = 2
+
+[node name="Citrine8" parent="." unique_id=1938943988 instance=ExtResource("8_30pfj")]
+position = Vector2(1673, 374)
+type = 2
+
+[node name="Citrine9" parent="." unique_id=1847252372 instance=ExtResource("8_30pfj")]
+position = Vector2(1484, 467)
+type = 2
+
+[node name="Citrine10" parent="." unique_id=1385807869 instance=ExtResource("8_30pfj")]
+position = Vector2(1497, 296)
+type = 2
+
+[node name="Citrine11" parent="." unique_id=973881725 instance=ExtResource("8_30pfj")]
+position = Vector2(1684, 242)
+type = 2
+
+[node name="Citrine12" parent="." unique_id=794212846 instance=ExtResource("8_30pfj")]
+position = Vector2(1601, 221)
+type = 2
+
+[node name="Citrine13" parent="." unique_id=1695109423 instance=ExtResource("8_30pfj")]
+position = Vector2(1731, 395)
+type = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001523778]
+position = Vector2(1148, 1388)
+texture = ExtResource("16_30pfj")
+centered = false
+offset = Vector2(0, -400)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=306279706]
+position = Vector2(185, -104)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=313641832]
+polygon = PackedVector2Array(-138, 33, -109, -101, -53, -159, 80, -168, 179, -144, 186, -24, 183, 100, -167, 102)
+
+[node name="Skull" type="Sprite2D" parent="Sprite2D/StaticBody2D" unique_id=1538763731]
+position = Vector2(-103, 112)
+texture = ExtResource("17_gkuo3")
+
+[node name="Pots" parent="." unique_id=1116984424 instance=ExtResource("17_3nnke")]
+position = Vector2(1157, 1406)
+
+[node name="Pots2" parent="." unique_id=1549915959 instance=ExtResource("17_3nnke")]
+position = Vector2(1524, 1404)
+
+[node name="Pots3" parent="." unique_id=1390282957 instance=ExtResource("17_3nnke")]
+position = Vector2(1211, 1380)
+
+[node name="Skull" type="Sprite2D" parent="." unique_id=2139489779]
+position = Vector2(1447, 1391)
+texture = ExtResource("17_gkuo3")
+flip_h = true
+
+[node name="Carpets" parent="." unique_id=1738673141 instance=ExtResource("19_m3bvp")]
+position = Vector2(211, 431)
+rotation = -1.5635535
+
+[node name="Carpets2" parent="." unique_id=1256741210 instance=ExtResource("20_j8gu4")]
+position = Vector2(745, 1116)
+
+[node name="Pots4" parent="." unique_id=1895017677 instance=ExtResource("21_ehuy1")]
+position = Vector2(1328, 1395)
+
+[node name="Lectern" parent="." unique_id=1190889055 node_paths=PackedStringArray("text_label_root") instance=ExtResource("22_d1yic")]
+position = Vector2(1333, 1240)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern" unique_id=352081218]
+visible = false
+z_index = 1
+offset_left = -266.0
+offset_top = -234.0
+offset_right = 121.0
+offset_bottom = -165.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern/PanelContainer" unique_id=281329295]
+layout_mode = 2
+bbcode_enabled = true
+text = "my succulents..."
+fit_content = true
+scroll_active = false

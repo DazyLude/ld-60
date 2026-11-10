@@ -152,10 +152,11 @@ func start_plushing() -> void:
 		plush_tween.tween_callback(func() -> void: plush_tween.kill(); plush_tween = null)
 
 
-func sacrifice() -> void:
+func sacrifice(silent: bool = false) -> void:
 	sacrificed.emit();
 	
-	BGMPlayer.play_one_off(BGMPlayer.EffectID.BodyStab);  
+	if silent:
+		BGMPlayer.play_one_off(BGMPlayer.EffectID.BodyStab);
 	
 	var temp_position := global_position;
 	reparent(respawn_point.get_parent());

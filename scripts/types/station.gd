@@ -60,3 +60,13 @@ func dispense_item() -> Item:
 	_item = null;
 	item_removed.emit()
 	return t_item;
+
+
+func disable() -> void:
+	hitbox.monitorable = false;
+	item_slot.hide()
+
+
+func enable() -> void:
+	hitbox.monitorable = true;
+	item_slot.show()

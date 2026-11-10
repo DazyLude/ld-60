@@ -5,7 +5,6 @@ extends Level
 
 
 var node_tweens : Dictionary[Node2D, Tween] = {};
-
 @export var movement_triggers : Dictionary[GemHolder, MovementTriggerData] = {};
 @export var movement_nodes : Dictionary[GemHolder, Node2D];
 var _starting_positions : Dictionary[Node2D, Vector2];

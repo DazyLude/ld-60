@@ -14,6 +14,7 @@ const appearance_time : float = 5.0;
 @export var takodachi_sprite : Sprite2D;
 @export var talking_position : Marker2D;
 @export var smoke_emitter : GPUParticles2D;
+@export var spawn_takodachi_on_sacrifice : bool = true;
 
 
 var _bound_cultist : NonPlayerCharacter;
@@ -51,10 +52,12 @@ func check_all(cultist : Item) -> void:
 	
 	cultist.sacrificed.disconnect(check_all);
 	if correct:
-		cultist_holder.hitbox.monitorable = false;
-		cultist_holder.deactivate();
 		sacrifice_made.emit();
-		spawn_takodachi();
+		if spawn_takodachi_on_sacrifice:
+			cultist_holder.hitbox.monitorable = false;
+			cultist_holder.deactivate();
+			spawn_takodachi();
+
 
 
 func spawn_takodachi() -> void:

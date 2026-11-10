@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bl8hwp0pbojb1" path="res://scenes/main/level_select.gd" id="2_k8sqw"]
 [ext_resource type="PackedScene" uid="uid://d1b7kiqgxo0k0" path="res://scenes/levels/bonus/trapped.tscn" id="3_4ryay"]
 [ext_resource type="FontVariation" uid="uid://dm4g6s4xb1qti" path="res://assets/themes/font variations/wizard.tres" id="7_0cfmq"]
+[ext_resource type="PackedScene" uid="uid://7n77fkkgp2yt" path="res://scenes/levels/bonus_postjam/tic_tac_toe.tscn" id="7_ldvme"]
 [ext_resource type="PackedScene" uid="uid://dchbcre2ua6ae" path="res://scenes/levels/bonus/alchemy_playground.tscn" id="14_kv151"]
 [ext_resource type="PackedScene" uid="uid://2oijnvhyya30" path="res://scenes/levels/bonus/the_test.tscn" id="15_3nsie"]
 [ext_resource type="PackedScene" uid="uid://b0wlqwj8vnc1r" path="res://scenes/levels/bonus/the_vault.tscn" id="16_psfke"]
@@ -18,7 +19,8 @@ button_to_levels = {
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer/alchemy"): ExtResource("14_kv151"),
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer/test"): ExtResource("15_3nsie"),
 NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2/heist"): ExtResource("16_psfke"),
-NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2/trapped"): ExtResource("3_4ryay")
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2/trapped"): ExtResource("3_4ryay"),
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2/tictactoe"): ExtResource("7_ldvme")
 }
 button_to_main_sequence_levels = {
 NodePath("VBoxContainer/HBoxContainer/Dialogues/intro"): -1,
@@ -163,6 +165,10 @@ text = "l_bonus_heist"
 [node name="trapped" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=67220052]
 layout_mode = 2
 text = "l_bonus_trapped"
+
+[node name="tictactoe" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=404463970]
+layout_mode = 2
+text = "l_tictactoe"
 
 [node name="Control" type="Control" parent="VBoxContainer" unique_id=677631574]
 custom_minimum_size = Vector2(0, 20)
