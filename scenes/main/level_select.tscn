@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blj848jotavt2" path="res://assets/novel/background.png" id="1_e2dyx"]
 [ext_resource type="Script" uid="uid://bl8hwp0pbojb1" path="res://scenes/main/level_select.gd" id="2_k8sqw"]
 [ext_resource type="PackedScene" uid="uid://d1b7kiqgxo0k0" path="res://scenes/levels/bonus/trapped.tscn" id="3_4ryay"]
-[ext_resource type="FontFile" uid="uid://cygtowexbyv8q" path="res://assets/fonts/Fondamento-Regular.ttf" id="4_0cfmq"]
+[ext_resource type="FontVariation" uid="uid://dm4g6s4xb1qti" path="res://assets/themes/font variations/wizard.tres" id="7_0cfmq"]
 [ext_resource type="PackedScene" uid="uid://dchbcre2ua6ae" path="res://scenes/levels/bonus/alchemy_playground.tscn" id="14_kv151"]
 [ext_resource type="PackedScene" uid="uid://2oijnvhyya30" path="res://scenes/levels/bonus/the_test.tscn" id="15_3nsie"]
 [ext_resource type="PackedScene" uid="uid://b0wlqwj8vnc1r" path="res://scenes/levels/bonus/the_vault.tscn" id="16_psfke"]
@@ -48,9 +48,9 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1551120675]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
-theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_fonts/font = ExtResource("7_0cfmq")
 theme_override_font_sizes/font_size = 64
-text = "Level Select"
+text = "level_select"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=913406020]
@@ -60,7 +60,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1004431154]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
-theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_fonts/font = ExtResource("7_0cfmq")
 theme_override_font_sizes/font_size = 48
 text = "story"
 horizontal_alignment = 1
@@ -121,7 +121,7 @@ size_flags_horizontal = 4
 [node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1981556242]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
-theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_fonts/font = ExtResource("7_0cfmq")
 theme_override_font_sizes/font_size = 48
 text = "bonus"
 horizontal_alignment = 1
@@ -132,9 +132,9 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer" unique_id=1165404905]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
-theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_fonts/font = ExtResource("7_0cfmq")
 theme_override_font_sizes/font_size = 48
-text = "alchemy: "
+text = "alchemy_lvls"
 horizontal_alignment = 1
 
 [node name="alchemy" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer" unique_id=2020025222]
@@ -151,9 +151,9 @@ layout_mode = 2
 [node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=1177292482]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
-theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_fonts/font = ExtResource("7_0cfmq")
 theme_override_font_sizes/font_size = 48
-text = "misc: "
+text = "misc_lvls"
 horizontal_alignment = 1
 
 [node name="heist" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=1627039661]

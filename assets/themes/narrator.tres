@@ -12,4 +12,7 @@ Button/styles/hover = ExtResource("1_5ogvt")
 Button/styles/normal = ExtResource("2_511xn")
 Button/styles/pressed = ExtResource("3_pf2bm")
 Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_2qvbb")
+PanelContainer/styles/panel = ExtResource("3_pf2bm")
 RichTextLabel/font_sizes/normal_font_size = 36
+RichTextLabel/fonts/normal_font = ExtResource("1_2qvbb")

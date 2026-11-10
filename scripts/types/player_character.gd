@@ -89,14 +89,12 @@ func start_plushing() -> void:
 
 func _add_area(area: Area2D) -> void:
 	if area.owner != null:
-		if area.owner is Item or area.owner is Station:
-			overlapping[area] = area.owner;
+		overlapping[area] = area.owner;
 
 
 func _remove_area(area: Area2D) -> void:
 	if area.owner != null:
-		if area.owner is Item or area.owner is Station:
-			overlapping.erase(area);
+		overlapping.erase(area);
 
 
 func get_closest() -> Node2D:
@@ -129,10 +127,17 @@ func activate_something(thing: Node2D) -> void:
 	if thing is Item:
 		var thing_item := thing as Item;
 		thing_item.activate()
+		return;
 	
 	if thing is Station:
 		var thing_station := thing as Station;
 		thing_station.activate()
+		return;
+	
+	if thing is Sign:
+		var thing_sign := thing as Sign;
+		thing_sign.activate()
+		return;
 
 
 func deactivate_something(thing: Node2D) -> void:
@@ -146,6 +151,10 @@ func deactivate_something(thing: Node2D) -> void:
 	if thing is Station:
 		var thing_station := thing as Station;
 		thing_station.deactivate()
+	
+	if thing is Sign:
+		var thing_sign := thing as Sign;
+		thing_sign.deactivate()
 
 
 func try_use_something() -> void:

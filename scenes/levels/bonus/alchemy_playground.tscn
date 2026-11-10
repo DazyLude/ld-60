@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bc7uq42qomsba" path="res://scenes/stations/book_holder.tscn" id="10_y73qe"]
 [ext_resource type="PackedScene" uid="uid://hwomokq7ue3f" path="res://scenes/stations/transmutation_table.tscn" id="11_5excn"]
 [ext_resource type="PackedScene" uid="uid://cj0q78etowlvl" path="res://scenes/items/grimoire.tscn" id="11_kn0mj"]
+[ext_resource type="PackedScene" uid="uid://lioexx3qagno" path="res://scenes/stations/lectern.tscn" id="12_kn0mj"]
 [ext_resource type="PackedScene" uid="uid://dnoaxo1xrgmbn" path="res://scenes/obstacles/wizard/bookshelf.tscn" id="13_mrecx"]
 
 [node name="Wizard3" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("grimoire_stand", "camera")]
@@ -22,17 +23,17 @@ searching_engine = 5
 metadata/_custom_type_script = "uid://bioviasxjhvur"
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=2022304447]
-tile_map_data = PackedByteArray("AAAAAAMAEwAAAAAAAAAAAAYAEwAAAAAAAAAAAAcAFAAAAAAAAAABAAcAEgAAAAAAAAAJAAcAEgAAAAAAAAAKAAYAFgAAAAAAAAAKAAcAFwAAAAAAAAAKAAMAFgAAAAAAAAAKAAQAFgAAAAAAAAAKAAUAFgAAAAAAAAAAAAQAEwAAAAAAAAAAAAUAEwAAAAAAAAACAAcAEgAAAAAAAAADAAcAEgAAAAAAAAAEAAcAEgAAAAAAAAAFAAcAEgAAAAAAAAAGAAcAEgAAAAAAAAAHAAcAEgAAAAAAAAAIAAcAEgAAAAAAAAAKAAIAGAAAAAAAAAAJAAIAIwAAAAAAAAAIAAIAIwAAAAAAAAAHAAIAIwAAAAAAAAAGAAIAIwAAAAAAAAAFAAIAIwAAAAAAAAAEAAIAIwAAAAAAAAADAAIAIwAAAAAAAAACAAIAIwAAAAAAAAABAAIAIwAAAAAAAAAAAAIAFQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAEwAAAAAAAAAAAAYAEwAAAAAAAAAKAAYAFgAAAAAAAAAKAAMAFgAAAAAAAAAKAAQAFgAAAAAAAAAKAAUAFgAAAAAAAAAAAAQAEwAAAAAAAAAAAAUAEwAAAAAAAAAKAAIAGAAAAAAAAAAJAAIAIwAAAAAAAAAIAAIAIwAAAAAAAAAHAAIAIwAAAAAAAAAGAAIAIwAAAAAAAAAFAAIAIwAAAAAAAAAEAAIAIwAAAAAAAAADAAIAIwAAAAAAAAACAAIAIwAAAAAAAAABAAIAIwAAAAAAAAAAAAIAFQAAAAAAAAAAAAgAFAAAAAAAAAABAAgAEgAAAAAAAAACAAgAEgAAAAAAAAADAAgAEgAAAAAAAAAEAAgAEgAAAAAAAAAFAAgAEgAAAAAAAAAGAAgAEgAAAAAAAAAHAAgAEgAAAAAAAAAIAAgAEgAAAAAAAAAJAAgAEgAAAAAAAAAKAAgAFwAAAAAAAAAKAAcAFgAAAAAAAAAAAAcAEwAAAAAAAAA=")
 tile_set = ExtResource("2_qdipb")
 navigation_enabled = false
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1031338355]
 z_index = -2
-tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAHAAQABwAAAAAAAAADAAQACAAAAAAAAAAFAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAFAAQACgAIAAAAAAABAAQABgAAAAAAAAABAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAACAAQAAAAAAAAAAAAGAAMABgAAAAAAAAACAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAEAAMABQAAAAAAAAAHAAMAAAAAAAAAAAABAAUACgAAAAAAAAACAAYACgAAAAAAAAAEAAUACgAAAAAAAAAFAAYACgAAAAAAAAAIAAUACgAAAAAAAAAIAAYACgAAAAAAAAAGAAYACgABAAAAAAAHAAUACgABAAAAAAAJAAYACgABAAAAAAAHAAYACgACAAAAAAAJAAUACgACAAAAAAAJAAMACgACAAAAAAAJAAQACgADAAAAAAAFAAUACgADAAAAAAADAAUACgAFAAAAAAABAAYACgAFAAAAAAACAAUACgAGAAAAAAADAAYACgAGAAAAAAAEAAYACgAGAAAAAAAGAAUACgAHAAAAAAA=")
+tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAHAAQABwAAAAAAAAADAAQACAAAAAAAAAAFAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAFAAQACgAIAAAAAAABAAQABgAAAAAAAAABAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAACAAQAAAAAAAAAAAAGAAMABgAAAAAAAAACAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAEAAMABQAAAAAAAAAHAAMAAAAAAAAAAAABAAUACgAAAAAAAAACAAYACgAAAAAAAAAEAAUACgAAAAAAAAAFAAYACgAAAAAAAAAIAAUACgAAAAAAAAAIAAYACgAAAAAAAAAGAAYACgABAAAAAAAHAAUACgABAAAAAAAJAAYACgABAAAAAAAHAAYACgACAAAAAAAJAAUACgACAAAAAAAJAAMACgACAAAAAAAJAAQACgADAAAAAAAFAAUACgADAAAAAAADAAUACgAFAAAAAAABAAYACgAFAAAAAAACAAUACgAGAAAAAAADAAYACgAGAAAAAAAEAAYACgAGAAAAAAAGAAUACgAHAAAAAAABAAcACgACAAAAAAACAAcACgAHAAAAAAADAAcACgAEAAAAAAAEAAcACgAHAAAAAAAFAAcACgAAAAAAAAAGAAcACgAIAAAAAAAHAAcACgAJAAAAAAAIAAcACgAGAAAAAAAJAAcACgACAAAAAAA=")
 tile_set = ExtResource("3_efq24")
 
 [node name="Decor" type="TileMapLayer" parent="." unique_id=1749607590]
-tile_map_data = PackedByteArray("AAAAAAQABwAAAAAAAGAAAAYABwAAAAAAAGACAAcABwAAAAAAADABAAcACAAAAAAAADADAAcACAAAAAAAADAAAAUACAAAAAAAAGAGAAcACgAAAAAAADAHAAcACgAAAAAAADAIAAcACgAAAAAAADAJAAcACgAAAAAAADAKAAYACgAAAAAAAFAKAAUACgAAAAAAAFAKAAQACgAAAAAAAFAFAAcACgAAAAAAADAKAAMACgAAAAAAAFA=")
+tile_map_data = PackedByteArray("AAAAAAQABwAAAAAAAGAAAAYABwAAAAAAAGAAAAUACAAAAAAAAGAKAAYACgAAAAAAAFAKAAUACgAAAAAAAFAKAAQACgAAAAAAAFAKAAMACgAAAAAAAFA=")
 tile_set = ExtResource("4_vm70f")
 navigation_enabled = false
 
@@ -43,7 +44,7 @@ position = Vector2(740, 493)
 limit_left = 18
 limit_top = 266
 limit_right = 1376
-limit_bottom = 1012
+limit_bottom = 1131
 
 [node name="ExportTip" type="Sprite2D" parent="." unique_id=1405952371]
 z_index = -2
@@ -52,30 +53,30 @@ rotation = -0.18949437
 texture = ExtResource("7_lo8e2")
 
 [node name="Amethyst" parent="." unique_id=431509241 instance=ExtResource("10_8dkts")]
-position = Vector2(202, 761)
+position = Vector2(207, 645)
 type = 3
 
 [node name="Ruby" parent="." unique_id=1737541831 instance=ExtResource("10_8dkts")]
-position = Vector2(202, 638)
+position = Vector2(207, 522)
 
 [node name="Emerald" parent="." unique_id=1621693367 instance=ExtResource("10_8dkts")]
-position = Vector2(323, 767)
+position = Vector2(328, 522)
 type = 4
 
 [node name="Sapphire" parent="." unique_id=1346957613 instance=ExtResource("10_8dkts")]
-position = Vector2(322, 639)
+position = Vector2(327, 647)
 type = 1
 
 [node name="Citrine" parent="." unique_id=708147492 instance=ExtResource("10_8dkts")]
-position = Vector2(448, 710)
+position = Vector2(453, 594)
 type = 2
 
 [node name="Diamond" parent="." unique_id=868600947 instance=ExtResource("10_8dkts")]
-position = Vector2(576, 750)
+position = Vector2(581, 634)
 type = 5
 
 [node name="Onyx" parent="." unique_id=1834823923 instance=ExtResource("10_8dkts")]
-position = Vector2(578, 637)
+position = Vector2(583, 521)
 type = 6
 
 [node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("11_5excn")]
@@ -91,8 +92,114 @@ position = Vector2(315, 433)
 position = Vector2(584, 433)
 
 [node name="Station" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("10_y73qe")]
-position = Vector2(1075, 729)
+position = Vector2(408, 925)
 starting_item = NodePath("../Grimoire")
 
 [node name="Grimoire" parent="." unique_id=1098946944 instance=ExtResource("11_kn0mj")]
-position = Vector2(918, 744)
+position = Vector2(251, 940)
+
+[node name="Lectern" parent="." unique_id=1190889055 node_paths=PackedStringArray("text_label_root") instance=ExtResource("12_kn0mj")]
+position = Vector2(1239, 413)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern" unique_id=652817111]
+visible = false
+z_index = 1
+offset_left = -580.0
+offset_top = -143.0
+offset_right = -101.0
+offset_bottom = 106.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern/PanelContainer" unique_id=1651381713]
+layout_mode = 2
+bbcode_enabled = true
+text = "alchemy_tutorial_1"
+fit_content = true
+scroll_active = false
+
+[node name="Lectern2" parent="." unique_id=1356948362 node_paths=PackedStringArray("text_label_root") instance=ExtResource("12_kn0mj")]
+position = Vector2(1239, 540)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern2" unique_id=610210068]
+visible = false
+z_index = 1
+offset_left = -580.0
+offset_top = -143.0
+offset_right = -101.0
+offset_bottom = 106.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern2/PanelContainer" unique_id=736524009]
+layout_mode = 2
+bbcode_enabled = true
+text = "alchemy_tutorial_2"
+fit_content = true
+scroll_active = false
+
+[node name="Lectern3" parent="." unique_id=50058866 node_paths=PackedStringArray("text_label_root") instance=ExtResource("12_kn0mj")]
+position = Vector2(1239, 673)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern3" unique_id=1357661841]
+visible = false
+z_index = 1
+offset_left = -580.0
+offset_top = -220.0
+offset_right = -101.0
+offset_bottom = 29.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern3/PanelContainer" unique_id=633743291]
+layout_mode = 2
+bbcode_enabled = true
+text = "alchemy_tutorial_3"
+fit_content = true
+scroll_active = false
+
+[node name="Lectern4" parent="." unique_id=305379526 node_paths=PackedStringArray("text_label_root") instance=ExtResource("12_kn0mj")]
+position = Vector2(1239, 800)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern4" unique_id=1231698159]
+visible = false
+z_index = 1
+offset_left = -580.0
+offset_top = -220.0
+offset_right = -101.0
+offset_bottom = 29.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern4/PanelContainer" unique_id=1259139749]
+layout_mode = 2
+bbcode_enabled = true
+text = "alchemy_tutorial_4"
+fit_content = true
+scroll_active = false
+
+[node name="Lectern5" parent="." unique_id=987810041 node_paths=PackedStringArray("text_label_root") instance=ExtResource("12_kn0mj")]
+position = Vector2(1244, 937)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern5" unique_id=223711857]
+visible = false
+z_index = 1
+offset_left = -580.0
+offset_top = -220.0
+offset_right = -101.0
+offset_bottom = 29.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern5/PanelContainer" unique_id=1074394663]
+layout_mode = 2
+bbcode_enabled = true
+text = "alchemy_tutorial_5"
+fit_content = true
+scroll_active = false

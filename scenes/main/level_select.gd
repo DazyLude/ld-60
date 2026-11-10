@@ -25,10 +25,6 @@ func _ready() -> void:
 		button.pressed.connect(play_main_sequence_level.bind(idx));
 
 
-func update() -> void:
-	bonus_root.visible = Settings.game_finished;
-
-
 func play_level(level: PackedScene) -> void:
 	var level_array : Array[PackedScene] = [level];
 	Gamestate.skip_to_level_select = true;

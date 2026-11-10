@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c278a6yitimmj"]
+
+[ext_resource type="Script" uid="uid://kcijktpqlpou" path="res://scripts/types/item.gd" id="1_ytpuw"]
+[ext_resource type="Texture2D" uid="uid://b5qid7w2gkvb6" path="res://assets/visuals/items/closed_textbook.png" id="3_y1hiq"]
+[ext_resource type="Texture2D" uid="uid://bv4egibenpgg6" path="res://assets/visuals/items/open_grimoire.png" id="4_pw5qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhyfn"]
+size = Vector2(93, 57)
+
+[node name="Grimoire" type="Node2D" unique_id=1737541831 node_paths=PackedStringArray("hitbox", "sprite")]
+script = ExtResource("1_ytpuw")
+item_name = "grimoire"
+item_texture = ExtResource("4_pw5qf")
+hitbox = NodePath("Area2D")
+sprite = NodePath("Sprite2D")
+take_sound = 5
+metadata/_custom_type_script = "uid://kcijktpqlpou"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073497469]
+texture = ExtResource("3_y1hiq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1509468262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1162187772]
+position = Vector2(5.5, 3.5)
+shape = SubResource("RectangleShape2D_hhyfn")

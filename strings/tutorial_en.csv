@@ -1,0 +1,6 @@
+key,en
+alchemy_tutorial_1,"[color=#d60600]Red[/color], [color=#3959c2]blue[/color], [color=#77239c]purple[/color] and [color=#007a10]green[/color] gems represent different elements. They can be arranged in a circle."
+alchemy_tutorial_2,"The [color=#c9a532]yellow[/color] one is neutral. Combining a [color=#c9a532]yellow[/color] with an elemental gem transposes it to the opposite element, e.g. [color=#3959c2]blue[/color] + [color=#c9a532]yellow[/color] → [color=#d60600]red[/color] + [color=#c9a532]yellow[/color]. "
+alchemy_tutorial_3,Combining two different elemental gems usually gives you two other elemental gems e.g. [color=#3959c2]blue[/color] + [color=#007a10]green[/color] -> [color=#d60600]red[/color] + [color=#77239c]purple[/color]. 
+alchemy_tutorial_4,"However, when you combine two [color=#3959c2]oppo[/color][color=#d60600]site[/color] elemental gems, they can neutralize each other, producing two [color=#c9a532]yellow[/color] gems! And two [color=#c9a532]yellow[/color] gems, in turn, can produce two other [color=#007a10]oppo[/color][color=#77239c]site[/color] gems."
+alchemy_tutorial_5,The [color=#7c7c7c]black[/color] and [color=#c0c0c0]white[/color] gems change the elemental gems either clockwise or counter-clockwise. And [color=#c9a532]yellow[/color] gem transposes those two between each other as well. 

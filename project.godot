@@ -90,7 +90,7 @@ exit={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://strings/english.en.translation", "res://strings/english.ru.translation")
+locale/translations=PackedStringArray("res://strings/english.en.translation", "res://strings/english.ru.translation", "res://strings/tutorial_en.en.translation", "res://strings/tutorial_ru.ru.translation")
 
 [physics]
 

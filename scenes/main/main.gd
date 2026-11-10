@@ -81,7 +81,6 @@ func _on_volume_slider_change(v: float) -> void:
 
 func _on_level_select_pressed() -> void:
 	level_select_root.show();
-	level_select_root.update();
 
 
 func _on_back_from_level_select_pressed() -> void:

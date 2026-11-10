@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://lioexx3qagno"]
+
+[ext_resource type="Script" uid="uid://bwvf2qcqymh3h" path="res://scripts/types/sign.gd" id="1_i3eo1"]
+[ext_resource type="Texture2D" uid="uid://bil6mlftckti1" path="res://assets/visuals/stations/book holder.png" id="2_y0vos"]
+[ext_resource type="PackedScene" uid="uid://c278a6yitimmj" path="res://scenes/items/open_grimoire.tscn" id="3_y0vos"]
+[ext_resource type="Texture2D" uid="uid://b4itc0g8awve" path="res://assets/visuals/poi.png" id="4_ty7mm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
+size = Vector2(64, 58)
+
+[node name="Lectern" type="Node2D" unique_id=1190889055 node_paths=PackedStringArray("hitbox", "item_placement", "starting_item", "unread_marker")]
+script = ExtResource("1_i3eo1")
+station_name = "book_holder"
+hitbox = NodePath("Area2D")
+item_placement = NodePath("Marker2D")
+starting_item = NodePath("Grimoire")
+unread_marker = NodePath("Mark")
+metadata/_custom_type_script = "uid://bwvf2qcqymh3h"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1154531718]
+position = Vector2(-5, -38)
+texture = ExtResource("2_y0vos")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=676756648]
+position = Vector2(-5, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=255867426]
+position = Vector2(6, 30)
+shape = SubResource("RectangleShape2D_3ic5c")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=269852651]
+position = Vector2(0, -70)
+
+[node name="Grimoire" parent="." unique_id=1737541831 instance=ExtResource("3_y0vos")]
+position = Vector2(0, -69)
+
+[node name="Mark" type="Sprite2D" parent="." unique_id=619962025]
+position = Vector2(0, -112)
+texture = ExtResource("4_ty7mm")
