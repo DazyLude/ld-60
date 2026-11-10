@@ -15,10 +15,10 @@ offset_bottom = 40.0
 texture = ExtResource("1_e2dyx")
 script = ExtResource("2_k8sqw")
 button_to_levels = {
-NodePath("VBoxContainer/HBoxContainer/BonusLevels/alchemy"): ExtResource("14_kv151"),
-NodePath("VBoxContainer/HBoxContainer/BonusLevels/test"): ExtResource("15_3nsie"),
-NodePath("VBoxContainer/HBoxContainer/BonusLevels/heist"): ExtResource("16_psfke"),
-NodePath("VBoxContainer/HBoxContainer/BonusLevels/trapped"): ExtResource("3_4ryay")
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer/alchemy"): ExtResource("14_kv151"),
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer/test"): ExtResource("15_3nsie"),
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2/heist"): ExtResource("16_psfke"),
+NodePath("VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2/trapped"): ExtResource("3_4ryay")
 }
 button_to_main_sequence_levels = {
 NodePath("VBoxContainer/HBoxContainer/Dialogues/intro"): -1,
@@ -114,7 +114,11 @@ text = "l_neanderthal"
 layout_mode = 2
 text = "d_outro"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1981556242]
+[node name="BonusLevels" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=591508713]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1981556242]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
 theme_override_fonts/font = ExtResource("4_0cfmq")
@@ -122,26 +126,47 @@ theme_override_font_sizes/font_size = 48
 text = "bonus"
 horizontal_alignment = 1
 
-[node name="BonusLevels" type="GridContainer" parent="VBoxContainer/HBoxContainer" unique_id=866547140]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1497631872]
 layout_mode = 2
-size_flags_horizontal = 4
-columns = 4
 
-[node name="alchemy" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=2020025222]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer" unique_id=1165404905]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
+theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_font_sizes/font_size = 48
+text = "alchemy: "
+horizontal_alignment = 1
+
+[node name="alchemy" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer" unique_id=2020025222]
 layout_mode = 2
 text = "l_bonus_alchemy"
 
-[node name="test" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1945529380]
+[node name="test" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer" unique_id=1945529380]
 layout_mode = 2
 text = "l_bonus_test"
 
-[node name="heist" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1627039661]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=1511647911]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=1177292482]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9254902, 0.7647059, 1)
+theme_override_fonts/font = ExtResource("4_0cfmq")
+theme_override_font_sizes/font_size = 48
+text = "misc: "
+horizontal_alignment = 1
+
+[node name="heist" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=1627039661]
 layout_mode = 2
 text = "l_bonus_heist"
 
-[node name="trapped" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels" unique_id=67220052]
+[node name="trapped" type="Button" parent="VBoxContainer/HBoxContainer/BonusLevels/HBoxContainer2" unique_id=67220052]
 layout_mode = 2
 text = "l_bonus_trapped"
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=677631574]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="Back" type="Button" parent="VBoxContainer" unique_id=1493854303]
 layout_mode = 2

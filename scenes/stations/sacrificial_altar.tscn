@@ -4,14 +4,45 @@
 [ext_resource type="Texture2D" uid="uid://ltkr1ikogeni" path="res://assets/visuals/vampyr/circle.png" id="2_lhvdl"]
 [ext_resource type="PackedScene" uid="uid://c34nffr34wgml" path="res://scenes/stations/stone.tscn" id="3_270q7"]
 [ext_resource type="Texture2D" uid="uid://d2smvvqn13bxc" path="res://assets/visuals/vampyr/big squid.png" id="4_270q7"]
+[ext_resource type="Texture2D" uid="uid://c2vbocfv3k008" path="res://assets/visuals/smoke_cloud.png" id="5_ixo5c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_270q7"]
 atlas = ExtResource("4_270q7")
 
-[node name="SacrificialStone" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("cultist_holder", "takodachi_sprite")]
+[sub_resource type="Curve" id="Curve_2d3hv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.39700377, 1), 0.0, 0.0, 0, 0, Vector2(0.49812737, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_bgyfn"]
+curve = SubResource("Curve_2d3hv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_epy27"]
+lifetime_randomness = 0.75
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape_offset = Vector3(0, 10, 0)
+emission_shape = 3
+emission_box_extents = Vector3(205, 10, 1)
+angle_min = 90.000015
+angle_max = 270.0
+velocity_pivot = Vector3(1, 0, 0)
+initial_velocity_max = 20.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+damping_min = 0.1
+damping_max = 10.0
+scale_min = 0.39999998
+scale_max = 0.5
+alpha_curve = SubResource("CurveTexture_bgyfn")
+hue_variation_min = 0.079999976
+hue_variation_max = 0.119999975
+
+[node name="SacrificialStone" type="Node2D" unique_id=1301439559 node_paths=PackedStringArray("cultist_holder", "takodachi_sprite", "smoke_emitter")]
 script = ExtResource("1_lhvdl")
 cultist_holder = NodePath("Stone")
 takodachi_sprite = NodePath("Takodachi")
+smoke_emitter = NodePath("GPUParticles2D")
 metadata/_custom_type_script = "uid://db5f5adk7kmgr"
 
 [node name="Circle" type="Sprite2D" parent="." unique_id=479752479]
@@ -26,3 +57,12 @@ visible = false
 position = Vector2(-246, -394)
 texture = SubResource("AtlasTexture_270q7")
 centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=241042396]
+emitting = false
+amount = 64
+texture = ExtResource("5_ixo5c")
+lifetime = 2.0
+randomness = 1.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_epy27")

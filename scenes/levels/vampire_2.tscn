@@ -132,8 +132,8 @@ texture = ExtResource("10_q51nt")
 flip_h = true
 
 [node name="Diamond" parent="." unique_id=1889815271 instance=ExtResource("10_ewbns")]
-position = Vector2(895, 168)
-type = 5
+position = Vector2(1081, 253)
+type = 6
 
 [node name="Citrine" parent="." unique_id=1061348284 instance=ExtResource("10_ewbns")]
 position = Vector2(1090, 490)
@@ -141,16 +141,15 @@ type = 2
 
 [node name="Onyx" parent="." unique_id=1900888691 instance=ExtResource("10_ewbns")]
 position = Vector2(319, 434)
-type = 6
+type = 5
 
 [node name="Emerald" parent="." unique_id=1579871259 instance=ExtResource("10_ewbns")]
 position = Vector2(880, 599)
-type = 4
+type = 3
 
-[node name="DiamondHolder" parent="." unique_id=1972157419 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_fgqx4")]
+[node name="DiamondHolder" parent="." unique_id=1972157419 instance=ExtResource("9_fgqx4")]
 position = Vector2(953, 172)
 type = 6
-starting_item = NodePath("../Diamond")
 
 [node name="CitrineHolder" parent="." unique_id=359851750 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_fgqx4")]
 position = Vector2(1146, 498)
@@ -165,9 +164,10 @@ type = 3
 position = Vector2(223, 578)
 type = 1
 
-[node name="OnyxHolder" parent="." unique_id=313509920 instance=ExtResource("9_fgqx4")]
+[node name="OnyxHolder" parent="." unique_id=313509920 node_paths=PackedStringArray("starting_item") instance=ExtResource("9_fgqx4")]
 position = Vector2(1144, 276)
 type = 7
+starting_item = NodePath("../Diamond")
 
 [node name="TransmutationTable" parent="." unique_id=380858643 instance=ExtResource("11_0y7fv")]
 position = Vector2(703, 877)

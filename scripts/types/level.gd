@@ -33,14 +33,14 @@ func randomize_position(time: float) -> void:
 	if  time - prev_position >= 1.0:
 		prev_position = time;
 		
-		var rand_x := randf() - 0.5;
-		var rand_y := randf() - 0.5;
+		var rand_x := clampf(randfn(0.0, 1.0), -0.5, 0.5);
+		var rand_y := clampf(randfn(0.0, 1.0), -0.5, 0.5);
 		
-		position = Vector2(20.0, 50.0) * Vector2(rand_x, rand_y);
+		camera.offset = Vector2(10.0, 25.0) * Vector2(rand_x, rand_y);
 
 
 func reset_position() -> void:
-	position = Vector2();
+	camera.offset = Vector2();
 
 
 func initialize_local_dialogue_player() -> void:

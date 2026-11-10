@@ -13,6 +13,7 @@ const appearance_time : float = 5.0;
 @export var cultist_holder : Station;
 @export var takodachi_sprite : Sprite2D;
 @export var talking_position : Marker2D;
+@export var smoke_emitter : GPUParticles2D;
 
 
 var _bound_cultist : NonPlayerCharacter;
@@ -73,10 +74,17 @@ func spawn_takodachi() -> void:
 	player.assume_direct_control = true;
 	player.force_plushing = true;
 	
+	takodachi_tween.tween_callback(
+		func() -> void: smoke_emitter.emitting = true
+		);
 	takodachi_tween.tween_property(takodachi_sprite, ^"position:y", starting_y, appearance_time);
 	takodachi_tween.parallel().tween_property(
 		takodachi_texture, ^"region:size:y", sprite_height, appearance_time);
 	takodachi_tween.parallel().tween_property(
 		player, ^"global_position", talking_position.global_position, appearance_time)
 	takodachi_tween.tween_callback(
-		func() -> void: player.force_plushing = false);
+		func() -> void: smoke_emitter.emitting = false
+	);
+	takodachi_tween.tween_callback(
+		func() -> void: player.force_plushing = false
+	);
