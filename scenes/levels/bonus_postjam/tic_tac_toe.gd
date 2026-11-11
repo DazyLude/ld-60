@@ -371,7 +371,6 @@ func play_smokescreen(over: Node2D, idx: int) -> void:
 		animate(_smoke_tween_2, smoke2);
 
 
-
 func animate(tween: Tween, cloud: Sprite2D) -> void:
 	var random_rotation := randf() * 2.0 * PI;
 	var explosion_time := 0.05;

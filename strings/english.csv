@@ -71,7 +71,7 @@ omake_4_a,...28800,...28800
 omake_5_q,How many hours in 8 seconds?,Cколько часов в 8 секундах?
 omake_5_a,I am not a calculator.,Я не калькулятор.
 omake_6_q,What holiday is it today?,Какой сегодня праздник?
-omake_6_a,My birthday.,Мой День рождения.
+omake_6_a,My birthday.,Мой день рождения.
 omake_7_q,What zodiac sign is october?,Какой знак зодиака в октябре?
 omake_7_a,Libra and Scorpio.,Весы и Скорпион.
 omake_8_q,What does the mog mean?,Что такое могну?
@@ -102,3 +102,5 @@ owo_wins,You lose… Another try — another sacrifice…,Ты проиграл�
 owo_draws,Acceptable… Take your citrine…,Сойдет… Держи свой цитрин…
 owo_loses,"How?.. Leave me be, mortal… I need to tend to my succulents…","Но как?.. Оставь меня, Смертный, у меня есть суккуленты чтобы за ними ухаживать…"
 l_tictactoe,Tic-Tac-Toe,Крестики-Нолики
+,,
+l_labyrinth,The Labyrinth,Лабиринт
