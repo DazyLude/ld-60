@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ddrh4j10t8lr3" path="res://assets/visuals/vampyr/skulls.png" id="12_65y4l"]
 [ext_resource type="PackedScene" uid="uid://diup1ews0vrea" path="res://scenes/items/gem.tscn" id="12_iqb1b"]
 [ext_resource type="PackedScene" uid="uid://bsmx22u4kqpmf" path="res://scenes/stations/gem_holder.tscn" id="13_1qdmt"]
+[ext_resource type="PackedScene" uid="uid://lioexx3qagno" path="res://scenes/stations/lectern.tscn" id="16_e4tsr"]
 
 [sub_resource type="Resource" id="Resource_e4tsr"]
 script = ExtResource("2_nxeq2")
@@ -53,7 +54,7 @@ metadata/_custom_type_script = "uid://cbrw43b7f6vmt"
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqmcj"]
 radius = 47.93
 
-[node name="Labyrinth" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("sacrificial", "movement_triggers", "movement_nodes", "player", "smoke", "targets", "camera")]
+[node name="Labyrinth" type="Node2D" unique_id=38921846 node_paths=PackedStringArray("sacrificial", "movement_triggers", "movement_nodes", "player", "smoke", "lectern", "lectern_text_box", "lectern_controls", "targets", "camera")]
 y_sort_enabled = true
 script = ExtResource("1_65y4l")
 sacrificial = NodePath("SacrificialStone")
@@ -65,6 +66,9 @@ NodePath("BookshelfTrigger"): NodePath("Bookshelf")
 }
 player = NodePath("Vampire")
 smoke = NodePath("Smoke")
+lectern = NodePath("Lectern")
+lectern_text_box = NodePath("Lectern/PanelContainer/RichTextLabel")
+lectern_controls = NodePath("LecternControls")
 targets = [NodePath("Target1"), NodePath("Target2")]
 camera = NodePath("Vampire/Camera2D2")
 player_character = 2
@@ -453,3 +457,26 @@ position = Vector2(2494, 1534)
 [node name="BookshelfTrigger" parent="." unique_id=1301588875 instance=ExtResource("13_1qdmt")]
 position = Vector2(2237, 1584)
 type = 1
+
+[node name="LecternControls" parent="." unique_id=1181700518 instance=ExtResource("13_1qdmt")]
+position = Vector2(1977, 1244)
+
+[node name="Lectern" parent="." unique_id=1190889055 node_paths=PackedStringArray("text_label_root") instance=ExtResource("16_e4tsr")]
+position = Vector2(1977, 1074)
+text_label_root = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="Lectern" unique_id=2044235157]
+z_index = 1
+offset_left = -699.0
+offset_top = -174.0
+offset_right = -190.0
+offset_bottom = -105.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lectern/PanelContainer" unique_id=619059515]
+layout_mode = 2
+bbcode_enabled = true
+text = "my succulents... "
+fit_content = true
+scroll_active = false

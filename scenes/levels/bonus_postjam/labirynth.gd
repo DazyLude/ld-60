@@ -24,6 +24,31 @@ var _starting_positions : Dictionary[Node2D, Vector2];
 @export var player : Character;
 @export var smoke : Sprite2D;
 
+@export var lectern : Sign;
+@export var lectern_text_box : RichTextLabel;
+@export var lectern_controls : GemHolder;
+var lectern_default_tip : String = "laby_tip_0"
+var lectern_tips : Dictionary[ColoredGem.Type, String] = {
+	ColoredGem.Type.EMERALD: "laby_tip_1",
+	ColoredGem.Type.CITRINE: "laby_tip_2",
+	ColoredGem.Type.RUBY: "laby_tip_3",
+	ColoredGem.Type.ONYX: "laby_tip_4",
+	
+	ColoredGem.Type.SAPPHIRE: "laby_tip_5",
+	ColoredGem.Type.AMETHYST: "laby_tip_6",
+	ColoredGem.Type.DIAMOND: "laby_tip_7",
+}
+var tip_read_status : Dictionary[String, bool] = {
+	"laby_tip_0": true,
+	"laby_tip_1": true,
+	"laby_tip_2": true,
+	"laby_tip_3": true,
+	"laby_tip_4": true,
+	"laby_tip_5": true,
+	"laby_tip_6": true,
+	"laby_tip_7": true,
+}
+
 
 var gem_vectors : Dictionary[ColoredGem.Type, Vector2i] = {
 	ColoredGem.Type.CITRINE: Vector2i(0, 0), ColoredGem.Type.SAPPHIRE: Vector2i(1, 0),
@@ -54,6 +79,10 @@ func _ready() -> void:
 		teleport.area_entered.connect(try_default_teleport)
 	
 	variable_teleport.area_entered.connect(try_targetable_teleport)
+	
+	lectern_controls.item_received.connect(update_lectern_tip);
+	lectern_controls.item_removed.connect(update_lectern_tip);
+	update_lectern_tip(null);
 
 
 func _on_successful_sacrifice() -> void:
@@ -139,7 +168,7 @@ func _teleport_to(pos: Vector2) -> void:
 	
 	explode(player.global_position)
 	get_tree().create_timer(0.27).timeout.connect(explode.bind(pos))
-	BGMPlayer.play_one_off(BGMPlayer.EffectID.Bonk)
+	BGMPlayer.play_one_off(BGMPlayer.EffectID.DissapearanceBarrierSuzumia)
 	
 	teleport_tween.tween_property(player, ^"global_position", pos, 0.3);
 	teleport_tween.tween_callback(player.show);
@@ -203,3 +232,19 @@ func get_current_target() -> Vector2i:
 			return Vector2i(1, 1)
 	
 	return target_cell;
+
+
+func update_lectern_tip(item: Item = null) -> void:
+	tip_read_status[lectern_text_box.text] = lectern.unread_marker.visible;
+	
+	var text : String;
+	if item == null:
+		text = lectern_default_tip;
+	elif item is ColoredGem:
+		var gem := item as ColoredGem;
+		text = lectern_tips[gem.type];
+	else:
+		return;
+	
+	lectern_text_box.text = text;
+	lectern.unread_marker.visible = tip_read_status[text];
